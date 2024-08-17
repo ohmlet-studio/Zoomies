@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dt6l3p410dvjy"
+path="res://.godot/imported/Menu Theme.wav-ec1b75ce96db5f83ebcad298d2973e32.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Menu Theme.wav"
+dest_files=["res://.godot/imported/Menu Theme.wav-ec1b75ce96db5f83ebcad298d2973e32.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

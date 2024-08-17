@@ -1,86 +1,29 @@
-[gd_scene load_steps=14 format=3 uid="uid://bym37ckhwglbu"]
+[gd_scene load_steps=5 format=3 uid="uid://bym37ckhwglbu"]
 
-[ext_resource type="Texture2D" uid="uid://d0y8o6qsf7yfv" path="res://assets/textures/cat.png" id="1_3jx6e"]
-[ext_resource type="Script" path="res://scripts/webcamControls.gd" id="1_b5u6k"]
-[ext_resource type="Script" path="res://scenes/webcam.gd" id="1_ei5se"]
-[ext_resource type="Texture2D" uid="uid://dt1pqcoiu1ih2" path="res://assets/textures/plant.png" id="2_ehe6u"]
-[ext_resource type="Texture2D" uid="uid://bj6o55ei14h8x" path="res://assets/textures/hint.png" id="2_jfdyk"]
+[ext_resource type="PackedScene" uid="uid://b77qblty1v771" path="res://scenes/cat_webcam.tscn" id="2_m7tnm"]
 [ext_resource type="Texture2D" uid="uid://0l2ayk71gk40" path="res://assets/textures/zoomies_interface.jpg" id="2_umdc2"]
-[ext_resource type="Texture2D" uid="uid://ceet1gi5uti6n" path="res://assets/textures/drawer.png" id="3_ib6dc"]
-[ext_resource type="AudioStream" uid="uid://d1tw501moi7g8" path="res://assets/sounds/effects/scroll.mp3" id="4_u8qwx"]
-[ext_resource type="Texture2D" uid="uid://b8b1pt51bppb0" path="res://assets/textures/cattree.png" id="4_vb15x"]
-[ext_resource type="AudioStream" uid="uid://crx6p27p8f06o" path="res://assets/sounds/effects/zoom_out.wav" id="5_8ei3w"]
-[ext_resource type="Texture2D" uid="uid://0b5ubyr07cej" path="res://assets/textures/table.png" id="6_fkb2m"]
-[ext_resource type="AudioStream" uid="uid://cesbii4202ftl" path="res://assets/sounds/effects/zoom_in.wav" id="8_pjhgn"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_qhg58"]
+viewport_path = NodePath("CatWebcam")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ikwe1"]
-viewport_path = NodePath("SubViewport")
+viewport_path = NodePath("CatWebcam")
 
 [node name="Webcam" type="Node2D"]
 position = Vector2(121, 67)
 scale = Vector2(0.13665, 0.13665)
-script = ExtResource("1_ei5se")
 
-[node name="Sprite2D6" type="Sprite2D" parent="."]
+[node name="CatWebcam" parent="." instance=ExtResource("2_m7tnm")]
+
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(3285.76, 1880.71)
 scale = Vector2(4.42863, 4.42863)
 texture = ExtResource("2_umdc2")
 
-[node name="SubViewport" type="SubViewport" parent="."]
-size = Vector2i(1920, 1080)
-
-[node name="Node3D" type="Node3D" parent="SubViewport"]
-
-[node name="Camera3D" type="Camera3D" parent="SubViewport/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.74062)
-current = true
-script = ExtResource("1_b5u6k")
-
-[node name="TextureRect" type="TextureRect" parent="SubViewport/Node3D/Camera3D"]
-offset_right = 1920.0
-offset_bottom = 1080.0
-scale = Vector2(0.600312, 0.600312)
-texture = ExtResource("2_jfdyk")
-metadata/_edit_group_ = true
-
-[node name="zoomInPlayer" type="AudioStreamPlayer" parent="SubViewport/Node3D/Camera3D"]
-stream = ExtResource("8_pjhgn")
-
-[node name="scrollPlayer" type="AudioStreamPlayer" parent="SubViewport/Node3D/Camera3D"]
-stream = ExtResource("4_u8qwx")
-volume_db = -3.748
-pitch_scale = 1.5
-
-[node name="zoomOutPlayer" type="AudioStreamPlayer" parent="SubViewport/Node3D/Camera3D"]
-stream = ExtResource("5_8ei3w")
-
-[node name="Sprite3D2" type="Sprite3D" parent="SubViewport/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.73139, 3.15146, -6.83427)
-texture = ExtResource("4_vb15x")
-
-[node name="Sprite3D3" type="Sprite3D" parent="SubViewport/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24709, 3.07591, -12.455)
-texture = ExtResource("2_ehe6u")
-
-[node name="Sprite3D4" type="Sprite3D" parent="SubViewport/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.21557, 4.6701, -3.85718)
-texture = ExtResource("3_ib6dc")
-
-[node name="cat" type="Sprite3D" parent="SubViewport/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.522467, 2.64444, -0.940465)
-pixel_size = 0.003
-texture = ExtResource("1_3jx6e")
-
-[node name="cat2" type="Sprite3D" parent="SubViewport/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.272999, -1.17867, -0.921876)
-pixel_size = 0.006
-alpha_cut = 1
-texture = ExtResource("6_fkb2m")
-
 [node name="Sprite2D3" type="Sprite2D" parent="."]
 position = Vector2(1455.04, 340.065)
 scale = Vector2(0.77882, 0.77882)
-texture = SubResource("ViewportTexture_ikwe1")
+texture = SubResource("ViewportTexture_qhg58")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(-73.1797, 336.626)

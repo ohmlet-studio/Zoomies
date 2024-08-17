@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dhvubohb8a88p"
+path="res://.godot/imported/B (2).wav-cd8f5a8df4bf66ace79311ce18de58f0.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Mewfonts/B (2).wav"
+dest_files=["res://.godot/imported/B (2).wav-cd8f5a8df4bf66ace79311ce18de58f0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,91 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2rskphkhcspx"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_oyt78"]
+[ext_resource type="FontFile" uid="uid://cpp57g0w306h5" path="res://assets/fonts/Vividly-Regular.ttf" id="1_r48s2"]
+
+[sub_resource type="Theme" id="Theme_jyfsc"]
+default_font = ExtResource("1_r48s2")
+Button/fonts/font = ExtResource("1_r48s2")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_jyfsc")
+script = ExtResource("1_oyt78")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.116741, 0.116741, 0.116741, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "Zoomies"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonsVBox" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="StartGameButton" type="Button" parent="MarginContainer/ButtonsVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../QuitGameButton")
+focus_neighbor_bottom = NodePath("../OptionsButton")
+focus_next = NodePath("../OptionsButton")
+focus_previous = NodePath("../QuitGameButton")
+theme_override_font_sizes/font_size = 32
+text = "Start"
+
+[node name="OptionsButton" type="Button" parent="MarginContainer/ButtonsVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../StartGameButton")
+focus_neighbor_bottom = NodePath("../QuitGameButton")
+focus_next = NodePath("../QuitGameButton")
+focus_previous = NodePath("../StartGameButton")
+theme_override_font_sizes/font_size = 32
+text = "Options"
+
+[node name="QuitGameButton" type="Button" parent="MarginContainer/ButtonsVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../OptionsButton")
+focus_neighbor_bottom = NodePath("../StartGameButton")
+focus_next = NodePath("../StartGameButton")
+focus_previous = NodePath("../OptionsButton")
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/ButtonsVBox/StartGameButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ButtonsVBox/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ButtonsVBox/QuitGameButton" to="." method="_on_quit_button_pressed"]
