@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://b44yty5ujqy42"]
 
-[ext_resource path="res://assets/placeholder.png" type="Texture" id=1]
-[ext_resource path="res://scenes/camera.gd" type="Script" id=2]
+[ext_resource type="Texture2D" uid="uid://cy5efrqmmmoi4" path="res://assets/placeholder.png" id="1"]
+[ext_resource type="Script" path="res://scripts/shift.gd" id="2_mi0f0"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 512, 294 )
-scale = Vector2( 0.546759, 0.546759 )
-texture = ExtResource( 1 )
-script = ExtResource( 2 )
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(512, 294)
+scale = Vector2(0.546759, 0.546759)
+texture = ExtResource("1")
+script = ExtResource("2_mi0f0")
 
 [node name="Camera2D" type="Camera2D" parent="."]

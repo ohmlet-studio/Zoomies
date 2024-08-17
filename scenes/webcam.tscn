@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bym37ckhwglbu"]
+
+[ext_resource type="Texture2D" uid="uid://d0y8o6qsf7yfv" path="res://assets/textures/cat.png" id="1_3jx6e"]
+
+[node name="Webcam" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.74062)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.475391)
+texture = ExtResource("1_3jx6e")
