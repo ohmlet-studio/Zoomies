@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cy5efrqmmmoi4" path="res://assets/placeholder.png" id="1_elyv2"]
 [ext_resource type="Script" path="res://shift.gd" id="2_yll1g"]
-[ext_resource type="AudioStream" uid="uid://fgpr4hy67ack" path="res://assets/sounds/Placeholder Cat Muzak.mp3" id="3_jij11"]
+[ext_resource type="AudioStream" path="res://assets/sounds/Placeholder Cat Muzak.mp3" id="3_jij11"]
 
 [sub_resource type="GDScript" id="GDScript_712ol"]
 script/source = "extends Node2D
