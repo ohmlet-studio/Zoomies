@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://b77qblty1v771"]
+[gd_scene load_steps=15 format=3 uid="uid://b77qblty1v771"]
 
 [ext_resource type="Script" path="res://scripts/webcamControls.gd" id="1_3yicl"]
-[ext_resource type="Texture2D" uid="uid://bj6o55ei14h8x" path="res://assets/textures/hint.png" id="2_10nxm"]
 [ext_resource type="AudioStream" uid="uid://cesbii4202ftl" path="res://assets/sounds/effects/zoom_in.wav" id="3_w0x2j"]
 [ext_resource type="AudioStream" uid="uid://d1tw501moi7g8" path="res://assets/sounds/effects/scroll.mp3" id="4_rjkl4"]
 [ext_resource type="AudioStream" uid="uid://crx6p27p8f06o" path="res://assets/sounds/effects/zoom_out.wav" id="5_wp3m7"]
@@ -9,7 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dt1pqcoiu1ih2" path="res://assets/textures/plant.png" id="7_barfw"]
 [ext_resource type="Texture2D" uid="uid://ceet1gi5uti6n" path="res://assets/textures/drawer.png" id="8_lgyud"]
 [ext_resource type="Texture2D" uid="uid://d0y8o6qsf7yfv" path="res://assets/textures/cat.png" id="9_4n3bq"]
-[ext_resource type="Texture2D" uid="uid://ptevrapia1oh" path="res://assets/textures/wallpapers/squares.jpg" id="11_84jmh"]
+[ext_resource type="Texture2D" uid="uid://bbitd2d76aijy" path="res://assets/textures/rooms/wallpapers/fish.jpg" id="9_vtfcw"]
+[ext_resource type="Texture2D" uid="uid://cpaornr5hmc88" path="res://assets/textures/rooms/floors/tiles.jpg" id="10_gohw2"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_jcuwj"]
 
@@ -19,7 +19,12 @@ albedo_color = Color(0.344076, 0.344076, 0.344076, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ctksj"]
 shading_mode = 0
-albedo_texture = ExtResource("11_84jmh")
+albedo_texture = ExtResource("9_vtfcw")
+uv1_scale = Vector3(5, 5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8u6k"]
+shading_mode = 0
+albedo_texture = ExtResource("10_gohw2")
 uv1_scale = Vector3(5, 5, 5)
 
 [node name="SubViewport" type="SubViewport"]
@@ -27,27 +32,23 @@ size = Vector2i(1920, 1080)
 
 [node name="Node3D" type="Node3D" parent="."]
 
-[node name="Camera3D" type="Camera3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.74062)
-current = true
+[node name="WebcamPivot" type="Node3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.92146, 2.66212)
 script = ExtResource("1_3yicl")
 
-[node name="TextureRect" type="TextureRect" parent="Node3D/Camera3D"]
-offset_right = 1920.0
-offset_bottom = 1080.0
-scale = Vector2(0.600312, 0.600312)
-texture = ExtResource("2_10nxm")
-metadata/_edit_group_ = true
+[node name="Camera3D" type="Camera3D" parent="Node3D/WebcamPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0243331, -0.871258)
+current = true
 
-[node name="zoomInPlayer" type="AudioStreamPlayer" parent="Node3D/Camera3D"]
+[node name="zoomInPlayer" type="AudioStreamPlayer" parent="Node3D/WebcamPivot"]
 stream = ExtResource("3_w0x2j")
 
-[node name="scrollPlayer" type="AudioStreamPlayer" parent="Node3D/Camera3D"]
+[node name="scrollPlayer" type="AudioStreamPlayer" parent="Node3D/WebcamPivot"]
 stream = ExtResource("4_rjkl4")
 volume_db = -3.748
 pitch_scale = 1.5
 
-[node name="zoomOutPlayer" type="AudioStreamPlayer" parent="Node3D/Camera3D"]
+[node name="zoomOutPlayer" type="AudioStreamPlayer" parent="Node3D/WebcamPivot"]
 stream = ExtResource("5_wp3m7")
 
 [node name="Sprite3D2" type="Sprite3D" parent="Node3D"]
@@ -63,21 +64,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.21557, 4.6701, -3.85718)
 texture = ExtResource("8_lgyud")
 
 [node name="cat" type="Sprite3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.522467, 2.64444, -0.940465)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00206745, 2.64444, -0.896537)
 pixel_size = 0.003
 texture = ExtResource("9_4n3bq")
 
 [node name="table" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(10.1837, 0, 0, 0, -2.59266e-07, 5.28388, 0, -5.93132, -2.30966e-07, -0.443008, 1.08041, 2.08177)
+transform = Transform3D(10.1837, 0, 0, 0, -2.59266e-07, 5.28388, 0, -5.93132, -2.30966e-07, 0.00234455, 1.08041, 2.08177)
 mesh = SubResource("QuadMesh_jcuwj")
 surface_material_override/0 = SubResource("StandardMaterial3D_mkma4")
 
 [node name="wallpaper" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(117.297, 0, 0, 0, 62.6927, 0, 0, 0, 5.28388, 0.510363, 12.6509, -15.4421)
+transform = Transform3D(117.297, 0, 0, 0, 62.6927, 0, 0, 0, 5.28388, -0.0193001, 12.6509, -15.4421)
 mesh = SubResource("QuadMesh_jcuwj")
 surface_material_override/0 = SubResource("StandardMaterial3D_ctksj")
 
 [node name="ground" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(117.297, 0, 0, 0, -2.74039e-06, 5.28388, 0, -62.6927, -2.30966e-07, 0.510363, -2.19839, 2.73316)
+transform = Transform3D(117.297, 0, 0, 0, -2.74038e-06, 5.28388, 0, -62.6927, -2.30966e-07, -0.0193001, -2.15521, 2.60197)
 mesh = SubResource("QuadMesh_jcuwj")
-surface_material_override/0 = SubResource("StandardMaterial3D_ctksj")
+surface_material_override/0 = SubResource("StandardMaterial3D_x8u6k")

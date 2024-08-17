@@ -3,7 +3,7 @@ extends Node2D
 const lines: Array[String] = [
 	"Bonjour, je m'appelle Truc. Et je suis contengue !",
 	"Test ! Test !",
-	"Et la bvoila je fais ça !",
+	"Et la voila je fais ça !",
 ]
 
 const test_position = Vector2(500, 500)

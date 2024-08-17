@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://0l2ayk71gk40" path="res://assets/textures/zoomies_interface.jpg" id="2_umdc2"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ikwe1"]
-viewport_path = NodePath("CatWebcam")
+viewport_path = NodePath(".")
 
 [node name="Webcam" type="Node2D"]
 position = Vector2(121, 67)
