@@ -1,10 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bym37ckhwglbu"]
+[gd_scene load_steps=4 format=3 uid="uid://bym37ckhwglbu"]
 
 [ext_resource type="PackedScene" uid="uid://b77qblty1v771" path="res://scenes/cat_webcam.tscn" id="2_m7tnm"]
 [ext_resource type="Texture2D" uid="uid://0l2ayk71gk40" path="res://assets/textures/zoomies_interface.jpg" id="2_umdc2"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_qhg58"]
-viewport_path = NodePath("CatWebcam")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ikwe1"]
 viewport_path = NodePath("CatWebcam")
@@ -16,41 +13,11 @@ scale = Vector2(0.13665, 0.13665)
 [node name="CatWebcam" parent="." instance=ExtResource("2_m7tnm")]
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(3285.76, 1880.71)
-scale = Vector2(4.42863, 4.42863)
+position = Vector2(3323.7, 1855.86)
+scale = Vector2(4.36905, 4.36905)
 texture = ExtResource("2_umdc2")
-
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(1455.04, 340.065)
-scale = Vector2(0.77882, 0.77882)
-texture = SubResource("ViewportTexture_qhg58")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(-73.1797, 336.626)
-scale = Vector2(0.771135, 0.771135)
-texture = SubResource("ViewportTexture_ikwe1")
-
-[node name="Sprite2D4" type="Sprite2D" parent="."]
-position = Vector2(4507.8, 354.701)
-scale = Vector2(0.77882, 0.77882)
-texture = SubResource("ViewportTexture_ikwe1")
-
-[node name="Sprite2D7" type="Sprite2D" parent="."]
-position = Vector2(2979.58, 351.262)
-scale = Vector2(0.771135, 0.771135)
-texture = SubResource("ViewportTexture_ikwe1")
-
-[node name="Sprite2D8" type="Sprite2D" parent="."]
-position = Vector2(7595.98, 369.337)
-scale = Vector2(0.77882, 0.77882)
-texture = SubResource("ViewportTexture_ikwe1")
-
-[node name="Sprite2D9" type="Sprite2D" parent="."]
-position = Vector2(6067.76, 365.898)
-scale = Vector2(0.771135, 0.771135)
-texture = SubResource("ViewportTexture_ikwe1")
 
 [node name="Sprite2D5" type="Sprite2D" parent="."]
 position = Vector2(3197.95, 2392.97)
-scale = Vector2(2.61868, 2.61868)
+scale = Vector2(3, 3)
 texture = SubResource("ViewportTexture_ikwe1")
