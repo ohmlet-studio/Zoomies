@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bpd4q3boh8b7v"]
+
+[node name="Intro" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "INTRO DU JEU"

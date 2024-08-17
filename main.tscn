@@ -1,10 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://b44yty5ujqy42"]
+[gd_scene load_steps=5 format=3 uid="uid://b44yty5ujqy42"]
 
 [ext_resource type="Texture2D" uid="uid://cy5efrqmmmoi4" path="res://assets/placeholder.png" id="1_elyv2"]
 [ext_resource type="Script" path="res://shift.gd" id="2_yll1g"]
 [ext_resource type="AudioStream" uid="uid://fgpr4hy67ack" path="res://assets/sounds/Placeholder Cat Muzak.mp3" id="3_jij11"]
 
+[sub_resource type="GDScript" id="GDScript_712ol"]
+script/source = "extends Node2D
+
+func start_game():
+	pass
+"
+
 [node name="Main" type="Node2D"]
+script = SubResource("GDScript_712ol")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
