@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cy5efrqmmmoi4" path="res://assets/placeholder.png" id="1_elyv2"]
 [ext_resource type="Script" path="res://shift.gd" id="2_yll1g"]
-[ext_resource type="AudioStream" uid="uid://qpn6y4wyjd67" path="res://assets/sounds/Psyduck.wav" id="3_kuymj"]
+[ext_resource type="AudioStream" uid="uid://fgpr4hy67ack" path="res://assets/sounds/Placeholder Cat Muzak.mp3" id="3_jij11"]
 
 [node name="Main" type="Node2D"]
 
@@ -14,7 +14,7 @@ scale = Vector2(0.602778, 0.602778)
 texture = ExtResource("1_elyv2")
 script = ExtResource("2_yll1g")
 
-[node name="Psyduck" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_kuymj")
-volume_db = -4.0
+[node name="PlaceholderCatMuzak" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jij11")
 autoplay = true
+parameters/looping = true
