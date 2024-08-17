@@ -1,8 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://b44yty5ujqy42"]
+[gd_scene load_steps=3 format=3 uid="uid://dm0rphrd71jf2"]
 
 [ext_resource type="Texture2D" uid="uid://cy5efrqmmmoi4" path="res://assets/placeholder.png" id="1_elyv2"]
-[ext_resource type="Script" path="res://shift.gd" id="2_yll1g"]
-[ext_resource type="AudioStream" path="res://assets/sounds/Placeholder Cat Muzak.mp3" id="3_jij11"]
 
 [sub_resource type="GDScript" id="GDScript_712ol"]
 script/source = "extends Node2D
@@ -17,9 +15,6 @@ script = SubResource("GDScript_712ol")
 position = Vector2(3.66669, -0.5)
 scale = Vector2(0.602778, 0.602778)
 texture = ExtResource("1_elyv2")
-script = ExtResource("2_yll1g")
 
 [node name="PlaceholderCatMuzak" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_jij11")
 autoplay = true
-parameters/looping = true

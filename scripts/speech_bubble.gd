@@ -13,30 +13,32 @@ var letter_time = 0.03
 var space_time = 0.06
 var punctuation_time = 0.2
 
+var text_aggreator = ""
+var bubble_position
+
 signal finished_displaying()
 
-func display_text(text_to_display: String):
+func display_text(text_to_display: String, position: Vector2):
 	text = text_to_display
-	label.text = text_to_display
+	bubble_position = position
+	_display_letter()
 	
-	await resized
+func _display_letter():
+	text_aggreator += text[letter_index]
+	
+	label.text = text_aggreator
+	
 	custom_minimum_size.x = min(size.x, MAX_WIDTH)
+	
+	print(size.x)
 	
 	#Wrap line if max width reached
 	if size.x > MAX_WIDTH:
 		label.autowrap_mode = TextServer.AUTOWRAP_WORD
-		await resized # wait x
-		await resized # wait y
 		custom_minimum_size.y = size.y
 		
-	global_position.x -= size.x / 2
-	global_position.y -= size.y + 24
-	
-	label.text = ""
-	_display_letter()
-	
-func _display_letter():
-	label.text += text[letter_index]
+	global_position.x = bubble_position.x - size.x / 2
+	global_position.y = bubble_position.y + 24
 	
 	letter_index += 1
 	if letter_index >= text.length():
@@ -49,7 +51,7 @@ func _display_letter():
 		" ":
 			timer.start(space_time)
 		_:
-			timer.start(	letter_time)
+			timer.start(letter_time)
 			
 
 
