@@ -1,14 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://b44yty5ujqy42"]
-
-[ext_resource type="Texture2D" uid="uid://cy5efrqmmmoi4" path="res://assets/placeholder.png" id="1"]
-[ext_resource type="Script" path="res://scripts/shift.gd" id="2_mi0f0"]
+[gd_scene format=3 uid="uid://b44yty5ujqy42"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(512, 294)
-scale = Vector2(0.546759, 0.546759)
-texture = ExtResource("1")
-script = ExtResource("2_mi0f0")
-
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="SubViewport" type="SubViewport" parent="."]

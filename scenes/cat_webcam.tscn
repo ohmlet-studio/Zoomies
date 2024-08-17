@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=3 uid="uid://b77qblty1v771"]
+
+[ext_resource type="Script" path="res://scripts/webcamControls.gd" id="1_3yicl"]
+[ext_resource type="Texture2D" uid="uid://bj6o55ei14h8x" path="res://assets/textures/hint.png" id="2_10nxm"]
+[ext_resource type="AudioStream" uid="uid://cesbii4202ftl" path="res://assets/sounds/effects/zoom_in.wav" id="3_w0x2j"]
+[ext_resource type="AudioStream" uid="uid://d1tw501moi7g8" path="res://assets/sounds/effects/scroll.mp3" id="4_rjkl4"]
+[ext_resource type="AudioStream" uid="uid://crx6p27p8f06o" path="res://assets/sounds/effects/zoom_out.wav" id="5_wp3m7"]
+[ext_resource type="Texture2D" uid="uid://b8b1pt51bppb0" path="res://assets/textures/cattree.png" id="6_w2d06"]
+[ext_resource type="Texture2D" uid="uid://dt1pqcoiu1ih2" path="res://assets/textures/plant.png" id="7_barfw"]
+[ext_resource type="Texture2D" uid="uid://ceet1gi5uti6n" path="res://assets/textures/drawer.png" id="8_lgyud"]
+[ext_resource type="Texture2D" uid="uid://d0y8o6qsf7yfv" path="res://assets/textures/cat.png" id="9_4n3bq"]
+[ext_resource type="Texture2D" uid="uid://0b5ubyr07cej" path="res://assets/textures/table.png" id="10_jj1sk"]
+
+[node name="SubViewport" type="SubViewport"]
+size = Vector2i(1920, 1080)
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.74062)
+current = true
+script = ExtResource("1_3yicl")
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/Camera3D"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.600312, 0.600312)
+texture = ExtResource("2_10nxm")
+metadata/_edit_group_ = true
+
+[node name="zoomInPlayer" type="AudioStreamPlayer" parent="Node3D/Camera3D"]
+stream = ExtResource("3_w0x2j")
+
+[node name="scrollPlayer" type="AudioStreamPlayer" parent="Node3D/Camera3D"]
+stream = ExtResource("4_rjkl4")
+volume_db = -3.748
+pitch_scale = 1.5
+
+[node name="zoomOutPlayer" type="AudioStreamPlayer" parent="Node3D/Camera3D"]
+stream = ExtResource("5_wp3m7")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.73139, 3.15146, -6.83427)
+texture = ExtResource("6_w2d06")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24709, 3.07591, -12.455)
+texture = ExtResource("7_barfw")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.21557, 4.6701, -3.85718)
+texture = ExtResource("8_lgyud")
+
+[node name="cat" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.522467, 2.64444, -0.940465)
+pixel_size = 0.003
+texture = ExtResource("9_4n3bq")
+
+[node name="cat2" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.272999, -1.17867, -0.921876)
+pixel_size = 0.006
+alpha_cut = 1
+texture = ExtResource("10_jj1sk")
