@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b44yty5ujqy42"]
+
+[ext_resource type="Texture2D" uid="uid://cy5efrqmmmoi4" path="res://assets/placeholder.png" id="1_elyv2"]
+[ext_resource type="Script" path="res://shift.gd" id="2_yll1g"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Placeholder" type="Sprite2D" parent="."]
+position = Vector2(3.66669, -0.5)
+scale = Vector2(0.602778, 0.602778)
+texture = ExtResource("1_elyv2")
+script = ExtResource("2_yll1g")
