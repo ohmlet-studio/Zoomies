@@ -49,15 +49,15 @@ text = "Zoomies"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ButtonsVBox" type="VBoxContainer" parent="MarginContainer"]
+[node name="OptionButtonsVBox" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="ReturnButton" type="Button" parent="MarginContainer/ButtonsVBox"]
+[node name="ReturnButton" type="Button" parent="MarginContainer/OptionButtonsVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
 text = "Return"
 
-[connection signal="pressed" from="MarginContainer/ButtonsVBox/ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="MarginContainer/OptionButtonsVBox/ReturnButton" to="." method="_on_return_button_pressed"]

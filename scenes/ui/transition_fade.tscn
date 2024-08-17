@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwbtmv7a3y3sq"]
+
+[sub_resource type="GDScript" id="GDScript_ygutd"]
+script/source = "extends CanvasLayer
+
+signal on_transition_finished
+
+@onready var color_rect = $ColorRect
+@onready var animation_player = $AnimationPlayer
+
+func _ready():
+	color_rect.visible = false
+	animation_player.animation_finished.connect(_on_animation_finished)
+	
+func _on_animation_finished(anim_name):
+	if anim_name == \"fade_to_black\"
+		animation_player.play(\"fade_to_normal\")
+		on_transition_finished.emit()
+	elif anim_name ==\"fade_to_normal\"
+		color_rect.visible = false
+
+	
+func transition():
+	color_rect.visible = true
+	animation_player.play(\"fade_to_black\")
+"
+
+[sub_resource type="Animation" id="Animation_akaaf"]
+resource_name = "fade_to_black"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hrdni"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_sh2wf"]
+resource_name = "fade_to_normal"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_detxb"]
+_data = {
+"RESET": SubResource("Animation_hrdni"),
+"fade_to_black": SubResource("Animation_akaaf"),
+"fade_to_normal": SubResource("Animation_sh2wf")
+}
+
+[node name="TransitionFade" type="CanvasLayer"]
+script = SubResource("GDScript_ygutd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_detxb")
+}

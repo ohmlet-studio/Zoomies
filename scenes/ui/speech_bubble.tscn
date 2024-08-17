@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1k3dsa6xyl3y"]
+
+[ext_resource type="Script" path="res://scripts/speech_bubble.gd" id="1_ekv2r"]
+[ext_resource type="Texture2D" uid="uid://bk1ix8c81gtsg" path="res://assets/textures/speech_bubble.png" id="2_0qyt5"]
+[ext_resource type="FontFile" uid="uid://cpp57g0w306h5" path="res://assets/fonts/Vividly-Regular.ttf" id="3_3qy4i"]
+
+[node name="SpeechBubble" type="MarginContainer"]
+texture_filter = 1
+offset_right = 195.0
+offset_bottom = 128.0
+script = ExtResource("1_ekv2r")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_0qyt5")
+region_rect = Rect2(0, 0, 96, 96)
+patch_margin_left = 64
+patch_margin_top = 64
+patch_margin_right = 64
+patch_margin_bottom = 64
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+texture_filter = 1
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3qy4i")
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LetterDisplayTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]

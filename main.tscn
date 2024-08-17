@@ -6,9 +6,6 @@
 
 [sub_resource type="GDScript" id="GDScript_712ol"]
 script/source = "extends Node2D
-
-func start_game():
-	pass
 "
 
 [node name="Main" type="Node2D"]
