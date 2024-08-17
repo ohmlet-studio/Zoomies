@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://b77qblty1v771"]
+[gd_scene load_steps=10 format=3 uid="uid://bebl7unp45048"]
 
 [ext_resource type="Script" path="res://scripts/webcamControls.gd" id="1_3yicl"]
-[ext_resource type="Texture2D" uid="uid://bj6o55ei14h8x" path="res://assets/textures/hint.png" id="2_10nxm"]
 [ext_resource type="AudioStream" uid="uid://cesbii4202ftl" path="res://assets/sounds/effects/zoom_in.wav" id="3_w0x2j"]
 [ext_resource type="AudioStream" uid="uid://d1tw501moi7g8" path="res://assets/sounds/effects/scroll.mp3" id="4_rjkl4"]
 [ext_resource type="AudioStream" uid="uid://crx6p27p8f06o" path="res://assets/sounds/effects/zoom_out.wav" id="5_wp3m7"]
@@ -20,13 +19,6 @@ size = Vector2i(1920, 1080)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.74062)
 current = true
 script = ExtResource("1_3yicl")
-
-[node name="TextureRect" type="TextureRect" parent="Node3D/Camera3D"]
-offset_right = 1920.0
-offset_bottom = 1080.0
-scale = Vector2(0.600312, 0.600312)
-texture = ExtResource("2_10nxm")
-metadata/_edit_group_ = true
 
 [node name="zoomInPlayer" type="AudioStreamPlayer" parent="Node3D/Camera3D"]
 stream = ExtResource("3_w0x2j")

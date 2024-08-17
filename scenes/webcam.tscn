@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bym37ckhwglbu"]
+[gd_scene load_steps=5 format=3 uid="uid://ppygdipimg2m"]
 
-[ext_resource type="PackedScene" uid="uid://b77qblty1v771" path="res://scenes/cat_webcam.tscn" id="2_m7tnm"]
+[ext_resource type="PackedScene" uid="uid://bebl7unp45048" path="res://scenes/cat_webcam.tscn" id="2_m7tnm"]
 [ext_resource type="Texture2D" uid="uid://0l2ayk71gk40" path="res://assets/textures/zoomies_interface.jpg" id="2_umdc2"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_qhg58"]
-viewport_path = NodePath("CatWebcam")
+viewport_path = NodePath(".")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ikwe1"]
-viewport_path = NodePath("CatWebcam")
+viewport_path = NodePath(".")
 
 [node name="Webcam" type="Node2D"]
 position = Vector2(121, 67)
