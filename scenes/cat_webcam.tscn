@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=3 uid="uid://bebl7unp45048"]
 
 [ext_resource type="Script" path="res://scripts/webcamControls.gd" id="1_3yicl"]
-[ext_resource type="AudioStream" uid="uid://cesbii4202ftl" path="res://assets/sounds/effects/zoom_in.wav" id="3_w0x2j"]
-[ext_resource type="AudioStream" uid="uid://d1tw501moi7g8" path="res://assets/sounds/effects/scroll.mp3" id="4_rjkl4"]
-[ext_resource type="AudioStream" uid="uid://crx6p27p8f06o" path="res://assets/sounds/effects/zoom_out.wav" id="5_wp3m7"]
+[ext_resource type="AudioStream" uid="uid://bo31i5hi71rn3" path="res://assets/sounds/effects/zoom_in.wav" id="3_w0x2j"]
+[ext_resource type="AudioStream" uid="uid://bvblhh7ijsnms" path="res://assets/sounds/effects/scroll.mp3" id="4_rjkl4"]
+[ext_resource type="AudioStream" uid="uid://htf26qrq8weu" path="res://assets/sounds/effects/zoom_out.wav" id="5_wp3m7"]
 [ext_resource type="Texture2D" uid="uid://b8b1pt51bppb0" path="res://assets/textures/rooms/objects/cattree.png" id="6_w2d06"]
 [ext_resource type="Texture2D" uid="uid://dt1pqcoiu1ih2" path="res://assets/textures/rooms/objects/plant.png" id="7_barfw"]
 [ext_resource type="PackedScene" uid="uid://bjonmciq4nenn" path="res://scenes/cat_builder.tscn" id="8_6mjnb"]

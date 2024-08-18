@@ -2,6 +2,5 @@
 .godot/
 /android/
 builds/*
-**.import
 **/.DS_Store
 **.tmp
