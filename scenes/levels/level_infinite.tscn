@@ -33,6 +33,22 @@ offset_right = 904.0
 offset_bottom = 344.0
 texture_normal = ExtResource("3_0vlbl")
 
+[node name="UpRectangle" type="ColorRect" parent="."]
+top_level = true
+offset_left = -936.0
+offset_top = -456.0
+offset_right = 776.0
+offset_bottom = -376.0
+color = Color(0.72549, 0.882353, 0.960784, 1)
+
+[node name="DownRectangle" type="ColorRect" parent="."]
+top_level = true
+offset_left = -944.0
+offset_top = 328.0
+offset_right = 776.0
+offset_bottom = 544.0
+color = Color(0.72549, 0.882353, 0.960784, 1)
+
 [connection signal="button_down" from="UpButton" to="." method="_on_up_button_button_down"]
 [connection signal="button_up" from="UpButton" to="." method="_on_up_button_button_up"]
 [connection signal="button_down" from="DownButton" to="." method="_on_down_button_button_down"]
