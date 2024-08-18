@@ -1,15 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://b77qblty1v771"]
+[gd_scene load_steps=15 format=3 uid="uid://bebl7unp45048"]
 
-[ext_resource type="Script" path="res://scenes/scripts/webcamControls.gd" id="1_3yicl"]
+[ext_resource type="Script" path="res://scripts/webcamControls.gd" id="1_3yicl"]
 [ext_resource type="AudioStream" uid="uid://cesbii4202ftl" path="res://assets/sounds/effects/zoom_in.wav" id="3_w0x2j"]
 [ext_resource type="AudioStream" uid="uid://d1tw501moi7g8" path="res://assets/sounds/effects/scroll.mp3" id="4_rjkl4"]
 [ext_resource type="AudioStream" uid="uid://crx6p27p8f06o" path="res://assets/sounds/effects/zoom_out.wav" id="5_wp3m7"]
 [ext_resource type="Texture2D" uid="uid://b8b1pt51bppb0" path="res://assets/textures/rooms/objects/cattree.png" id="6_w2d06"]
 [ext_resource type="Texture2D" uid="uid://dt1pqcoiu1ih2" path="res://assets/textures/rooms/objects/plant.png" id="7_barfw"]
-[ext_resource type="PackedScene" uid="uid://ccmvqnx2pb42i" path="res://scenes/cat_builder.tscn" id="8_6mjnb"]
+[ext_resource type="PackedScene" uid="uid://bjonmciq4nenn" path="res://scenes/cat_builder.tscn" id="8_6mjnb"]
 [ext_resource type="Texture2D" uid="uid://ceet1gi5uti6n" path="res://assets/textures/rooms/objects/drawer.png" id="8_lgyud"]
-[ext_resource type="Texture2D" uid="uid://bbitd2d76aijy" path="res://assets/textures/rooms/wallpapers/fish.jpg" id="9_vtfcw"]
-[ext_resource type="Texture2D" uid="uid://cpaornr5hmc88" path="res://assets/textures/rooms/floors/tiles.jpg" id="10_gohw2"]
+[ext_resource type="Texture2D" uid="uid://bqaogofcjfar5" path="res://assets/textures/rooms/wallpapers/fish.jpg" id="9_vtfcw"]
+[ext_resource type="Texture2D" uid="uid://ccapb0rlso7g1" path="res://assets/textures/rooms/floors/tiles.jpg" id="10_gohw2"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_jcuwj"]
 

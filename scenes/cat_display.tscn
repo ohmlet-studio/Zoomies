@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bki3jlgfxx844"]
+[gd_scene load_steps=6 format=3 uid="uid://dhrrkj5xdmdeb"]
 
-[ext_resource type="Script" path="res://scenes/scripts/cat_display.gd" id="1_0xj6i"]
-[ext_resource type="PackedScene" uid="uid://b77qblty1v771" path="res://scenes/cat_webcam.tscn" id="1_bc4rd"]
+[ext_resource type="Script" path="res://scripts/cat_display.gd" id="1_0xj6i"]
+[ext_resource type="PackedScene" uid="uid://bebl7unp45048" path="res://scenes/cat_webcam.tscn" id="1_bc4rd"]
 [ext_resource type="Texture2D" uid="uid://bj6o55ei14h8x" path="res://assets/textures/cat_display/hint.png" id="1_kwfk6"]
 [ext_resource type="Texture2D" uid="uid://cb8ply4wtyueq" path="res://assets/textures/cat_display/border.png" id="4_3yo0l"]
 

@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://osqn6pkmkmkb"]
+[gd_scene load_steps=3 format=3 uid="uid://dfhw8fxner6r5"]
 
 [ext_resource type="Texture2D" uid="uid://0l2ayk71gk40" path="res://assets/textures/zoomies_interface.jpg" id="1_c683d"]
-[ext_resource type="PackedScene" uid="uid://bki3jlgfxx844" path="res://scenes/cat_display.tscn" id="2_8gtux"]
+[ext_resource type="PackedScene" uid="uid://dhrrkj5xdmdeb" path="res://scenes/cat_display.tscn" id="2_8gtux"]
 
 [node name="Level" type="Node2D"]
 

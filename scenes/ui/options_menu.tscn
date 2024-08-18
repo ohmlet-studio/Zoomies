@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c40ot7tgcgnmh"]
 
 [ext_resource type="FontFile" uid="uid://cpp57g0w306h5" path="res://assets/fonts/Vividly-Regular.ttf" id="1_w1nwx"]
-[ext_resource type="Script" path="res://scenes/scripts/options_menu.gd" id="2_aw210"]
+[ext_resource type="Script" path="res://scripts/options_menu.gd" id="2_aw210"]
 
 [sub_resource type="Theme" id="Theme_jyfsc"]
 default_font = ExtResource("1_w1nwx")
