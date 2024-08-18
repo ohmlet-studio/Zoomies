@@ -5,8 +5,8 @@
 [ext_resource type="AudioStream" uid="uid://bvblhh7ijsnms" path="res://assets/sounds/effects/scroll.mp3" id="4_rjkl4"]
 [ext_resource type="Texture2D" uid="uid://cmameg2k708sa" path="res://assets/textures/rooms/objects/monstera.png" id="5_b2bm4"]
 [ext_resource type="AudioStream" uid="uid://htf26qrq8weu" path="res://assets/sounds/effects/zoom_out.wav" id="5_wp3m7"]
-[ext_resource type="Texture2D" uid="uid://vgid0565xngf" path="res://assets/textures/rooms/wallpapers/vertical_stripes.jpg" id="7_r1rls"]
 [ext_resource type="PackedScene" uid="uid://bjonmciq4nenn" path="res://scenes/cat_builder.tscn" id="8_6mjnb"]
+[ext_resource type="Texture2D" uid="uid://benihwxolii8c" path="res://assets/textures/rooms/wallpapers/duck.jpg" id="8_ecqs1"]
 [ext_resource type="Texture2D" uid="uid://ceet1gi5uti6n" path="res://assets/textures/rooms/objects/drawer.png" id="8_lgyud"]
 [ext_resource type="Texture2D" uid="uid://ccapb0rlso7g1" path="res://assets/textures/rooms/floors/tiles.jpg" id="10_gohw2"]
 
@@ -18,7 +18,7 @@ albedo_color = Color(0.344076, 0.344076, 0.344076, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ctksj"]
 shading_mode = 0
-albedo_texture = ExtResource("7_r1rls")
+albedo_texture = ExtResource("8_ecqs1")
 uv1_scale = Vector3(20, 20, 20)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cc2an"]
@@ -44,14 +44,16 @@ current = true
 
 [node name="zoomInPlayer" type="AudioStreamPlayer" parent="Node3D/WebcamPivot"]
 stream = ExtResource("3_w0x2j")
+volume_db = -10.0
 
 [node name="scrollPlayer" type="AudioStreamPlayer" parent="Node3D/WebcamPivot"]
 stream = ExtResource("4_rjkl4")
-volume_db = -2.0
+volume_db = -10.0
 pitch_scale = 1.5
 
 [node name="zoomOutPlayer" type="AudioStreamPlayer" parent="Node3D/WebcamPivot"]
 stream = ExtResource("5_wp3m7")
+volume_db = -10.0
 
 [node name="Sprite3D2" type="Sprite3D" parent="Node3D"]
 transform = Transform3D(0.93, 0, 0, 0, 0.93, 0, 0, 0, 0.6, 3.80722, 4.84387, -3.58676)
@@ -76,6 +78,21 @@ surface_material_override/0 = SubResource("StandardMaterial3D_mkma4")
 
 [node name="wallpaper" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(382.885, 0, 0, 0, 204.644, 0, 0, 0, 5.28388, -0.0193001, 12.6509, -15.4421)
+mesh = SubResource("QuadMesh_jcuwj")
+surface_material_override/0 = SubResource("StandardMaterial3D_ctksj")
+
+[node name="wallpaper4" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(382.885, 0, 0, 0, 3.05176e-05, -5.28388, 0, 204.644, 4.17233e-07, -0.0193001, 22.6509, -15.4421)
+mesh = SubResource("QuadMesh_jcuwj")
+surface_material_override/0 = SubResource("StandardMaterial3D_ctksj")
+
+[node name="wallpaper2" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-1.67364e-05, 0, 5.28388, 0, 204.644, 0, -382.885, 0, -2.30966e-07, -28.0193, 12.6509, -15.4421)
+mesh = SubResource("QuadMesh_jcuwj")
+surface_material_override/0 = SubResource("StandardMaterial3D_ctksj")
+
+[node name="wallpaper3" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-1.67364e-05, 0, -5.28388, 0, 204.644, 0, 382.885, 0, -2.30966e-07, 28.9807, 12.6509, -15.4421)
 mesh = SubResource("QuadMesh_jcuwj")
 surface_material_override/0 = SubResource("StandardMaterial3D_ctksj")
 

@@ -14,10 +14,10 @@ script = ExtResource("1_0xj6i")
 centered = false
 
 [node name="EarHint" type="TextureRect" parent="."]
-offset_left = 15.0
-offset_top = -277.0
-offset_right = 3201.0
-offset_bottom = 1515.0
+offset_left = 259.0
+offset_top = -53.0
+offset_right = 2510.0
+offset_bottom = 1213.0
 scale = Vector2(0.600312, 0.600312)
 texture = ExtResource("1_kwfk6")
 metadata/_edit_group_ = true
