@@ -13,8 +13,9 @@ const start_y = -540 + 170
 var pos_shift_x = start_x
 var pos_shift_y = start_y
 
-# Variable to know if button keep pressed
-var buttonPressed = false
+# Variable to know if buttons keep pressed
+var buttonDownPressed = false
+var buttonUpPressed = false
 
 @export var scene_array = Array()
 var idx = 0
@@ -49,14 +50,29 @@ func _instantiate_cat_display():
 	
 
 func _on_down_button_button_down() -> void:
-	buttonPressed = true
+	buttonDownPressed = true
 	
 func _on_down_button_button_up() -> void:
-	buttonPressed = false
+	buttonDownPressed = false
+	
+
+func _on_up_button_button_down() -> void:
+	buttonUpPressed = true
+
+func _on_up_button_button_up() -> void:
+	buttonUpPressed = false
 
 func _process(delta: float) -> void:
-	if buttonPressed:
+	# Check if button is pressed + doesn't allow to go beyond last element
+	if (buttonDownPressed && scene_array.back().position.y > 0 ):
 		for scene in scene_array:
 			scene.position.y -= PIX_SPEED
 		pos_shift_y -= PIX_SPEED
+	# ----------------------------------------------------
+	# Same for up button
+	if (buttonUpPressed && scene_array.front().position.y < start_y ):
+		for scene in scene_array:
+			scene.position.y += PIX_SPEED
+		pos_shift_y += PIX_SPEED
+	
 	
