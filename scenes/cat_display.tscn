@@ -1,22 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://bki3jlgfxx844"]
+[gd_scene load_steps=6 format=3 uid="uid://bki3jlgfxx844"]
 
+[ext_resource type="Script" path="res://scenes/scripts/cat_display.gd" id="1_0xj6i"]
 [ext_resource type="PackedScene" uid="uid://b77qblty1v771" path="res://scenes/cat_webcam.tscn" id="1_bc4rd"]
-[ext_resource type="Texture2D" uid="uid://bj6o55ei14h8x" path="res://assets/textures/hint.png" id="1_kwfk6"]
-[ext_resource type="Script" path="res://scripts/cat_display_sprite.gd" id="2_0n1nj"]
+[ext_resource type="Texture2D" uid="uid://bj6o55ei14h8x" path="res://assets/textures/cat_display/hint.png" id="1_kwfk6"]
+[ext_resource type="Texture2D" uid="uid://cb8ply4wtyueq" path="res://assets/textures/cat_display/border.png" id="4_3yo0l"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_76fh1"]
+viewport_path = NodePath(".")
 
 [node name="CatDisplay" type="Node2D"]
-
-[node name="CatDisplaySprite" type="Sprite2D" parent="."]
-centered = false
-script = ExtResource("2_0n1nj")
+script = ExtResource("1_0xj6i")
 
 [node name="SubViewport" parent="." instance=ExtResource("1_bc4rd")]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 3.0
-offset_top = -329.0
-offset_right = 3189.0
-offset_bottom = 1463.0
+[node name="CatDisplaySprite" type="Sprite2D" parent="."]
+texture = SubResource("ViewportTexture_76fh1")
+centered = false
+
+[node name="EarHint" type="TextureRect" parent="."]
+offset_left = 15.0
+offset_top = -277.0
+offset_right = 3201.0
+offset_bottom = 1515.0
 scale = Vector2(0.600312, 0.600312)
 texture = ExtResource("1_kwfk6")
 metadata/_edit_group_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("4_3yo0l")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1

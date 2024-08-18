@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1k3dsa6xyl3y"]
+[gd_scene load_steps=6 format=3 uid="uid://c1k3dsa6xyl3y"]
 
-[ext_resource type="Script" path="res://scripts/speech_bubble.gd" id="1_ekv2r"]
-[ext_resource type="Texture2D" uid="uid://bk1ix8c81gtsg" path="res://assets/textures/speech_bubble.png" id="2_0qyt5"]
+[ext_resource type="Script" path="res://scenes/scripts/speech_bubble.gd" id="1_ekv2r"]
+[ext_resource type="Texture2D" uid="uid://t4g1jahvf6ic" path="res://assets/textures/bubbles/speech_bubble.png" id="2_s5hkw"]
 [ext_resource type="FontFile" uid="uid://cpp57g0w306h5" path="res://assets/fonts/Vividly-Regular.ttf" id="3_3qy4i"]
 [ext_resource type="Texture2D" uid="uid://b8fmxgq5p6en2" path="res://assets/textures/bubbles/bubble_tail.png" id="4_se7q3"]
+[ext_resource type="AudioStream" uid="uid://bwh4e4bip5d5r" path="res://assets/sounds/fonts/A/A (1).wav" id="5_noj14"]
 
 [node name="SpeechBubble" type="MarginContainer"]
 texture_filter = 1
@@ -13,7 +14,7 @@ script = ExtResource("1_ekv2r")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 2
-texture = ExtResource("2_0qyt5")
+texture = ExtResource("2_s5hkw")
 region_rect = Rect2(0, 0, 96, 96)
 patch_margin_left = 64
 patch_margin_top = 64
@@ -44,6 +45,9 @@ position = Vector2(83, 129)
 scale = Vector2(0.739583, 0.635417)
 texture = ExtResource("4_se7q3")
 centered = false
-offset = Vector2(-16, 32)
+offset = Vector2(-16, 25)
+
+[node name="MeowPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_noj14")
 
 [connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]

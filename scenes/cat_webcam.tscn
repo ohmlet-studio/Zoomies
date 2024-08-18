@@ -1,13 +1,13 @@
 [gd_scene load_steps=15 format=3 uid="uid://b77qblty1v771"]
 
-[ext_resource type="Script" path="res://scripts/webcamControls.gd" id="1_3yicl"]
+[ext_resource type="Script" path="res://scenes/scripts/webcamControls.gd" id="1_3yicl"]
 [ext_resource type="AudioStream" uid="uid://cesbii4202ftl" path="res://assets/sounds/effects/zoom_in.wav" id="3_w0x2j"]
 [ext_resource type="AudioStream" uid="uid://d1tw501moi7g8" path="res://assets/sounds/effects/scroll.mp3" id="4_rjkl4"]
 [ext_resource type="AudioStream" uid="uid://crx6p27p8f06o" path="res://assets/sounds/effects/zoom_out.wav" id="5_wp3m7"]
-[ext_resource type="Texture2D" uid="uid://b8b1pt51bppb0" path="res://assets/textures/cattree.png" id="6_w2d06"]
-[ext_resource type="Texture2D" uid="uid://dt1pqcoiu1ih2" path="res://assets/textures/plant.png" id="7_barfw"]
-[ext_resource type="Texture2D" uid="uid://ceet1gi5uti6n" path="res://assets/textures/drawer.png" id="8_lgyud"]
-[ext_resource type="Texture2D" uid="uid://d0y8o6qsf7yfv" path="res://assets/textures/cat.png" id="9_4n3bq"]
+[ext_resource type="Texture2D" uid="uid://b8b1pt51bppb0" path="res://assets/textures/rooms/objects/cattree.png" id="6_w2d06"]
+[ext_resource type="Texture2D" uid="uid://dt1pqcoiu1ih2" path="res://assets/textures/rooms/objects/plant.png" id="7_barfw"]
+[ext_resource type="PackedScene" uid="uid://ccmvqnx2pb42i" path="res://scenes/cat_builder.tscn" id="8_6mjnb"]
+[ext_resource type="Texture2D" uid="uid://ceet1gi5uti6n" path="res://assets/textures/rooms/objects/drawer.png" id="8_lgyud"]
 [ext_resource type="Texture2D" uid="uid://bbitd2d76aijy" path="res://assets/textures/rooms/wallpapers/fish.jpg" id="9_vtfcw"]
 [ext_resource type="Texture2D" uid="uid://cpaornr5hmc88" path="res://assets/textures/rooms/floors/tiles.jpg" id="10_gohw2"]
 
@@ -63,10 +63,8 @@ texture = ExtResource("7_barfw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.21557, 4.6701, -3.85718)
 texture = ExtResource("8_lgyud")
 
-[node name="cat" type="Sprite3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00206745, 2.64444, -0.896537)
-pixel_size = 0.003
-texture = ExtResource("9_4n3bq")
+[node name="cat" parent="Node3D" instance=ExtResource("8_6mjnb")]
+transform = Transform3D(0.361119, 0, 0, 0, 0.361119, 0, 0, 0, 0.555758, -0.00206745, 3.04345, -0.896537)
 
 [node name="table" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(10.1837, 0, 0, 0, -2.59266e-07, 5.28388, 0, -5.93132, -2.30966e-07, 0.00234455, 1.08041, 2.08177)

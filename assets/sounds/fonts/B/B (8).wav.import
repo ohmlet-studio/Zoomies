@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dkd2u75m0lacx"
+path="res://.godot/imported/B (8).wav-0623cf5407246df80f93e209ea47473c.sample"
+
+[deps]
+
+source_file="res://assets/sounds/fonts/B/B (8).wav"
+dest_files=["res://.godot/imported/B (8).wav-0623cf5407246df80f93e209ea47473c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
