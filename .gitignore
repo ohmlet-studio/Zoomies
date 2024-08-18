@@ -4,3 +4,4 @@
 builds/*
 **.import
 **/.DS_Store
+**.tmp
