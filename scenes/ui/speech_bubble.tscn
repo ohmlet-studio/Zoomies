@@ -24,9 +24,9 @@ patch_margin_bottom = 64
 [node name="MarginContainer" type="MarginContainer" parent="."]
 texture_filter = 1
 layout_mode = 2
-theme_override_constants/margin_left = 8
+theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
+theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 8
 
 [node name="Label" type="Label" parent="MarginContainer"]

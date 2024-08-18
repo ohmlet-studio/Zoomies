@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqcg6dqmo4oqq"
-path.s3tc="res://.godot/imported/mouth_open.png-cac0b43a6b2389bdc6bc87450f4ee2f8.s3tc.ctex"
+uid="uid://dpopkgwmihrwr"
+path.s3tc="res://.godot/imported/boss_eyes.png-33d870c23a5c64913f3c2ed5e2ad359c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/cat_parts/mouth_open.png"
-dest_files=["res://.godot/imported/mouth_open.png-cac0b43a6b2389bdc6bc87450f4ee2f8.s3tc.ctex"]
+source_file="res://assets/textures/cat_parts/eyes/boss_eyes.png"
+dest_files=["res://.godot/imported/boss_eyes.png-33d870c23a5c64913f3c2ed5e2ad359c.s3tc.ctex"]
 
 [params]
 

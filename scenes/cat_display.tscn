@@ -1,12 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhrrkj5xdmdeb"]
+[gd_scene load_steps=5 format=3 uid="uid://dhrrkj5xdmdeb"]
 
 [ext_resource type="Script" path="res://scripts/cat_display.gd" id="1_0xj6i"]
 [ext_resource type="PackedScene" uid="uid://bebl7unp45048" path="res://scenes/cat_webcam.tscn" id="1_bc4rd"]
 [ext_resource type="Texture2D" uid="uid://bj6o55ei14h8x" path="res://assets/textures/cat_display/hint.png" id="1_kwfk6"]
 [ext_resource type="Texture2D" uid="uid://cb8ply4wtyueq" path="res://assets/textures/cat_display/border.png" id="4_3yo0l"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_76fh1"]
-viewport_path = NodePath(".")
 
 [node name="CatDisplay" type="Node2D"]
 script = ExtResource("1_0xj6i")
@@ -14,7 +11,6 @@ script = ExtResource("1_0xj6i")
 [node name="SubViewport" parent="." instance=ExtResource("1_bc4rd")]
 
 [node name="CatDisplaySprite" type="Sprite2D" parent="."]
-texture = SubResource("ViewportTexture_76fh1")
 centered = false
 
 [node name="EarHint" type="TextureRect" parent="."]

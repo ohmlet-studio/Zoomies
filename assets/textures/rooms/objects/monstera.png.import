@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqbpafbux8bc6"
-path.s3tc="res://.godot/imported/mouth.png-3aca539e885d517ed8b5e82226568e0a.s3tc.ctex"
+uid="uid://cmameg2k708sa"
+path.s3tc="res://.godot/imported/monstera.png-7231e5bcc57c21d985b3ed4b0e0b3460.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/cat_parts/mouth.png"
-dest_files=["res://.godot/imported/mouth.png-3aca539e885d517ed8b5e82226568e0a.s3tc.ctex"]
+source_file="res://assets/textures/rooms/objects/monstera.png"
+dest_files=["res://.godot/imported/monstera.png-7231e5bcc57c21d985b3ed4b0e0b3460.s3tc.ctex"]
 
 [params]
 

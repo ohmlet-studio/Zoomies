@@ -1,21 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjonmciq4nenn"]
 
-[ext_resource type="Texture2D" uid="uid://d0y8o6qsf7yfv" path="res://assets/textures/cat_parts/cat.png" id="1_rw3yo"]
-[ext_resource type="Texture2D" uid="uid://dqbpafbux8bc6" path="res://assets/textures/cat_parts/mouth.png" id="2_8g06n"]
-[ext_resource type="Texture2D" uid="uid://cqcg6dqmo4oqq" path="res://assets/textures/cat_parts/mouth_open.png" id="3_edk6s"]
+[ext_resource type="Texture2D" uid="uid://cp5y11q2qlpjn" path="res://assets/textures/cat_parts/body/boss.png" id="1_kqii3"]
+[ext_resource type="Texture2D" uid="uid://d3yb7u878qgsp" path="res://assets/textures/cat_parts/mouth/bouche.png" id="2_yuhiq"]
+[ext_resource type="Texture2D" uid="uid://dpopkgwmihrwr" path="res://assets/textures/cat_parts/eyes/boss_eyes.png" id="3_3j4e8"]
 
 [node name="cat" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00206745, 2.64444, -0.896537)
 
 [node name="baseplate" type="Sprite3D" parent="."]
-texture = ExtResource("1_rw3yo")
+texture = ExtResource("1_kqii3")
 
 [node name="mouth" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.98171, 0.0423268)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.229643, 0.043834)
 alpha_cut = 2
-texture = ExtResource("2_8g06n")
+texture = ExtResource("2_yuhiq")
 
 [node name="eyes" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.94262, 0.0459423)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30041, 0.0459423)
 alpha_cut = 2
-texture = ExtResource("3_edk6s")
+texture = ExtResource("3_3j4e8")

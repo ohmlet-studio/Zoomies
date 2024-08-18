@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vgid0565xngf"
-path.s3tc="res://.godot/imported/vertical_stripes.jpg-a6d4bc549ff7425b5b6a985a67845619.s3tc.ctex"
+uid="uid://d3yb7u878qgsp"
+path.s3tc="res://.godot/imported/bouche.png-80c8fe88dd40c96d7f50a886f2f7a39b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/rooms/wallpapers/vertical_stripes.jpg"
-dest_files=["res://.godot/imported/vertical_stripes.jpg-a6d4bc549ff7425b5b6a985a67845619.s3tc.ctex"]
+source_file="res://assets/textures/cat_parts/mouth/bouche.png"
+dest_files=["res://.godot/imported/bouche.png-80c8fe88dd40c96d7f50a886f2f7a39b.s3tc.ctex"]
 
 [params]
 
