@@ -1,15 +1,16 @@
-extends Node3D
+extends SubViewport
 
+var is_active = false
 var _pan_speed: float = 1
 var _zoom_speed: float = 1
-var camera;
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	camera = get_node("Camera3D")
-
+@onready var camera = $world/WebcamPivot/Camera3D;
+@onready var camera_pivot = $world/WebcamPivot
 
 func _process(delta: float) -> void:
+	if !is_active:
+		return
+	
 	if Input.is_action_pressed("ui_shift"):
 		if Input.is_action_pressed("ui_up"):
 			zoom(-_zoom_speed)
@@ -30,21 +31,21 @@ func zoom(speed) -> void:
 	camera.fov += speed
 	
 	if speed < 0:
-		if not get_node("zoomInPlayer").is_playing():
-			get_node("zoomInPlayer").playing = true
+		if not $zoomInPlayer.is_playing():
+			$zoomInPlayer.playing = true
 	else:
-		if not get_node("zoomOutPlayer").is_playing():
-			get_node("zoomOutPlayer").playing = true
+		if not $zoomOutPlayer.is_playing():
+			$zoomOutPlayer.playing = true
 
 
 func rotate_webcam_x(speed) -> void:
-	rotation_degrees.x += speed * camera.fov * 0.01
+	camera_pivot.rotation_degrees.x += speed * camera.fov * 0.01
 	
-	if not get_node("scrollPlayer").is_playing():
-		get_node("scrollPlayer").playing = true
+	if not $scrollPlayer.is_playing():
+		$scrollPlayer.playing = true
 
 func rotate_webcam_y(speed) -> void:
-	rotation_degrees.y += speed * camera.fov * 0.01
+	camera_pivot.rotation_degrees.y += speed * camera.fov * 0.01
 	
-	if not get_node("scrollPlayer").is_playing():
-		get_node("scrollPlayer").playing = true
+	if not $scrollPlayer.is_playing():
+		$scrollPlayer.playing = true
