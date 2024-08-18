@@ -26,8 +26,6 @@ func _process(delta: float) -> void:
 		elif Input.is_action_pressed("ui_right"):
 			rotate_webcam_y(-_pan_speed)
 
-#TODO + sound ?
-
 func zoom(speed) -> void:
 	camera.fov += speed
 	

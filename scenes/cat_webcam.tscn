@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bebl7unp45048"]
+[gd_scene load_steps=15 format=3 uid="uid://bebl7unp45048"]
 
 [ext_resource type="Script" path="res://scripts/webcamControls.gd" id="1_3yicl"]
 [ext_resource type="AudioStream" uid="uid://bo31i5hi71rn3" path="res://assets/sounds/effects/zoom_in.wav" id="3_w0x2j"]
@@ -7,6 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://htf26qrq8weu" path="res://assets/sounds/effects/zoom_out.wav" id="5_wp3m7"]
 [ext_resource type="Texture2D" uid="uid://vgid0565xngf" path="res://assets/textures/rooms/wallpapers/vertical_stripes.jpg" id="7_r1rls"]
 [ext_resource type="PackedScene" uid="uid://bjonmciq4nenn" path="res://scenes/cat_builder.tscn" id="8_6mjnb"]
+[ext_resource type="Texture2D" uid="uid://ceet1gi5uti6n" path="res://assets/textures/rooms/objects/drawer.png" id="8_lgyud"]
+[ext_resource type="Texture2D" uid="uid://ccapb0rlso7g1" path="res://assets/textures/rooms/floors/tiles.jpg" id="10_gohw2"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_jcuwj"]
 
@@ -17,7 +19,15 @@ albedo_color = Color(0.344076, 0.344076, 0.344076, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ctksj"]
 shading_mode = 0
 albedo_texture = ExtResource("7_r1rls")
-uv1_scale = Vector3(5, 5, 5)
+uv1_scale = Vector3(20, 20, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cc2an"]
+shading_mode = 0
+albedo_texture = ExtResource("10_gohw2")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="QuadMesh" id="QuadMesh_gnht0"]
+material = SubResource("StandardMaterial3D_cc2an")
 
 [node name="SubViewport" type="SubViewport"]
 size = Vector2i(1920, 1080)
@@ -44,16 +54,17 @@ pitch_scale = 1.5
 stream = ExtResource("5_wp3m7")
 
 [node name="Sprite3D2" type="Sprite3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.73139, 3.15146, -6.83427)
+transform = Transform3D(0.93, 0, 0, 0, 0.93, 0, 0, 0, 0.6, 3.80722, 4.84387, -3.58676)
+alpha_cut = 2
 texture = ExtResource("5_b2bm4")
 
 [node name="Sprite3D3" type="Sprite3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24709, 3.07591, -12.455)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.71664, 2.99854, -6.35919)
 texture = ExtResource("5_b2bm4")
 
 [node name="Sprite3D4" type="Sprite3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.21557, 4.6701, -3.85718)
-texture = ExtResource("5_b2bm4")
+transform = Transform3D(0.96, 0, 0, 0, 0.96, 0, 0, 0, 0.6, -2.76095, 3.95506, -4.2005)
+texture = ExtResource("8_lgyud")
 
 [node name="cat" parent="Node3D" instance=ExtResource("8_6mjnb")]
 transform = Transform3D(0.361119, 0, 0, 0, 0.361119, 0, 0, 0, 0.555758, -0.00206745, 2.35139, -0.896537)
@@ -64,6 +75,10 @@ mesh = SubResource("QuadMesh_jcuwj")
 surface_material_override/0 = SubResource("StandardMaterial3D_mkma4")
 
 [node name="wallpaper" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(117.297, 0, 0, 0, 62.6927, 0, 0, 0, 5.28388, -0.0193001, 12.6509, -15.4421)
+transform = Transform3D(382.885, 0, 0, 0, 204.644, 0, 0, 0, 5.28388, -0.0193001, 12.6509, -15.4421)
 mesh = SubResource("QuadMesh_jcuwj")
 surface_material_override/0 = SubResource("StandardMaterial3D_ctksj")
+
+[node name="floor" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(340.919, 0, 0, 0, -8.27892e-06, 0.95, 0, -189.4, -4.15258e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_gnht0")
