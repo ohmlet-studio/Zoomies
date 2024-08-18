@@ -1,16 +1,20 @@
 extends Node2D
 
 const MAX_SCENE = 100
-const SCALE = 0.3
+const SCALE = 0.28
+const PIX_SPEED = 30
 
 # Take scene size * scale
 const scene_size_x = 1920 * SCALE
 const scene_size_y = 1080 * SCALE
 
-const start_x = -960 + 60
-const start_y = -540 + 150
+const start_x = -960 + 30
+const start_y = -540 + 170
 var pos_shift_x = start_x
 var pos_shift_y = start_y
+
+# Variable to know if button keep pressed
+var buttonPressed = false
 
 @export var scene_array = Array()
 var idx = 0
@@ -42,3 +46,17 @@ func _instantiate_cat_display():
 	# Add scene to parent node
 	add_child(scene_array[idx])
 	idx += 1
+	
+
+func _on_down_button_button_down() -> void:
+	buttonPressed = true
+	
+func _on_down_button_button_up() -> void:
+	buttonPressed = false
+
+func _process(delta: float) -> void:
+	if buttonPressed:
+		for scene in scene_array:
+			scene.position.y -= PIX_SPEED
+		pos_shift_y -= PIX_SPEED
+	
