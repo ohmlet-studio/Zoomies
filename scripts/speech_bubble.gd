@@ -38,7 +38,8 @@ func _display_letter():
 		custom_minimum_size.y = size.y
 		
 	global_position.x = bubble_position.x - size.x / 2
-	global_position.y = bubble_position.y + 24
+	global_position.y = bubble_position.y  - size.y + 24
+	get_node("Tail").global_position = bubble_position
 	
 	letter_index += 1
 	if letter_index >= text.length():
