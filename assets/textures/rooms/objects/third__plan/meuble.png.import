@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw2j1ndf53q5w"
-path="res://.godot/imported/monstera.png-d282d514e3e8bf615bc83f2f85d61964.ctex"
+uid="uid://di85pyxabr7mh"
+path="res://.godot/imported/meuble.png-61d20f3c63fac6c1260f560b4ddaa31a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/rooms/objects/second_plan/monstera.png"
-dest_files=["res://.godot/imported/monstera.png-d282d514e3e8bf615bc83f2f85d61964.ctex"]
+source_file="res://assets/textures/rooms/objects/third__plan/meuble.png"
+dest_files=["res://.godot/imported/meuble.png-61d20f3c63fac6c1260f560b4ddaa31a.ctex"]
 
 [params]
 

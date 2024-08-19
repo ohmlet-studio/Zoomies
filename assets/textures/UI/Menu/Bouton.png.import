@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw2j1ndf53q5w"
-path="res://.godot/imported/monstera.png-d282d514e3e8bf615bc83f2f85d61964.ctex"
+uid="uid://dmwlnqp4gxtai"
+path="res://.godot/imported/Bouton.png-afb3b96e6e3b3051c9340b6967052575.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/rooms/objects/second_plan/monstera.png"
-dest_files=["res://.godot/imported/monstera.png-d282d514e3e8bf615bc83f2f85d61964.ctex"]
+source_file="res://assets/textures/UI/Menu/Bouton.png"
+dest_files=["res://.godot/imported/Bouton.png-afb3b96e6e3b3051c9340b6967052575.ctex"]
 
 [params]
 

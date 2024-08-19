@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw2j1ndf53q5w"
-path="res://.godot/imported/monstera.png-d282d514e3e8bf615bc83f2f85d61964.ctex"
+uid="uid://ptiha6ohqebi"
+path="res://.godot/imported/YouÔÇÖre fired.png-653523af9169c7d0473c7673513552bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/rooms/objects/second_plan/monstera.png"
-dest_files=["res://.godot/imported/monstera.png-d282d514e3e8bf615bc83f2f85d61964.ctex"]
+source_file="res://assets/textures/gameover/YouÔÇÖre fired.png"
+dest_files=["res://.godot/imported/YouÔÇÖre fired.png-653523af9169c7d0473c7673513552bb.ctex"]
 
 [params]
 
