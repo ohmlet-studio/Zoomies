@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://cs6sy82mme6s4"]
+
+[ext_resource type="Texture2D" uid="uid://0l2ayk71gk40" path="res://assets/textures/zoomies_interface.jpg" id="1_a80tg"]
+[ext_resource type="Texture2D" uid="uid://pun643wc0nln" path="res://assets/textures/UI/bottom_bar/menu.png" id="2_detra"]
+[ext_resource type="Texture2D" uid="uid://byb1c4gfwksll" path="res://assets/textures/UI/bottom_bar/pause.png" id="3_hin76"]
+[ext_resource type="Texture2D" uid="uid://rnnhuytfygym" path="res://assets/textures/UI/bottom_bar/grid.png" id="4_nv8s6"]
+
+[node name="ZoomiesUI" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_a80tg")
+expand_mode = 1
+
+[node name="bottom_bar" type="Node2D" parent="."]
+position = Vector2(159, 174)
+scale = Vector2(0.830135, 0.830135)
+
+[node name="menu" type="TextureButton" parent="bottom_bar"]
+offset_left = 692.0
+offset_top = 937.0
+offset_right = 922.0
+offset_bottom = 1121.0
+scale = Vector2(0.7553, 0.7553)
+texture_normal = ExtResource("2_detra")
+
+[node name="pause" type="TextureButton" parent="bottom_bar"]
+offset_left = 867.0
+offset_top = 937.0
+offset_right = 1097.0
+offset_bottom = 1121.0
+scale = Vector2(0.7553, 0.7553)
+texture_normal = ExtResource("3_hin76")
+
+[node name="grid" type="TextureButton" parent="bottom_bar"]
+offset_left = 1041.0
+offset_top = 937.0
+offset_right = 1271.0
+offset_bottom = 1121.0
+scale = Vector2(0.7553, 0.7553)
+texture_normal = ExtResource("4_nv8s6")

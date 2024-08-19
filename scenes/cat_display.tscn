@@ -41,7 +41,7 @@ albedo_texture = ExtResource("15_tsi68")
 uv1_scale = Vector3(10, 10, 10)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_hixn4"]
-viewport_path = NodePath(".")
+viewport_path = NodePath("SubViewport")
 
 [node name="CatDisplay" type="Node2D"]
 script = ExtResource("1_0xj6i")
@@ -72,8 +72,12 @@ volume_db = -10.0
 [node name="aligned_sound" type="AudioStreamPlayer" parent="SubViewport"]
 stream = ExtResource("5_lgkhl")
 
+[node name="ding_player" type="AudioStreamPlayer" parent="SubViewport"]
+stream = ExtResource("5_lgkhl")
+volume_db = -3.0
+
 [node name="WebcamPivot" type="Node3D" parent="SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 1.92146, 2.66212)
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 2.74379, 2.66212)
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport/WebcamPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0243331, -0.871258)

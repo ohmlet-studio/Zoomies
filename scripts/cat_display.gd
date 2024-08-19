@@ -39,6 +39,25 @@ func _ready() -> void:
 	# set the sprite invisible
 	parent2D.visible = false
 
+func disable_input():
+	sub_viewport.is_input_enabled = false
+	
+func enable_input():
+	sub_viewport.is_input_enabled = true
+
+func unalign_camera_random(scale_fov, scale_rotation):
+	var rng = RandomNumberGenerator.new()
+	sub_viewport.camera.fov =  rng.randf_range(scale_fov*sub_viewport.LIMIT_FOV_MIN, scale_fov*sub_viewport.LIMIT_FOV_MAX)
+	
+	var random_rotation = Vector3(
+		 rng.randf_range(scale_rotation*sub_viewport.LIMIT_X_MIN, scale_rotation*sub_viewport.LIMIT_X_MAX),
+		 rng.randf_range(scale_rotation*sub_viewport.LIMIT_Y_MIN, scale_rotation*sub_viewport.LIMIT_Y_MAX),
+		 sub_viewport.camera_pivot.rotation_degrees.z
+	)
+	
+	sub_viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
+	
+	sub_viewport.camera_pivot.rotation_degrees =  random_rotation
 
 func connect_cat():
 	$connect_sound.play()

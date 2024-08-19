@@ -25,7 +25,9 @@ const lines: Array[String] = [
 const test_position = Vector2(960, 250)
 
 func _ready() -> void:
-	# wait for 2 seconds
+	$Boss.disable_input()
+	
+	# wait for a bit
 	await get_tree().create_timer(0.5).timeout
 	
 	$Boss.connect_cat()

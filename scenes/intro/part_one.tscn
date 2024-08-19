@@ -1,24 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhrtnjiydddt4"]
+[gd_scene load_steps=5 format=3 uid="uid://dhrtnjiydddt4"]
 
-[ext_resource type="Script" path="res://scripts/intro.gd" id="1_6muly"]
-[ext_resource type="Texture2D" uid="uid://0l2ayk71gk40" path="res://assets/textures/zoomies_interface.jpg" id="2_p5p2h"]
+[ext_resource type="Script" path="res://scripts/intro/part_one.gd" id="1_6muly"]
+[ext_resource type="PackedScene" uid="uid://cs6sy82mme6s4" path="res://scenes/ui/zoomies_ui.tscn" id="3_khsjq"]
 [ext_resource type="PackedScene" uid="uid://bt2t7cgg75aot" path="res://scenes/cats/boss.tscn" id="3_lbx7h"]
+[ext_resource type="AudioStream" uid="uid://y0jkwjbupk6e" path="res://assets/sounds/Videocall.mp3" id="4_e2mxu"]
 
-[node name="Intro" type="Node2D"]
+[node name="IntroPartOne" type="Node2D"]
 script = ExtResource("1_6muly")
 
-[node name="Background" type="TextureRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 1920.0
-offset_bottom = 1080.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_p5p2h")
-expand_mode = 1
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_e2mxu")
+volume_db = 3.0
+autoplay = true
+
+[node name="ZoomiesUI" parent="." instance=ExtResource("3_khsjq")]
 
 [node name="Boss" parent="." instance=ExtResource("3_lbx7h")]
-position = Vector2(212, 153)
+position = Vector2(227, 119)
+scale = Vector2(0.981965, 0.981965)
 
 [connection signal="ready" from="." to="." method="_on_ready"]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://k1ofw02afqk0"]
+
+[ext_resource type="Script" path="res://scripts/intro/part_two.gd" id="1_l0xbq"]
+[ext_resource type="PackedScene" uid="uid://cs6sy82mme6s4" path="res://scenes/ui/zoomies_ui.tscn" id="2_hwdm2"]
+[ext_resource type="PackedScene" uid="uid://bt2t7cgg75aot" path="res://scenes/cats/boss.tscn" id="3_vupdj"]
+[ext_resource type="AudioStream" uid="uid://y0jkwjbupk6e" path="res://assets/sounds/Videocall.mp3" id="4_udv23"]
+[ext_resource type="AudioStream" uid="uid://cynmdpvcdqqj5" path="res://assets/sounds/effects/Patoune.wav" id="5_twyvj"]
+
+[node name="IntroPartTwo" type="Node2D"]
+script = ExtResource("1_l0xbq")
+
+[node name="ZoomiesUI" parent="." instance=ExtResource("2_hwdm2")]
+
+[node name="musicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_udv23")
+volume_db = 3.0
+autoplay = true
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_twyvj")
+volume_db = 24.0
+
+[node name="Boss" parent="." instance=ExtResource("3_vupdj")]
+position = Vector2(227, 119)
+scale = Vector2(0.981965, 0.981965)
+
+[connection signal="ready" from="." to="." method="_on_ready"]
