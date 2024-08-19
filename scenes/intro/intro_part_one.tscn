@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dy3fjvga8g3m7"]
+[gd_scene load_steps=6 format=3 uid="uid://imfy3jtt61ay"]
 
 [ext_resource type="Script" path="res://scripts/intro.gd" id="1_lp3hk"]
 [ext_resource type="Texture2D" uid="uid://0l2ayk71gk40" path="res://assets/textures/zoomies_interface.jpg" id="2_mykix"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://benihwxolii8c" path="res://assets/textures/rooms/wallpapers/duck.jpg" id="5_vi8iq"]
 [ext_resource type="Texture2D" uid="uid://ccapb0rlso7g1" path="res://assets/textures/rooms/floors/tiles.jpg" id="6_y3c5y"]
 
-[node name="Intro" type="Node2D"]
+[node name="Intro2" type="Node2D"]
 script = ExtResource("1_lp3hk")
 
 [node name="Background" type="TextureRect" parent="."]

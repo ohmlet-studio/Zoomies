@@ -61,7 +61,6 @@ func _process(delta: float) -> void:
 			if camera_pivot.rotation_degrees.y > LIMIT_X_MIN :
 				rotate_webcam_y(-_pan_speed)
 			
-	print("x ", camera_pivot.rotation_degrees.x, " y ", camera_pivot.rotation_degrees.y, " fov ",camera.fov)
 	# Check if ears are aligned
 	if (
 		# X axis

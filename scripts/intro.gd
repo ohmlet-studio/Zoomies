@@ -32,4 +32,11 @@ func _ready() -> void:
 	
 	await get_tree().create_timer(0.5).timeout
 	
+	# Connect signal from dialog manager
+	var dialog_signal_call = Callable(self, "_on_dialog_finished")
+	DialogManager.dialog_finish.connect(dialog_signal_call)
+	# Start dialog
 	DialogManager.start_dialog(test_position, lines)
+	
+func _on_dialog_finished():
+	get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")
