@@ -39,7 +39,7 @@ func _instantiate_cat_display():
 	
 	cat_scene_node.unalign_camera_random(DIFFICULTY, DIFFICULTY)
 	cat_scene_node.connect_cat()
-	WebcamManager.add_new_display(cat_scene_node)
+	#WebcamManager.add_new_display(cat_scene_node)
 	
 	scene_array.append({
 		"scene": cat_scene_node,

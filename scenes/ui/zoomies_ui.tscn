@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cs6sy82mme6s4"]
 
 [ext_resource type="Texture2D" uid="uid://0l2ayk71gk40" path="res://assets/textures/zoomies_interface.jpg" id="1_a80tg"]
-[ext_resource type="Texture2D" uid="uid://pun643wc0nln" path="res://assets/textures/UI/bottom_bar/menu.png" id="2_detra"]
-[ext_resource type="Texture2D" uid="uid://byb1c4gfwksll" path="res://assets/textures/UI/bottom_bar/pause.png" id="3_hin76"]
-[ext_resource type="Texture2D" uid="uid://rnnhuytfygym" path="res://assets/textures/UI/bottom_bar/grid.png" id="4_nv8s6"]
+[ext_resource type="Texture2D" uid="uid://wl48b0bak38o" path="res://assets/textures/UI/bottom_bar/menu.png" id="2_detra"]
+[ext_resource type="Texture2D" uid="uid://blobdkiyaf60p" path="res://assets/textures/UI/bottom_bar/pause.png" id="3_hin76"]
+[ext_resource type="Texture2D" uid="uid://c3gm7x028s8jt" path="res://assets/textures/UI/bottom_bar/grid.png" id="4_nv8s6"]
 
 [node name="ZoomiesUI" type="Node2D"]
 
@@ -28,40 +28,35 @@ offset_bottom = 292.0
 scale = Vector2(1, 0.560001)
 color = Color(0.72549, 0.882353, 0.960784, 1)
 
-[node name="bottom_bar" type="Node2D" parent="."]
-top_level = true
-position = Vector2(159, 174)
-scale = Vector2(0.830135, 0.830135)
-
-[node name="DownRectangle" type="ColorRect" parent="bottom_bar"]
+[node name="DownRectangle" type="ColorRect" parent="."]
 visible = false
-offset_left = 101.188
-offset_top = 944.425
-offset_right = 1821.19
-offset_bottom = 1160.42
+offset_left = 243.0
+offset_top = 958.0
+offset_right = 1963.0
+offset_bottom = 1174.0
 scale = Vector2(1, 0.560001)
 color = Color(0.72549, 0.882353, 0.960784, 1)
 
-[node name="menu" type="TextureButton" parent="bottom_bar"]
-offset_left = 692.0
-offset_top = 937.0
-offset_right = 922.0
-offset_bottom = 1121.0
+[node name="menu" type="TextureButton" parent="."]
+offset_left = 733.453
+offset_top = 951.836
+offset_right = 963.453
+offset_bottom = 1135.84
 scale = Vector2(0.7553, 0.7553)
 texture_normal = ExtResource("2_detra")
 
-[node name="pause" type="TextureButton" parent="bottom_bar"]
-offset_left = 867.0
-offset_top = 937.0
-offset_right = 1097.0
-offset_bottom = 1121.0
+[node name="pause" type="TextureButton" parent="."]
+offset_left = 878.727
+offset_top = 951.836
+offset_right = 1108.73
+offset_bottom = 1135.84
 scale = Vector2(0.7553, 0.7553)
 texture_normal = ExtResource("3_hin76")
 
-[node name="grid" type="TextureButton" parent="bottom_bar"]
-offset_left = 1041.0
-offset_top = 937.0
-offset_right = 1271.0
-offset_bottom = 1121.0
+[node name="grid" type="TextureButton" parent="."]
+offset_left = 1023.17
+offset_top = 951.836
+offset_right = 1253.17
+offset_bottom = 1135.84
 scale = Vector2(0.7553, 0.7553)
 texture_normal = ExtResource("4_nv8s6")

@@ -80,6 +80,8 @@ func _ready() -> void:
 	parent2D.visible = false
 	
 	enable_input()
+	
+	WebcamManager.add_new_display(self)
 
 func disable_input():
 	sub_viewport.is_input_enabled = false

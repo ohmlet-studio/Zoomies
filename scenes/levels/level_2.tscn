@@ -1,77 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdmlwiqmqtulo"]
+[gd_scene load_steps=4 format=3 uid="uid://chnxoqmxylub0"]
 
-[ext_resource type="Texture2D" uid="uid://0l2ayk71gk40" path="res://assets/textures/zoomies_interface.jpg" id="1_56a63"]
-[ext_resource type="PackedScene" uid="uid://dhrrkj5xdmdeb" path="res://scenes/cat_display.tscn" id="2_cc430"]
+[ext_resource type="Script" path="res://scripts/levels/level_2.gd" id="1_rtukf"]
+[ext_resource type="PackedScene" uid="uid://cs6sy82mme6s4" path="res://scenes/ui/zoomies_ui.tscn" id="2_myug6"]
+[ext_resource type="PackedScene" uid="uid://gi8h4kub3elw" path="res://scenes/cats/random.tscn" id="3_33dxy"]
 
 [node name="Level2" type="Node2D"]
+script = ExtResource("1_rtukf")
 
-[node name="Background" type="TextureRect" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -960.0
-offset_top = -540.0
-offset_right = 960.0
-offset_bottom = 540.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_56a63")
-expand_mode = 1
+[node name="ZoomiesUI" parent="." instance=ExtResource("2_myug6")]
+position = Vector2(-960, -540)
 
-[node name="GridContainer" type="GridContainer" parent="."]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -896.0
-offset_top = -224.0
-offset_right = 720.0
-offset_bottom = 560.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-columns = 3
-
-[node name="CatDisplay" parent="GridContainer" instance=ExtResource("2_cc430")]
+[node name="Cat1" parent="." instance=ExtResource("3_33dxy")]
+unique_name_in_owner = true
+position = Vector2(-914, -160)
 scale = Vector2(0.3, 0.3)
 
-[node name="CatDisplay2" parent="GridContainer" instance=ExtResource("2_cc430")]
-position = Vector2(616, 0)
+[node name="Cat2" parent="." instance=ExtResource("3_33dxy")]
+unique_name_in_owner = true
+position = Vector2(-292, -160)
 scale = Vector2(0.3, 0.3)
 
-[node name="CatDisplay3" parent="GridContainer" instance=ExtResource("2_cc430")]
-position = Vector2(1224, 0)
+[node name="Cat3" parent="." instance=ExtResource("3_33dxy")]
+unique_name_in_owner = true
+position = Vector2(336, -160)
 scale = Vector2(0.3, 0.3)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -840.0
-offset_top = -400.0
-offset_right = 848.0
-offset_bottom = 392.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="Control" type="Control" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="CatDisplay" parent="ScrollContainer/VBoxContainer/HBoxContainer/Control" instance=ExtResource("2_cc430")]
-scale = Vector2(0.2, 0.2)
+[connection signal="ready" from="." to="." method="_on_ready"]
