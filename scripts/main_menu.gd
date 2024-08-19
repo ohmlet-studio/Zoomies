@@ -1,6 +1,6 @@
 extends Control
 
-@onready var buttons_v_box = $MarginContainer/ButtonsVBox
+@onready var buttons_v_box = %ButtonsVBox
 @onready var start_container = %StartContainer
 @onready var option_container = %OptionContainer
 
@@ -34,9 +34,20 @@ func _on_options_button_pressed() -> void:
 func _on_return_button_pressed() -> void:
 	start_container.visible = true
 	option_container.visible = false
-	
+
+func _on_music_ctrl_slider_value_changed(value: float) -> void:
+	var val_temp
+	if value <= -50 :
+		val_temp = -80
+	else:
+		val_temp = value
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), val_temp)
 
 
-
-func _on_music_ctrl_slider_drag_ended(value_changed: bool) -> void:
-	pass # Replace with function body.
+func _on_sfx_ctrl_slider_value_changed(value: float) -> void:
+	var val_temp
+	if value <= -50 :
+		val_temp = -80
+	else:
+		val_temp = value
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), val_temp)
