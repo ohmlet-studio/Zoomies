@@ -41,4 +41,4 @@ func _ready() -> void:
 	DialogManager.start_dialog(test_position, lines)
 	
 func _on_dialog_finished():
-	get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")
+	get_tree().change_scene_to_file("res://scenes/intro/part_two.tscn")

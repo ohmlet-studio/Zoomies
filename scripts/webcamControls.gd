@@ -35,7 +35,6 @@ func _ready() -> void:
 	cam_default_pos_x = camera_pivot.rotation_degrees.x
 	cam_default_pos_y = camera_pivot.rotation_degrees.y
 	cam_default_fov = camera.fov
-	# Randomize FOV and position
 
 func _process(delta: float) -> void:
 	if !is_active:

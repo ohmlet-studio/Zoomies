@@ -77,10 +77,10 @@ stream = ExtResource("5_lgkhl")
 volume_db = -3.0
 
 [node name="WebcamPivot" type="Node3D" parent="SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 2.74379, 2.66212)
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 2.70772, 2.92663)
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport/WebcamPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0243331, -0.871258)
+transform = Transform3D(1, 0, 0, 0, 0.967749, 0.251917, 0, -0.251917, 0.967749, 0, 0.0243332, -0.871258)
 current = true
 fov = 49.0
 
