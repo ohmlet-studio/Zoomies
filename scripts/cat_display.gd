@@ -21,6 +21,12 @@ var border_color = default_boder_color
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# ----------- Pick random texture for the cat -------------
+	if randomize_cat:
+		cat_body = _get_random_texture("res://assets/textures/cat_parts/body/")
+		cat_eyes = _get_random_texture("res://assets/textures/cat_parts/eyes/normal/")
+	# ---------------------------------------------------------
+	
 	$SubViewport/cat/baseplate.texture = cat_body
 	$SubViewport/cat/eyes.texture = cat_eyes
 	
@@ -39,6 +45,18 @@ func _ready() -> void:
 	# set the sprite invisible
 	parent2D.visible = false
 
+func _get_random_texture(path : String) -> Texture2D:
+	var dir_name := path
+	var dir := DirAccess.open(dir_name)
+	var file_names := dir.get_files()
+	# Delete import file from array
+	for file in file_names:
+		if file.contains(".import") :
+			file_names.remove_at(file_names.find(file))
+
+	var random_file = file_names[randi() % file_names.size()]
+	var res := load(dir_name + random_file)
+	return res
 
 func connect_cat():
 	$connect_sound.play()
