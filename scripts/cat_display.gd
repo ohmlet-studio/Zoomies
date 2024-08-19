@@ -5,6 +5,15 @@ extends Node2D
 @onready var sub_viewport = $SubViewport
 @onready var parent2D = $Parent2D
 
+# Objects sprites
+@onready var first_plan_obj = %firstPlan
+@onready var second_plan_obj = %secondPlan
+@onready var third_plan_obj = %thirdPlan
+@onready var mug_obg = %mug
+
+# Object position boundary
+@export var object_lim_x_axis = 5
+
 @export var default_boder_color = Color("d7d7d7")
 @export var border_color_focus = Color(0, 0, 0.545098, 1)
 @export var border_color_hover = Color("white")
@@ -15,7 +24,7 @@ extends Node2D
 @export var cat_eyes: Texture2D
 @export var wallpaper: Texture2D
 @export var floor: Texture2D
-@export var room_objects: Array[Texture2D]
+#@export var room_objects: Array[Texture2D]
 
 var border_color = default_boder_color
 
@@ -27,8 +36,19 @@ func _ready() -> void:
 		cat_eyes = _get_random_texture("res://assets/textures/cat_parts/eyes/normal/")
 	
 	if randomize_room:
+		# Get wall and floor texture
 		floor = _get_random_texture("res://assets/textures/rooms/floors/")
 		wallpaper = _get_random_texture("res://assets/textures/rooms/wallpapers/")
+		# Get object texture
+		first_plan_obj.set_texture(_get_random_texture("res://assets/textures/rooms/objects/first_plan/"))
+		second_plan_obj.set_texture(_get_random_texture("res://assets/textures/rooms/objects/second_plan/"))
+		third_plan_obj.set_texture(_get_random_texture("res://assets/textures/rooms/objects/third__plan/"))
+		mug_obg.set_texture(_get_random_texture("res://assets/textures/rooms/objects/mug/colored/"))
+		# Randomize object X axis
+		first_plan_obj.translate(Vector3(randf_range(-object_lim_x_axis, object_lim_x_axis), 0, 0))
+		second_plan_obj.translate(Vector3(randf_range(-object_lim_x_axis, object_lim_x_axis), 0, 0))
+		third_plan_obj.translate(Vector3(randf_range(-object_lim_x_axis, object_lim_x_axis), 0, 0))
+		
 	# ---------------------------------------------
 	
 	$SubViewport/cat/baseplate.texture = cat_body
@@ -68,6 +88,8 @@ func unalign_camera_random(scale_fov, scale_rotation):
 	sub_viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
 	
 	sub_viewport.camera_pivot.rotation_degrees =  random_rotation
+	
+
 func _get_random_texture(path : String) -> Texture2D:
 	var dir_name := path
 	var dir := DirAccess.open(dir_name)
