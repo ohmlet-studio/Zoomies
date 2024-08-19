@@ -1,10 +1,43 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhrrkj5xdmdeb"]
+[gd_scene load_steps=26 format=3 uid="uid://dhrrkj5xdmdeb"]
 
 [ext_resource type="Script" path="res://scripts/cat_display.gd" id="1_0xj6i"]
-[ext_resource type="PackedScene" uid="uid://bebl7unp45048" path="res://scenes/cat_webcam.tscn" id="1_bc4rd"]
 [ext_resource type="Texture2D" uid="uid://bj6o55ei14h8x" path="res://assets/textures/cat_display/hint.png" id="1_kwfk6"]
+[ext_resource type="Script" path="res://scripts/webcamControls.gd" id="2_ppm4p"]
+[ext_resource type="AudioStream" uid="uid://bo31i5hi71rn3" path="res://assets/sounds/effects/zoom_in.wav" id="3_r24hr"]
+[ext_resource type="Texture2D" uid="uid://bn5mhxll8yyhg" path="res://assets/textures/cat_parts/eyes/sexy/normal.png" id="3_rwwuh"]
 [ext_resource type="Texture2D" uid="uid://cb8ply4wtyueq" path="res://assets/textures/cat_display/border.png" id="4_3yo0l"]
+[ext_resource type="Texture2D" uid="uid://cyg3s24oy6myn" path="res://assets/textures/rooms/wallpapers/squares.jpg" id="4_ikx2m"]
+[ext_resource type="AudioStream" uid="uid://bvblhh7ijsnms" path="res://assets/sounds/effects/scroll.mp3" id="4_jyrki"]
+[ext_resource type="AudioStream" uid="uid://htf26qrq8weu" path="res://assets/sounds/effects/zoom_out.wav" id="5_j6drw"]
 [ext_resource type="AudioStream" uid="uid://c202x3vi4wpai" path="res://assets/sounds/effects/connect.wav" id="5_km0xu"]
+[ext_resource type="AudioStream" uid="uid://dq4wwwaoujahu" path="res://assets/sounds/effects/BIP.wav" id="5_lgkhl"]
+[ext_resource type="Texture2D" uid="uid://cmameg2k708sa" path="res://assets/textures/rooms/objects/monstera.png" id="7_6hpya"]
+[ext_resource type="Texture2D" uid="uid://ceet1gi5uti6n" path="res://assets/textures/rooms/objects/drawer.png" id="8_roypx"]
+[ext_resource type="Texture2D" uid="uid://cp5y11q2qlpjn" path="res://assets/textures/cat_parts/body/boss.png" id="10_8edfj"]
+[ext_resource type="Texture2D" uid="uid://blnd1jvhiwla8" path="res://assets/textures/cat_parts/mouth/neutral.png" id="11_cxlok"]
+[ext_resource type="Texture2D" uid="uid://5h71h82dfhcp" path="res://assets/textures/cat_parts/eyes/boss/normal.png" id="12_uor7u"]
+[ext_resource type="Texture2D" uid="uid://cu0sb3nl4t17m" path="res://assets/textures/rooms/table.png" id="13_ceeji"]
+[ext_resource type="Texture2D" uid="uid://benihwxolii8c" path="res://assets/textures/rooms/wallpapers/duck.jpg" id="14_ys5lk"]
+[ext_resource type="Texture2D" uid="uid://d1na8so6vxeu" path="res://assets/textures/rooms/floors/boards.jpg" id="15_tsi68"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_jcuwj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mkma4"]
+shading_mode = 0
+albedo_texture = ExtResource("13_ceeji")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ctksj"]
+shading_mode = 0
+albedo_texture = ExtResource("14_ys5lk")
+uv1_scale = Vector3(20, 20, 20)
+distance_fade_max_distance = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_gnht0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5fpeg"]
+shading_mode = 0
+albedo_texture = ExtResource("15_tsi68")
+uv1_scale = Vector3(10, 10, 10)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_hixn4"]
 viewport_path = NodePath(".")
@@ -13,8 +46,103 @@ viewport_path = NodePath(".")
 script = ExtResource("1_0xj6i")
 default_boder_color = Color(0.636083, 0.677255, 0.753501, 1)
 border_color_focus = Color(1.03481e-06, 0.720339, 1.54018e-06, 1)
+cat_body = ExtResource("10_8edfj")
+cat_eyes = ExtResource("3_rwwuh")
+wallpaper = ExtResource("4_ikx2m")
+floor = ExtResource("15_tsi68")
 
-[node name="SubViewport" parent="." instance=ExtResource("1_bc4rd")]
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(1920, 1080)
+script = ExtResource("2_ppm4p")
+
+[node name="zoomInPlayer" type="AudioStreamPlayer" parent="SubViewport"]
+stream = ExtResource("3_r24hr")
+volume_db = -10.0
+
+[node name="scrollPlayer" type="AudioStreamPlayer" parent="SubViewport"]
+stream = ExtResource("4_jyrki")
+volume_db = -10.0
+pitch_scale = 1.5
+
+[node name="zoomOutPlayer" type="AudioStreamPlayer" parent="SubViewport"]
+stream = ExtResource("5_j6drw")
+volume_db = -10.0
+
+[node name="aligned_sound" type="AudioStreamPlayer" parent="SubViewport"]
+stream = ExtResource("5_lgkhl")
+
+[node name="WebcamPivot" type="Node3D" parent="SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 1.92146, 2.66212)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport/WebcamPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0243331, -0.871258)
+current = true
+fov = 49.0
+
+[node name="objects" type="Node3D" parent="SubViewport"]
+
+[node name="Sprite3D2" type="Sprite3D" parent="SubViewport/objects"]
+transform = Transform3D(0.93, 0, 0, 0, 0.93, 0, 0, 0, 0.6, 3.80722, 4.84387, -3.58676)
+alpha_cut = 2
+texture = ExtResource("7_6hpya")
+
+[node name="Sprite3D4" type="Sprite3D" parent="SubViewport/objects"]
+transform = Transform3D(0.96, 0, 0, 0, 0.96, 0, 0, 0, 0.6, -2.76095, 3.95506, -4.2005)
+texture = ExtResource("8_roypx")
+
+[node name="cat" type="Node3D" parent="SubViewport"]
+transform = Transform3D(0.361119, 0, 0, 0, 0.361119, 0, 0, 0, 0.555758, -0.00206745, 2.35139, -0.896537)
+
+[node name="baseplate" type="Sprite3D" parent="SubViewport/cat"]
+texture = ExtResource("10_8edfj")
+
+[node name="mouth" type="Sprite3D" parent="SubViewport/cat"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.229643, 0.043834)
+alpha_cut = 2
+texture = ExtResource("11_cxlok")
+
+[node name="eyes" type="Sprite3D" parent="SubViewport/cat"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30041, 0.0459423)
+alpha_cut = 2
+texture = ExtResource("12_uor7u")
+
+[node name="room" type="Node3D" parent="SubViewport"]
+
+[node name="table" type="MeshInstance3D" parent="SubViewport/room"]
+transform = Transform3D(10.1837, 0, 0, 0, -2.59266e-07, 5.28388, 0, -5.93132, -2.30966e-07, 0.00234455, 1.08041, 2.08177)
+mesh = SubResource("QuadMesh_jcuwj")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_mkma4")
+
+[node name="wallpaper" type="MeshInstance3D" parent="SubViewport/room"]
+transform = Transform3D(382.885, 0, 0, 0, 204.644, 0, 0, 0, 5.28388, -0.0193001, 12.6509, -15.4421)
+mesh = SubResource("QuadMesh_jcuwj")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ctksj")
+
+[node name="ceiling" type="MeshInstance3D" parent="SubViewport/room"]
+transform = Transform3D(382.885, 0, 0, 0, 3.05176e-05, -5.28388, 0, 204.644, 4.17233e-07, -0.0193001, 22.6509, -15.4421)
+mesh = SubResource("QuadMesh_jcuwj")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ctksj")
+
+[node name="wall_left" type="MeshInstance3D" parent="SubViewport/room"]
+transform = Transform3D(-1.67364e-05, 0, 5.28388, 0, 204.644, 0, -382.885, 0, -2.30966e-07, -28.0193, 12.6509, -15.4421)
+mesh = SubResource("QuadMesh_jcuwj")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ctksj")
+
+[node name="wallpaper3" type="MeshInstance3D" parent="SubViewport/room"]
+transform = Transform3D(-1.67364e-05, 0, -5.28388, 0, 204.644, 0, 382.885, 0, -2.30966e-07, 28.9807, 12.6509, -15.4421)
+mesh = SubResource("QuadMesh_jcuwj")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ctksj")
+
+[node name="floor" type="MeshInstance3D" parent="SubViewport/room"]
+transform = Transform3D(340.919, 0, 0, 0, -8.27892e-06, 0.95, 0, -189.4, -4.15258e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_gnht0")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_5fpeg")
 
 [node name="CatDisplaySprite" type="Sprite2D" parent="."]
 texture = SubResource("ViewportTexture_hixn4")

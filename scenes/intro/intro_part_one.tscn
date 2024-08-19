@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://dyu5xjet22mif"]
+
+[ext_resource type="Script" path="res://scripts/intro.gd" id="1_lp3hk"]
+[ext_resource type="Texture2D" uid="uid://0l2ayk71gk40" path="res://assets/textures/zoomies_interface.jpg" id="2_mykix"]
+[ext_resource type="PackedScene" uid="uid://dhrrkj5xdmdeb" path="res://scenes/cat_display.tscn" id="3_3c4js"]
+[ext_resource type="Texture2D" uid="uid://benihwxolii8c" path="res://assets/textures/rooms/wallpapers/duck.jpg" id="5_vi8iq"]
+[ext_resource type="Texture2D" uid="uid://ccapb0rlso7g1" path="res://assets/textures/rooms/floors/tiles.jpg" id="6_y3c5y"]
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_lp3hk")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mykix")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 866.0
+offset_top = 15.0
+offset_right = 973.0
+offset_bottom = 38.0
+text = "INTRO DU JEU"
+
+[node name="CatDisplay" parent="." instance=ExtResource("3_3c4js")]
+position = Vector2(246, 188)
+scale = Vector2(0.731204, 0.731204)
+wallpaper = ExtResource("5_vi8iq")
+floor = ExtResource("6_y3c5y")
+
+[connection signal="ready" from="." to="." method="_on_ready"]

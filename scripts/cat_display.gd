@@ -8,11 +8,30 @@ extends Node2D
 @export var border_color_focus = Color("Green")
 @export var border_color_hover = Color("white")
 
-var border_color = default_boder_color
+@export var randomize_room: bool
+@export var randomize_cat: bool
+@export var cat_body: Texture2D
+@export var cat_eyes: Texture2D
+@export var wallpaper: Texture2D
+@export var floor: Texture2D
+@export var room_objects: Array[Texture2D]
 
+var border_color = default_boder_color
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$SubViewport/cat/baseplate.texture = cat_body
+	$SubViewport/cat/eyes.texture = cat_eyes
+	
+	var wallpaper_material = $SubViewport/room/wallpaper.get_surface_override_material(0)
+	wallpaper_material.albedo_texture = wallpaper
+	
+	var floor_material = $SubViewport/room/floor.get_surface_override_material(0)
+	floor_material.albedo_texture = floor
+	
+	#sub_viewport.room_objects = room_objects
+	
+	# set the sprite texture to the viewport
 	sprite.texture = sub_viewport.get_texture()
 	sub_viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
 	$connect_sound.play()

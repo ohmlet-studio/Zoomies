@@ -4,8 +4,8 @@ var is_active = false
 var _pan_speed: float = 1
 var _zoom_speed: float = 1
 
-@onready var camera = $world/WebcamPivot/Camera3D;
-@onready var camera_pivot = $world/WebcamPivot
+@onready var camera = $WebcamPivot/Camera3D;
+@onready var camera_pivot = $WebcamPivot
 
 var is_aligned = false
 

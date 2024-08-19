@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhrtnjiydddt4"]
+
+[ext_resource type="Script" path="res://scripts/intro.gd" id="1_6muly"]
+[ext_resource type="Texture2D" uid="uid://0l2ayk71gk40" path="res://assets/textures/zoomies_interface.jpg" id="2_p5p2h"]
+[ext_resource type="PackedScene" uid="uid://dhrrkj5xdmdeb" path="res://scenes/cat_display.tscn" id="3_jc7ok"]
+[ext_resource type="Texture2D" uid="uid://5h71h82dfhcp" path="res://assets/textures/cat_parts/eyes/boss/normal.png" id="4_ttckc"]
+[ext_resource type="Texture2D" uid="uid://vgid0565xngf" path="res://assets/textures/rooms/wallpapers/vertical_stripes.jpg" id="5_feurm"]
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_6muly")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_p5p2h")
+expand_mode = 1
+
+[node name="Boss" parent="." instance=ExtResource("3_jc7ok")]
+visible = false
+position = Vector2(246, 188)
+scale = Vector2(0.731204, 0.731204)
+cat_eyes = ExtResource("4_ttckc")
+wallpaper = ExtResource("5_feurm")
+
+[connection signal="ready" from="." to="." method="_on_ready"]

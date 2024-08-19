@@ -51,8 +51,7 @@ func _play_meow(voice):
 	meowplayer.pitch_scale = 1.0 + (randf() * 0.5 - 0.25)
 	meowplayer.play()
 	
-
-
+	
 func _display_letter():
 	text_aggreator += text[letter_index]
 	
@@ -76,8 +75,7 @@ func _display_letter():
 		return
 	
 	if display_all :
-		letter_index = text.length() - 2
-		label.text = text.substr(0, letter_index)
+		timer.start(0.0001 )
 		
 	else :
 		match text[letter_index]:

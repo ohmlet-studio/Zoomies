@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://0l2ayk71gk40" path="res://assets/textures/zoomies_interface.jpg" id="1_c5ven"]
 [ext_resource type="Script" path="res://scripts/levels/level_1.gd" id="1_h1cfy"]
-[ext_resource type="PackedScene" uid="uid://bebl7unp45048" path="res://scenes/cat_webcam.tscn" id="2_ry6ls"]
+[ext_resource type="PackedScene" uid="uid://bebl7unp45048" path="res://scenes/deprecated/cat_webcam.tscn" id="2_ry6ls"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lw0q6"]
 size = Vector2(850, 552)

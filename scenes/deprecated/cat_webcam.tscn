@@ -1,0 +1,105 @@
+[gd_scene load_steps=15 format=3 uid="uid://bebl7unp45048"]
+
+[ext_resource type="Script" path="res://scripts/webcamControls.gd" id="1_6wun4"]
+[ext_resource type="AudioStream" uid="uid://bo31i5hi71rn3" path="res://assets/sounds/effects/zoom_in.wav" id="2_mija6"]
+[ext_resource type="AudioStream" uid="uid://bvblhh7ijsnms" path="res://assets/sounds/effects/scroll.mp3" id="3_utsl7"]
+[ext_resource type="AudioStream" uid="uid://htf26qrq8weu" path="res://assets/sounds/effects/zoom_out.wav" id="4_miufh"]
+[ext_resource type="AudioStream" uid="uid://dq4wwwaoujahu" path="res://assets/sounds/effects/BIP.wav" id="5_jh47q"]
+[ext_resource type="Texture2D" uid="uid://cmameg2k708sa" path="res://assets/textures/rooms/objects/monstera.png" id="6_y67jl"]
+[ext_resource type="Texture2D" uid="uid://ceet1gi5uti6n" path="res://assets/textures/rooms/objects/drawer.png" id="7_fjrsx"]
+[ext_resource type="PackedScene" uid="uid://bjonmciq4nenn" path="res://scenes/deprecated/cat_builder.tscn" id="8_qjbd4"]
+[ext_resource type="Texture2D" uid="uid://cu0sb3nl4t17m" path="res://assets/textures/rooms/table.png" id="9_hgrxk"]
+[ext_resource type="Texture2D" uid="uid://benihwxolii8c" path="res://assets/textures/rooms/wallpapers/duck.jpg" id="10_53e70"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_jcuwj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mkma4"]
+shading_mode = 0
+albedo_texture = ExtResource("9_hgrxk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ctksj"]
+shading_mode = 0
+albedo_texture = ExtResource("10_53e70")
+uv1_scale = Vector3(20, 20, 20)
+distance_fade_max_distance = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_gnht0"]
+
+[node name="SubViewport" type="SubViewport"]
+size = Vector2i(1920, 1080)
+script = ExtResource("1_6wun4")
+
+[node name="zoomInPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_mija6")
+volume_db = -10.0
+
+[node name="scrollPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_utsl7")
+volume_db = -10.0
+pitch_scale = 1.5
+
+[node name="zoomOutPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_miufh")
+volume_db = -10.0
+
+[node name="aligned_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_jh47q")
+
+[node name="WebcamPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 1.92146, 2.66212)
+
+[node name="Camera3D" type="Camera3D" parent="WebcamPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0243331, -0.871258)
+current = true
+fov = 49.0
+
+[node name="objects" type="Node3D" parent="."]
+
+[node name="Sprite3D2" type="Sprite3D" parent="objects"]
+transform = Transform3D(0.93, 0, 0, 0, 0.93, 0, 0, 0, 0.6, 3.80722, 4.84387, -3.58676)
+alpha_cut = 2
+texture = ExtResource("6_y67jl")
+
+[node name="Sprite3D4" type="Sprite3D" parent="objects"]
+transform = Transform3D(0.96, 0, 0, 0, 0.96, 0, 0, 0, 0.6, -2.76095, 3.95506, -4.2005)
+texture = ExtResource("7_fjrsx")
+
+[node name="cat" parent="." instance=ExtResource("8_qjbd4")]
+transform = Transform3D(0.361119, 0, 0, 0, 0.361119, 0, 0, 0, 0.555758, -0.00206745, 2.35139, -0.896537)
+
+[node name="room" type="Node3D" parent="."]
+
+[node name="table" type="MeshInstance3D" parent="room"]
+transform = Transform3D(10.1837, 0, 0, 0, -2.59266e-07, 5.28388, 0, -5.93132, -2.30966e-07, 0.00234455, 1.08041, 2.08177)
+mesh = SubResource("QuadMesh_jcuwj")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_mkma4")
+
+[node name="wallpaper" type="MeshInstance3D" parent="room"]
+transform = Transform3D(382.885, 0, 0, 0, 204.644, 0, 0, 0, 5.28388, -0.0193001, 12.6509, -15.4421)
+mesh = SubResource("QuadMesh_jcuwj")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ctksj")
+
+[node name="wallpaper4" type="MeshInstance3D" parent="room"]
+transform = Transform3D(382.885, 0, 0, 0, 3.05176e-05, -5.28388, 0, 204.644, 4.17233e-07, -0.0193001, 22.6509, -15.4421)
+mesh = SubResource("QuadMesh_jcuwj")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ctksj")
+
+[node name="wallpaper2" type="MeshInstance3D" parent="room"]
+transform = Transform3D(-1.67364e-05, 0, 5.28388, 0, 204.644, 0, -382.885, 0, -2.30966e-07, -28.0193, 12.6509, -15.4421)
+mesh = SubResource("QuadMesh_jcuwj")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ctksj")
+
+[node name="wallpaper3" type="MeshInstance3D" parent="room"]
+transform = Transform3D(-1.67364e-05, 0, -5.28388, 0, 204.644, 0, 382.885, 0, -2.30966e-07, 28.9807, 12.6509, -15.4421)
+mesh = SubResource("QuadMesh_jcuwj")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ctksj")
+
+[node name="floor" type="MeshInstance3D" parent="room"]
+transform = Transform3D(340.919, 0, 0, 0, -8.27892e-06, 0.95, 0, -189.4, -4.15258e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_gnht0")
+skeleton = NodePath("")

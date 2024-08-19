@@ -1,6 +1,5 @@
 extends Node2D
 
-
 const lines: Array[String] = [
 	"So, this is your first day at zoomies ?",
 	"Welcome to the family...",
@@ -25,13 +24,13 @@ const lines: Array[String] = [
 
 const test_position = Vector2(960, 250)
 
-func _on_ready() -> void:
-	# Connect signal dialog_finish in DialogManager to a function inside this scene
-	var callable = Callable(self, "_dialog_is_finished")
-	DialogManager.dialog_finish.connect(callable)
-	# Call start dialog
+func _ready() -> void:
+	# make CatDisplay invisible
+	$Boss.visible = false
+	
+	# wait for 2 seconds
+	await get_tree().create_timer(5.0)
+	
+	$Boss.visible = true
+	
 	DialogManager.start_dialog(test_position, lines)
-	
-	
-func _dialog_is_finished():
-	get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")

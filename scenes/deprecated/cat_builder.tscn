@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjonmciq4nenn"]
+
+[ext_resource type="Texture2D" uid="uid://cp5y11q2qlpjn" path="res://assets/textures/cat_parts/body/boss.png" id="1_5e8ya"]
+[ext_resource type="Texture2D" uid="uid://blnd1jvhiwla8" path="res://assets/textures/cat_parts/mouth/neutral.png" id="2_6aa2f"]
+[ext_resource type="Texture2D" uid="uid://5h71h82dfhcp" path="res://assets/textures/cat_parts/eyes/boss/normal.png" id="3_3452v"]
+
+[sub_resource type="GDScript" id="GDScript_jvps1"]
+
+[node name="cat" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00206745, 2.64444, -0.896537)
+script = SubResource("GDScript_jvps1")
+
+[node name="baseplate" type="Sprite3D" parent="."]
+texture = ExtResource("1_5e8ya")
+
+[node name="mouth" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.229643, 0.043834)
+alpha_cut = 2
+texture = ExtResource("2_6aa2f")
+
+[node name="eyes" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30041, 0.0459423)
+alpha_cut = 2
+texture = ExtResource("3_3452v")
