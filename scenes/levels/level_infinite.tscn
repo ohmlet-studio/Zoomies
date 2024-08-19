@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dst57avkngwuw"]
+[gd_scene load_steps=4 format=3 uid="uid://busjo6patdmd4"]
 
 [ext_resource type="Texture2D" uid="uid://0l2ayk71gk40" path="res://assets/textures/zoomies_interface.jpg" id="1_ht0o4"]
 [ext_resource type="Script" path="res://scripts/level_infinite.gd" id="1_kutmv"]

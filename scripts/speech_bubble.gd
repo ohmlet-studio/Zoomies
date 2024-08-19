@@ -9,6 +9,7 @@ const MAX_WIDTH = 1000
 
 var text = ""
 var letter_index = 0
+var display_all = false
 
 var letter_time = 0.03
 var space_time = 0.06
@@ -58,7 +59,7 @@ func _display_letter():
 	
 	custom_minimum_size.x = min(size.x, MAX_WIDTH)
 		
-	#Wrap line if max width reached
+	# Wrap line if max width reached
 	if size.x > MAX_WIDTH:
 		label.autowrap_mode = TextServer.AUTOWRAP_WORD
 		custom_minimum_size.y = size.y
@@ -70,16 +71,26 @@ func _display_letter():
 	letter_index += 1
 	if letter_index >= text.length():
 		finished_displaying.emit()
+		display_all = false
 		return
+	
+	if display_all :
+		timer.start(0.00000000001 )
 		
-	match text[letter_index]:
-		"!", ".", ",", "?":
-			timer.start(punctuation_time)
-		" ":
-			timer.start(space_time)
-		_:
-			_play_meow(voice)
-			timer.start(letter_time)
+	else :
+		match text[letter_index]:
+			"!", ".", ",", "?":
+				timer.start(punctuation_time)
+			" ":
+				timer.start(space_time)
+			_:
+				_play_meow(voice)
+				timer.start(letter_time)
+			
+	
 
 func _on_letter_display_timer_timeout() -> void:
+	_display_letter()
+
+func _handle_all_letter():
 	_display_letter()
