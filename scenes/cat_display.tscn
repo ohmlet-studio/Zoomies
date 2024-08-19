@@ -29,6 +29,15 @@ scale = Vector2(0.600312, 0.600312)
 texture = ExtResource("1_kwfk6")
 metadata/_edit_group_ = true
 
+[node name="EarHintAligned" type="TextureRect" parent="."]
+offset_left = 259.0
+offset_top = -53.0
+offset_right = 2510.0
+offset_bottom = 1213.0
+scale = Vector2(0.600312, 0.600312)
+texture = ExtResource("1_kwfk6")
+metadata/_edit_group_ = true
+
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0

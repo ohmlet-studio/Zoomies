@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bebl7unp45048"]
+[gd_scene load_steps=17 format=3 uid="uid://bebl7unp45048"]
 
 [ext_resource type="Script" path="res://scripts/webcamControls.gd" id="1_3yicl"]
 [ext_resource type="AudioStream" uid="uid://bo31i5hi71rn3" path="res://assets/sounds/effects/zoom_in.wav" id="3_w0x2j"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bjonmciq4nenn" path="res://scenes/cat_builder.tscn" id="8_6mjnb"]
 [ext_resource type="Texture2D" uid="uid://benihwxolii8c" path="res://assets/textures/rooms/wallpapers/duck.jpg" id="8_ecqs1"]
 [ext_resource type="Texture2D" uid="uid://ceet1gi5uti6n" path="res://assets/textures/rooms/objects/drawer.png" id="8_lgyud"]
+[ext_resource type="Texture2D" uid="uid://cu0sb3nl4t17m" path="res://assets/textures/rooms/table.png" id="9_htk48"]
 [ext_resource type="Texture2D" uid="uid://ccapb0rlso7g1" path="res://assets/textures/rooms/floors/tiles.jpg" id="10_gohw2"]
 [ext_resource type="AudioStream" uid="uid://dq4wwwaoujahu" path="res://assets/sounds/effects/BIP.wav" id="10_ku6tr"]
 
@@ -16,6 +17,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mkma4"]
 shading_mode = 0
 albedo_color = Color(0.344076, 0.344076, 0.344076, 1)
+albedo_texture = ExtResource("9_htk48")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ctksj"]
 shading_mode = 0
@@ -48,14 +50,18 @@ pitch_scale = 1.5
 stream = ExtResource("5_wp3m7")
 volume_db = -10.0
 
+[node name="aligned_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_ku6tr")
+
 [node name="world" type="Node3D" parent="."]
 
 [node name="WebcamPivot" type="Node3D" parent="world"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.92146, 2.66212)
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 1.92146, 2.66212)
 
 [node name="Camera3D" type="Camera3D" parent="world/WebcamPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0243331, -0.871258)
 current = true
+fov = 49.0
 
 [node name="Sprite3D2" type="Sprite3D" parent="world"]
 transform = Transform3D(0.93, 0, 0, 0, 0.93, 0, 0, 0, 0.6, 3.80722, 4.84387, -3.58676)
@@ -101,6 +107,3 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ctksj")
 [node name="floor" type="MeshInstance3D" parent="world"]
 transform = Transform3D(340.919, 0, 0, 0, -8.27892e-06, 0.95, 0, -189.4, -4.15258e-08, 0, 0, 0)
 mesh = SubResource("QuadMesh_gnht0")
-
-[node name="aligned_sound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_ku6tr")
