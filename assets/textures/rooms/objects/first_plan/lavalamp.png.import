@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e8j6a0ql6ryr"
-path="res://.godot/imported/arrow.png-de188478b7d02ee454522b23541484cc.ctex"
+uid="uid://jovk6cvvllfn"
+path="res://.godot/imported/lavalamp.png-4b5355abf890691a28ef206333c0ac5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/UI/arrow.png"
-dest_files=["res://.godot/imported/arrow.png-de188478b7d02ee454522b23541484cc.ctex"]
+source_file="res://assets/textures/rooms/objects/first_plan/lavalamp.png"
+dest_files=["res://.godot/imported/lavalamp.png-4b5355abf890691a28ef206333c0ac5f.ctex"]
 
 [params]
 
