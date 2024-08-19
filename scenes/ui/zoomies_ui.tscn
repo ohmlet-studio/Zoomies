@@ -8,23 +8,14 @@
 [node name="ZoomiesUI" type="Node2D"]
 
 [node name="Background" type="TextureRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
 offset_right = 1920.0
 offset_bottom = 1080.0
-grow_horizontal = 2
-grow_vertical = 2
 texture = ExtResource("1_a80tg")
 expand_mode = 1
 
 [node name="UpRectangle" type="ColorRect" parent="."]
 visible = false
 top_level = true
-offset_left = 99.0
-offset_top = 75.9999
-offset_right = 1819.0
-offset_bottom = 292.0
 scale = Vector2(1, 0.560001)
 color = Color(0.72549, 0.882353, 0.960784, 1)
 

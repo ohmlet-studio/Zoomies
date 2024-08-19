@@ -17,23 +17,19 @@ var punctuation_time = 0.2
 
 var text_aggreator = ""
 var bubble_position
+
+@export var voice_A: Array[AudioStream]
+@export var voice_B: Array[AudioStream]
+@export var voice_C: Array[AudioStream]
+
 var sounds = {}
 
 signal finished_displaying()
 
 func _ready():
-	for letter in ['A', 'B', 'C']:
-		var path = "res://assets/sounds/fonts/" + letter
-		
-		var dir = DirAccess.open(path)
-	
-		var loaded_sounds = []
-		for file in dir.get_files():
-			if file.ends_with(".wav") or file.ends_with(".mp3"):
-				loaded_sounds.append(load(path + '/' + file))
-		
-		sounds[letter] = loaded_sounds
-	
+	sounds['A'] = voice_A
+	sounds['B'] = voice_B
+	sounds['C'] = voice_C
 
 func display_text(text_to_display: String, position: Vector2):
 	text = text_to_display
