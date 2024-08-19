@@ -1,5 +1,6 @@
 extends Node2D
 
+const DIFFICULTY = 0.5 # between 0 and 1, defined how far the camera start
 const MAX_SCENE = 100
 const SCALE = 0.28
 const PIX_SPEED = 30
@@ -27,9 +28,17 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _instantiate_cat_display():	
 	# ------ Scene instantiation ----------
-	var cat_scene = load("res://scenes/cat_display.tscn")
+	var cat_scene = load("res://scenes/cats/random.tscn")
+	var cat_scene_node = cat_scene.instantiate()
+	
+	# this fails because the instance is not ready, help
+	# Add scene to parent node
+	add_child(cat_scene_node)
+	cat_scene_node.unalign_camera_random(DIFFICULTY, DIFFICULTY)
+	cat_scene_node.connect_cat()
+	
 	scene_array.append({
-		"scene": cat_scene.instantiate(),
+		"scene": cat_scene_node,
 		"loaded": true
 	})
 	scene_array[idx]["scene"].scale = Vector2(SCALE, SCALE)
@@ -44,8 +53,6 @@ func _instantiate_cat_display():
 		pos_shift_x = start_x
 		pos_shift_y += scene_size_y + 50
 	
-	# Add scene to parent node
-	add_child(scene_array[idx]["scene"])
 	idx += 1
 
 func _on_down_button_button_down() -> void:

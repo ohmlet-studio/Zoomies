@@ -48,6 +48,8 @@ func _ready() -> void:
 	
 	# set the sprite invisible
 	parent2D.visible = false
+	
+	enable_input()
 
 func disable_input():
 	sub_viewport.is_input_enabled = false
@@ -68,6 +70,7 @@ func unalign_camera_random(scale_fov, scale_rotation):
 	sub_viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
 	
 	sub_viewport.camera_pivot.rotation_degrees =  random_rotation
+
 func _get_random_texture(path : String) -> Texture2D:
 	var dir_name := path
 	var dir := DirAccess.open(dir_name)
