@@ -5,7 +5,7 @@ extends Node2D
 @onready var sub_viewport = $SubViewport
 
 @export var default_boder_color = Color("d7d7d7")
-@export var border_color_focus = Color("Green")
+@export var border_color_focus = Color(0, 0, 0.545098, 1)
 @export var border_color_hover = Color("white")
 
 @export var randomize_room: bool
@@ -39,6 +39,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	nine_patch.modulate = border_color
+	if sub_viewport.is_aligned :
+		border_color = Color("Green")
+	else:
+		border_color = Color(0, 0, 0.545098, 1)
 	
 
 func mouse_enter():
@@ -54,8 +58,8 @@ func mouse_focus():
 func _on_sprite_input():
 	sub_viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
 	sub_viewport.is_active = true
-	border_color = Color("Green")
-	await get_tree().create_timer(1).timeout
+	border_color = Color(0, 0, 0.545098, 1)
+	await get_tree().create_timer(60).timeout
 	sub_viewport.is_active = false
 	sub_viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
 	border_color = Color("#d7d7d7")
