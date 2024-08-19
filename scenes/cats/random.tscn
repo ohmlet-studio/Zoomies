@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbmr6cskav0jo"]
+[gd_scene load_steps=3 format=3 uid="uid://gi8h4kub3elw"]
 
 [ext_resource type="PackedScene" uid="uid://dhrrkj5xdmdeb" path="res://scenes/cat_display.tscn" id="1_ymc8f"]
 
@@ -6,6 +6,8 @@
 viewport_path = NodePath(".")
 
 [node name="CatDisplayRandom" instance=ExtResource("1_ymc8f")]
+randomize_room = true
+randomize_cat = true
 
 [node name="CatDisplaySprite" parent="Parent2D" index="0"]
 texture = SubResource("ViewportTexture_rypdx")

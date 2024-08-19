@@ -68,6 +68,8 @@ func _ready() -> void:
 	
 	# set the sprite invisible
 	parent2D.visible = false
+	
+	enable_input()
 
 func disable_input():
 	sub_viewport.is_input_enabled = false

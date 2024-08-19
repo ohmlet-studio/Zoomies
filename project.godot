@@ -17,7 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-DialogManager="*res://scripts/dialog_manager.gd"
+DialogManager="*res://scripts/global/dialog_manager.gd"
+WebcamManager="*res://scripts/global/webcam_manager.gd"
 
 [display]
 

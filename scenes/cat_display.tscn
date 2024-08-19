@@ -1,12 +1,10 @@
-[gd_scene load_steps=29 format=3 uid="uid://dhrrkj5xdmdeb"]
+[gd_scene load_steps=25 format=3 uid="uid://dhrrkj5xdmdeb"]
 
 [ext_resource type="Script" path="res://scripts/cat_display.gd" id="1_0xj6i"]
 [ext_resource type="Texture2D" uid="uid://bj6o55ei14h8x" path="res://assets/textures/cat_display/hint.png" id="1_kwfk6"]
 [ext_resource type="Script" path="res://scripts/webcamControls.gd" id="2_ppm4p"]
 [ext_resource type="AudioStream" uid="uid://bo31i5hi71rn3" path="res://assets/sounds/effects/zoom_in.wav" id="3_r24hr"]
-[ext_resource type="Texture2D" path="res://assets/textures/cat_parts/eyes/sexy/normal.png" id="3_rwwuh"]
 [ext_resource type="Texture2D" uid="uid://cb8ply4wtyueq" path="res://assets/textures/cat_display/border.png" id="4_3yo0l"]
-[ext_resource type="Texture2D" uid="uid://cyg3s24oy6myn" path="res://assets/textures/rooms/wallpapers/squares.jpg" id="4_ikx2m"]
 [ext_resource type="AudioStream" uid="uid://bvblhh7ijsnms" path="res://assets/sounds/effects/scroll.mp3" id="4_jyrki"]
 [ext_resource type="AudioStream" uid="uid://htf26qrq8weu" path="res://assets/sounds/effects/zoom_out.wav" id="5_j6drw"]
 [ext_resource type="AudioStream" uid="uid://c202x3vi4wpai" path="res://assets/sounds/effects/connect.wav" id="5_km0xu"]
@@ -49,10 +47,6 @@ viewport_path = NodePath("SubViewport")
 script = ExtResource("1_0xj6i")
 default_boder_color = Color(0.636083, 0.677255, 0.753501, 1)
 border_color_focus = Color(1.03481e-06, 0.720339, 1.54018e-06, 1)
-cat_body = ExtResource("10_8edfj")
-cat_eyes = ExtResource("3_rwwuh")
-wallpaper = ExtResource("4_ikx2m")
-floor = ExtResource("15_tsi68")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 size = Vector2i(1920, 1080)
