@@ -16,13 +16,22 @@ var cam_default_fov
 @export var EARS_MARGIN_POS = 2
 @export var EARS_MARGIN_FOV = 5
 
+# Camera limits
+@export var LIMIT_FOV_MIN = 1
+@export var LIMIT_FOV_MAX = 140
+@export var LIMIT_X_MIN = -75
+@export var LIMIT_X_MAX = 75
+@export var LIMIT_Y_MIN = -40
+@export var LIMIT_Y_MAX = 70
+
+
 var is_aligned = false
 
-func _on_ready() -> void:
+func _ready() -> void:
 	# Keep default
 	cam_default_pos_x = camera_pivot.rotation_degrees.x
 	cam_default_pos_y = camera_pivot.rotation_degrees.y
-	cam_default_fov = camera.fov	
+	cam_default_fov = camera.fov
 	# Randomize FOV and position
 
 func _process(delta: float) -> void:
@@ -30,21 +39,29 @@ func _process(delta: float) -> void:
 		return
 	
 	if Input.is_action_pressed("ui_shift"):
+		# Check limit
 		if Input.is_action_pressed("ui_up"):
-			zoom(-_zoom_speed)
+			if camera.fov > LIMIT_FOV_MIN :
+				zoom(-_zoom_speed)
 		elif Input.is_action_pressed("ui_down"):
-			zoom(_zoom_speed)
+			if camera.fov < LIMIT_FOV_MAX :
+				zoom(_zoom_speed)
 	else:
 		if Input.is_action_pressed("ui_up"):
-			rotate_webcam_x(_pan_speed)
+			if camera_pivot.rotation_degrees.x < LIMIT_Y_MAX :
+				rotate_webcam_x(_pan_speed)
 		elif Input.is_action_pressed("ui_down"):
-			rotate_webcam_x(-_pan_speed)
+			if camera_pivot.rotation_degrees.x > LIMIT_Y_MIN :
+				rotate_webcam_x(-_pan_speed)
 		
 		if Input.is_action_pressed("ui_left"):
-			rotate_webcam_y(_pan_speed)
+			if camera_pivot.rotation_degrees.y < LIMIT_X_MAX :
+				rotate_webcam_y(_pan_speed)
 		elif Input.is_action_pressed("ui_right"):
-			rotate_webcam_y(-_pan_speed)
+			if camera_pivot.rotation_degrees.y > LIMIT_X_MIN :
+				rotate_webcam_y(-_pan_speed)
 			
+	print("x ", camera_pivot.rotation_degrees.x, " y ", camera_pivot.rotation_degrees.y, " fov ",camera.fov)
 	# Check if ears are aligned
 	if (
 		# X axis
@@ -62,6 +79,7 @@ func _process(delta: float) -> void:
 		is_aligned = false
 
 func zoom(speed) -> void:
+	
 	camera.fov += speed
 	
 	if speed < 0:
