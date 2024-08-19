@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw2j1ndf53q5w"
-path.s3tc="res://.godot/imported/monstera.png-d282d514e3e8bf615bc83f2f85d61964.s3tc.ctex"
+uid="uid://cl3r2jyo5vkdm"
+path.s3tc="res://.godot/imported/boss.png-8fd0a9d605cdc2613c1dc4c68547fe17.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/rooms/objects/second_plan/monstera.png"
-dest_files=["res://.godot/imported/monstera.png-d282d514e3e8bf615bc83f2f85d61964.s3tc.ctex"]
+source_file="res://assets/textures/rooms/objects/mug/boss.png"
+dest_files=["res://.godot/imported/boss.png-8fd0a9d605cdc2613c1dc4c68547fe17.s3tc.ctex"]
 
 [params]
 

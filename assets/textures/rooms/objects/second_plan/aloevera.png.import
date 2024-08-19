@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxdssnvbhjpu3"
-path="res://.godot/imported/cattree.png-5f2fc0089d33610d299baebfa591566c.ctex"
+uid="uid://css1xgr44nuft"
+path="res://.godot/imported/aloevera.png-7cff3e439dd43a313e5b951131d52097.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/rooms/objects/first_plan/cattree.png"
-dest_files=["res://.godot/imported/cattree.png-5f2fc0089d33610d299baebfa591566c.ctex"]
+source_file="res://assets/textures/rooms/objects/second_plan/aloevera.png"
+dest_files=["res://.godot/imported/aloevera.png-7cff3e439dd43a313e5b951131d52097.ctex"]
 
 [params]
 

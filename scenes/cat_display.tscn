@@ -9,12 +9,14 @@
 [ext_resource type="AudioStream" uid="uid://htf26qrq8weu" path="res://assets/sounds/effects/zoom_out.wav" id="5_j6drw"]
 [ext_resource type="AudioStream" uid="uid://c202x3vi4wpai" path="res://assets/sounds/effects/connect.wav" id="5_km0xu"]
 [ext_resource type="AudioStream" uid="uid://dq4wwwaoujahu" path="res://assets/sounds/effects/BIP.wav" id="5_lgkhl"]
-[ext_resource type="Texture2D" uid="uid://cmameg2k708sa" path="res://assets/textures/rooms/objects/monstera.png" id="7_6hpya"]
-[ext_resource type="Texture2D" uid="uid://ceet1gi5uti6n" path="res://assets/textures/rooms/objects/drawer.png" id="8_roypx"]
 [ext_resource type="Texture2D" uid="uid://cp5y11q2qlpjn" path="res://assets/textures/cat_parts/body/boss.png" id="10_8edfj"]
+[ext_resource type="Texture2D" uid="uid://dxdssnvbhjpu3" path="res://assets/textures/rooms/objects/first_plan/cattree.png" id="11_0h6ov"]
 [ext_resource type="Texture2D" uid="uid://blnd1jvhiwla8" path="res://assets/textures/cat_parts/mouth/neutral.png" id="11_cxlok"]
+[ext_resource type="Texture2D" uid="uid://bbjfog48my8ok" path="res://assets/textures/rooms/objects/second_plan/monstera.png" id="12_jafud"]
 [ext_resource type="Texture2D" uid="uid://5h71h82dfhcp" path="res://assets/textures/cat_parts/eyes/boss/normal.png" id="12_uor7u"]
+[ext_resource type="Texture2D" uid="uid://c6bbctx2i0s8q" path="res://assets/textures/rooms/objects/second_plan/plant.png" id="13_5x7pk"]
 [ext_resource type="Texture2D" uid="uid://cu0sb3nl4t17m" path="res://assets/textures/rooms/table.png" id="13_ceeji"]
+[ext_resource type="Texture2D" uid="uid://x4cqasctqth2" path="res://assets/textures/rooms/objects/mug/boss.png" id="13_s3b2k"]
 [ext_resource type="Texture2D" uid="uid://benihwxolii8c" path="res://assets/textures/rooms/wallpapers/duck.jpg" id="14_ys5lk"]
 [ext_resource type="Texture2D" uid="uid://d1na8so6vxeu" path="res://assets/textures/rooms/floors/boards.jpg" id="15_tsi68"]
 [ext_resource type="AudioStream" uid="uid://bxuhtxxwap2hj" path="res://assets/sounds/effects/disconnect.mp3" id="20_na4ef"]
@@ -84,16 +86,31 @@ transform = Transform3D(1, 0, 0, 0, 0.967749, 0.251917, 0, -0.251917, 0.967749, 
 current = true
 fov = 49.0
 
-[node name="objects" type="Node3D" parent="SubViewport/Parent3D"]
+[node name="objects" type="Node3D" parent="SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 
-[node name="Sprite3D2" type="Sprite3D" parent="SubViewport/Parent3D/objects"]
-transform = Transform3D(0.93, 0, 0, 0, 0.93, 0, 0, 0, 0.6, 3.80722, 4.84387, -3.58676)
+[node name="thirdPlan" type="Sprite3D" parent="SubViewport/objects"]
+unique_name_in_owner = true
+transform = Transform3D(0.96, 0, 0, 0, 0.96, 0, 0, 0, 0.6, -3.182, 0, -8)
+texture = ExtResource("11_0h6ov")
+
+[node name="secondPlan" type="Sprite3D" parent="SubViewport/objects"]
+unique_name_in_owner = true
+transform = Transform3D(0.93, 0, 0, 0, 0.93, 0, 0, 0, 0.6, 3.807, 0, -5)
 alpha_cut = 2
-texture = ExtResource("7_6hpya")
+texture = ExtResource("12_jafud")
 
-[node name="Sprite3D4" type="Sprite3D" parent="SubViewport/Parent3D/objects"]
-transform = Transform3D(0.96, 0, 0, 0, 0.96, 0, 0, 0, 0.6, -2.76095, 3.95506, -4.2005)
-texture = ExtResource("8_roypx")
+[node name="firstPlan" type="Sprite3D" parent="SubViewport/objects"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, -3)
+alpha_cut = 2
+texture = ExtResource("13_5x7pk")
+
+[node name="mug" type="Sprite3D" parent="SubViewport/objects"]
+unique_name_in_owner = true
+transform = Transform3D(0.0926422, 0, -0.451318, 0, 0.0971439, 0, 0.0747955, 0, 0.559005, 3.06126, -3.37343, 0.337024)
+alpha_cut = 2
+texture = ExtResource("13_s3b2k")
 
 [node name="cat" type="Node3D" parent="SubViewport/Parent3D"]
 transform = Transform3D(0.361119, 0, 0, 0, 0.361119, 0, 0, 0, 0.555758, -0.00206745, 2.35139, -0.896537)
