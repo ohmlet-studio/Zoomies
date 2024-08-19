@@ -13,7 +13,7 @@ extends Node2D
 @onready var mug_obg = %mug
 
 # Object position boundary
-@export var object_lim_x_axis = 5
+@export var object_lim_x_axis = 10
 
 @export var default_boder_color = Color("d7d7d7")
 @export var border_color_focus = Color(0, 0, 0.545098, 1)
@@ -46,9 +46,9 @@ func _ready() -> void:
 		third_plan_obj.set_texture(_get_random_texture("res://assets/textures/rooms/objects/third__plan/"))
 		mug_obg.set_texture(_get_random_texture("res://assets/textures/rooms/objects/mug/colored/"))
 		# Randomize object X axis
-		first_plan_obj.translate(Vector3(randf_range(-object_lim_x_axis, object_lim_x_axis), 0, 0))
-		second_plan_obj.translate(Vector3(randf_range(-object_lim_x_axis, object_lim_x_axis), 0, 0))
-		third_plan_obj.translate(Vector3(randf_range(-object_lim_x_axis, object_lim_x_axis), 0, 0))
+		first_plan_obj.translate(Vector3(randf_range(5, object_lim_x_axis), 0, 0))
+		second_plan_obj.translate(Vector3(randf_range(5, object_lim_x_axis), 0, 0))
+		third_plan_obj.translate(Vector3(randf_range(5, object_lim_x_axis), 0, 0))
 		
 	# ---------------------------------------------
 	
