@@ -21,11 +21,15 @@ var border_color = default_boder_color
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# ----------- Pick random texture for the cat -------------
+	# ----------- Pick random texture -------------
 	if randomize_cat:
 		cat_body = _get_random_texture("res://assets/textures/cat_parts/body/")
 		cat_eyes = _get_random_texture("res://assets/textures/cat_parts/eyes/normal/")
-	# ---------------------------------------------------------
+	
+	if randomize_room:
+		floor = _get_random_texture("res://assets/textures/rooms/floors/")
+		wallpaper = _get_random_texture("res://assets/textures/rooms/wallpapers/")
+	# ---------------------------------------------
 	
 	$SubViewport/cat/baseplate.texture = cat_body
 	$SubViewport/cat/eyes.texture = cat_eyes
