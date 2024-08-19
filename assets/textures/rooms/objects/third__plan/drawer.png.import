@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sljwsp5ja08f"
-path="res://.godot/imported/normal.png-01f51f878a54f4341fad818b27a9810e.ctex"
+uid="uid://d36w842si55hf"
+path="res://.godot/imported/drawer.png-5d097a5a79bec34dc16829ffd734ef0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/cat_parts/eyes/wide/normal.png"
-dest_files=["res://.godot/imported/normal.png-01f51f878a54f4341fad818b27a9810e.ctex"]
+source_file="res://assets/textures/rooms/objects/third__plan/drawer.png"
+dest_files=["res://.godot/imported/drawer.png-5d097a5a79bec34dc16829ffd734ef0c.ctex"]
 
 [params]
 

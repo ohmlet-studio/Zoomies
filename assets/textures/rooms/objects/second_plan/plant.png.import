@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djj1ili22ht46"
-path="res://.godot/imported/blink.png-4458b583b3693ac7335864302de329a9.ctex"
+uid="uid://c6bbctx2i0s8q"
+path="res://.godot/imported/plant.png-ca5562bbd65ed29d047a12a8667d304a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/cat_parts/eyes/oval/blink.png"
-dest_files=["res://.godot/imported/blink.png-4458b583b3693ac7335864302de329a9.ctex"]
+source_file="res://assets/textures/rooms/objects/second_plan/plant.png"
+dest_files=["res://.godot/imported/plant.png-ca5562bbd65ed29d047a12a8667d304a.ctex"]
 
 [params]
 

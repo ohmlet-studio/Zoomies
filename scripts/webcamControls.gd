@@ -66,7 +66,15 @@ func _process(delta: float) -> void:
 		elif Input.is_action_pressed("ui_down"):
 			if camera_pivot.rotation_degrees.x > LIMIT_Y_MIN :
 				rotate_webcam_x(-_pan_speed)
-	
+		
+		if Input.is_action_pressed("ui_left"):
+			if camera_pivot.rotation_degrees.y < LIMIT_X_MAX :
+				rotate_webcam_y(_pan_speed)
+		elif Input.is_action_pressed("ui_right"):
+			if camera_pivot.rotation_degrees.y > LIMIT_X_MIN :
+				rotate_webcam_y(-_pan_speed)
+			
+	# Check if ears are aligned
 	if (
 		# X axis
 		camera_pivot.rotation_degrees.x < (cam_default_pos_x + EARS_MARGIN_POS) &&
