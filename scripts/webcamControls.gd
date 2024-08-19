@@ -3,8 +3,8 @@ extends SubViewport
 var is_active = false
 var is_input_enabled = true;
 
-var _pan_speed: float = 1
-var _zoom_speed: float = 1
+@export var _pan_speed: float = 50
+@export var _zoom_speed: float = 50
 
 @onready var camera = $Parent3D/WebcamPivot/Camera3D;
 @onready var camera_pivot = $Parent3D/WebcamPivot
@@ -45,33 +45,33 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_pressed("ui_left"):
 		if camera_pivot.rotation_degrees.y < LIMIT_X_MAX :
-			rotate_webcam_y(_pan_speed)
+			rotate_webcam_y(_pan_speed * delta)
 	elif Input.is_action_pressed("ui_right"):
 		if camera_pivot.rotation_degrees.y > LIMIT_X_MIN :
-			rotate_webcam_y(-_pan_speed)
+			rotate_webcam_y(-_pan_speed * delta)
 	
 	if Input.is_action_pressed("ui_shift"):
 		# Check limit
 		if Input.is_action_pressed("ui_up"):
 			if camera.fov > LIMIT_FOV_MIN :
-				zoom(-_zoom_speed)
+				zoom(-_zoom_speed * delta)
 		elif Input.is_action_pressed("ui_down"):
 			if camera.fov < LIMIT_FOV_MAX :
-				zoom(_zoom_speed)
+				zoom(_zoom_speed * delta)
 	else:
 		if Input.is_action_pressed("ui_up"):
 			if camera_pivot.rotation_degrees.x < LIMIT_Y_MAX :
-				rotate_webcam_x(_pan_speed)
+				rotate_webcam_x(_pan_speed * delta)
 		elif Input.is_action_pressed("ui_down"):
 			if camera_pivot.rotation_degrees.x > LIMIT_Y_MIN :
-				rotate_webcam_x(-_pan_speed)
+				rotate_webcam_x(-_pan_speed * delta)
 		
 		if Input.is_action_pressed("ui_left"):
 			if camera_pivot.rotation_degrees.y < LIMIT_X_MAX :
-				rotate_webcam_y(_pan_speed)
+				rotate_webcam_y(_pan_speed * delta)
 		elif Input.is_action_pressed("ui_right"):
 			if camera_pivot.rotation_degrees.y > LIMIT_X_MIN :
-				rotate_webcam_y(-_pan_speed)
+				rotate_webcam_y(-_pan_speed * delta)
 			
 	# Check if ears are aligned
 	if (

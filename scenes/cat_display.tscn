@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dhrrkj5xdmdeb"]
+[gd_scene load_steps=28 format=3 uid="uid://dhrrkj5xdmdeb"]
 
 [ext_resource type="Script" path="res://scripts/cat_display.gd" id="1_0xj6i"]
 [ext_resource type="Texture2D" uid="uid://bj6o55ei14h8x" path="res://assets/textures/cat_display/hint.png" id="1_kwfk6"]
@@ -11,10 +11,13 @@
 [ext_resource type="AudioStream" uid="uid://dq4wwwaoujahu" path="res://assets/sounds/effects/BIP.wav" id="5_lgkhl"]
 [ext_resource type="Texture2D" uid="uid://cp5y11q2qlpjn" path="res://assets/textures/cat_parts/body/boss.png" id="10_8edfj"]
 [ext_resource type="Texture2D" uid="uid://blnd1jvhiwla8" path="res://assets/textures/cat_parts/mouth/neutral.png" id="11_cxlok"]
+[ext_resource type="Texture2D" uid="uid://dw2j1ndf53q5w" path="res://assets/textures/rooms/objects/second_plan/monstera.png" id="12_jafud"]
 [ext_resource type="Texture2D" uid="uid://5h71h82dfhcp" path="res://assets/textures/cat_parts/eyes/boss/normal.png" id="12_uor7u"]
 [ext_resource type="Texture2D" uid="uid://cu0sb3nl4t17m" path="res://assets/textures/rooms/table.png" id="13_ceeji"]
+[ext_resource type="Texture2D" uid="uid://21gyx8ffouly" path="res://assets/textures/rooms/objects/third__plan/drawer.png" id="13_e8e18"]
 [ext_resource type="Texture2D" uid="uid://cl3r2jyo5vkdm" path="res://assets/textures/rooms/objects/mug/boss.png" id="13_s3b2k"]
 [ext_resource type="Texture2D" uid="uid://benihwxolii8c" path="res://assets/textures/rooms/wallpapers/duck.jpg" id="14_ys5lk"]
+[ext_resource type="Texture2D" uid="uid://jovk6cvvllfn" path="res://assets/textures/rooms/objects/first_plan/lavalamp.png" id="15_siqhc"]
 [ext_resource type="Texture2D" uid="uid://d1na8so6vxeu" path="res://assets/textures/rooms/floors/boards.jpg" id="15_tsi68"]
 [ext_resource type="AudioStream" uid="uid://bxuhtxxwap2hj" path="res://assets/sounds/effects/disconnect.mp3" id="20_na4ef"]
 
@@ -137,30 +140,37 @@ mesh = SubResource("QuadMesh_gnht0")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_5fpeg")
 
-[node name="objects" type="Node3D" parent="SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+[node name="objects" type="Node3D" parent="SubViewport/Parent3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 0)
 
-[node name="thirdPlan" type="Sprite3D" parent="SubViewport/objects"]
+[node name="thirdPlan" type="Sprite3D" parent="SubViewport/Parent3D/objects"]
 unique_name_in_owner = true
-transform = Transform3D(0.96, 0, 0, 0, 0.96, 0, 0, 0, 0.6, -3.182, 0, -8)
+transform = Transform3D(0.96, 0, 0, 0, 0.96, 0, 0, 0, 0.6, 2.073, 0, -13)
+centered = false
+texture = ExtResource("13_e8e18")
 
-[node name="secondPlan" type="Sprite3D" parent="SubViewport/objects"]
+[node name="secondPlan" type="Sprite3D" parent="SubViewport/Parent3D/objects"]
 unique_name_in_owner = true
-transform = Transform3D(0.93, 0, 0, 0, 0.93, 0, 0, 0, 0.6, 3.807, 0, -5)
+transform = Transform3D(0.93, 0, 0, 0, 0.93, 0, 0, 0, 0.6, 14.007, 0, -10)
+centered = false
 alpha_cut = 2
+texture = ExtResource("12_jafud")
 
-[node name="firstPlan" type="Sprite3D" parent="SubViewport/objects"]
+[node name="firstPlan" type="Sprite3D" parent="SubViewport/Parent3D/objects"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.45048, 0, -8)
+centered = false
 alpha_cut = 2
+texture = ExtResource("15_siqhc")
 
-[node name="mug" type="Sprite3D" parent="SubViewport/objects"]
+[node name="mug" type="Sprite3D" parent="SubViewport/Parent3D/objects"]
 unique_name_in_owner = true
 transform = Transform3D(0.0926422, 0, -0.451318, 0, 0.0971439, 0, 0.0747955, 0, 0.559005, 3.06126, -3.37343, 0.337024)
 alpha_cut = 2
 texture = ExtResource("13_s3b2k")
 
 [node name="Parent2D" type="Node2D" parent="."]
+scale = Vector2(1.00639, 1.00639)
 
 [node name="CatDisplaySprite" type="Sprite2D" parent="Parent2D"]
 texture = SubResource("ViewportTexture_hixn4")
