@@ -15,6 +15,7 @@ default_boder_color = Color(0.636083, 0.677255, 0.753501, 1)
 border_color_focus = Color(1.03481e-06, 0.720339, 1.54018e-06, 1)
 
 [node name="SubViewport" parent="." instance=ExtResource("1_bc4rd")]
+EARS_MARGIN_FOV = 8
 
 [node name="CatDisplaySprite" type="Sprite2D" parent="."]
 texture = SubResource("ViewportTexture_hixn4")

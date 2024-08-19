@@ -107,3 +107,5 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ctksj")
 [node name="floor" type="MeshInstance3D" parent="world"]
 transform = Transform3D(340.919, 0, 0, 0, -8.27892e-06, 0.95, 0, -189.4, -4.15258e-08, 0, 0, 0)
 mesh = SubResource("QuadMesh_gnht0")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
