@@ -1,8 +1,9 @@
 extends Node2D
 
-@onready var nine_patch = $NinePatchRect
-@onready var sprite = $CatDisplaySprite
+@onready var nine_patch = $Parent2D/NinePatchRect
+@onready var sprite = $Parent2D/CatDisplaySprite
 @onready var sub_viewport = $SubViewport
+@onready var parent2D = $Parent2D
 
 @export var default_boder_color = Color("d7d7d7")
 @export var border_color_focus = Color(0, 0, 0.545098, 1)
@@ -34,11 +35,25 @@ func _ready() -> void:
 	# set the sprite texture to the viewport
 	sprite.texture = sub_viewport.get_texture()
 	sub_viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
+	
+	# set the sprite invisible
+	parent2D.visible = false
+
+
+func connect_cat():
 	$connect_sound.play()
+	parent2D.visible = true
+	
+func disconnect_cat():
+	$disconnect_sound.play()
+	parent2D.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	# set border color
 	nine_patch.modulate = border_color
+	
+	# change color if aligned
 	if sub_viewport.is_aligned :
 		border_color = Color("Green")
 	else:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dhrrkj5xdmdeb"]
+[gd_scene load_steps=27 format=3 uid="uid://dhrrkj5xdmdeb"]
 
 [ext_resource type="Script" path="res://scripts/cat_display.gd" id="1_0xj6i"]
 [ext_resource type="Texture2D" uid="uid://bj6o55ei14h8x" path="res://assets/textures/cat_display/hint.png" id="1_kwfk6"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cu0sb3nl4t17m" path="res://assets/textures/rooms/table.png" id="13_ceeji"]
 [ext_resource type="Texture2D" uid="uid://benihwxolii8c" path="res://assets/textures/rooms/wallpapers/duck.jpg" id="14_ys5lk"]
 [ext_resource type="Texture2D" uid="uid://d1na8so6vxeu" path="res://assets/textures/rooms/floors/boards.jpg" id="15_tsi68"]
+[ext_resource type="AudioStream" uid="uid://bxuhtxxwap2hj" path="res://assets/sounds/effects/disconnect.mp3" id="20_na4ef"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_jcuwj"]
 
@@ -144,11 +145,14 @@ mesh = SubResource("QuadMesh_gnht0")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_5fpeg")
 
-[node name="CatDisplaySprite" type="Sprite2D" parent="."]
+[node name="Parent2D" type="Node2D" parent="."]
+scale = Vector2(0.766389, 0.766389)
+
+[node name="CatDisplaySprite" type="Sprite2D" parent="Parent2D"]
 texture = SubResource("ViewportTexture_hixn4")
 centered = false
 
-[node name="EarHint" type="TextureRect" parent="."]
+[node name="EarHint" type="TextureRect" parent="Parent2D"]
 offset_left = 259.0
 offset_top = -53.0
 offset_right = 2510.0
@@ -157,7 +161,7 @@ scale = Vector2(0.600312, 0.600312)
 texture = ExtResource("1_kwfk6")
 metadata/_edit_group_ = true
 
-[node name="EarHintAligned" type="TextureRect" parent="."]
+[node name="EarHintAligned" type="TextureRect" parent="Parent2D"]
 offset_left = 259.0
 offset_top = -53.0
 offset_right = 2510.0
@@ -166,7 +170,7 @@ scale = Vector2(0.600312, 0.600312)
 texture = ExtResource("1_kwfk6")
 metadata/_edit_group_ = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="NinePatchRect" type="NinePatchRect" parent="Parent2D"]
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("4_3yo0l")
@@ -177,7 +181,7 @@ patch_margin_bottom = 20
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="Parent2D"]
 modulate = Color(1, 1, 1, 0)
 offset_left = -19.0
 offset_top = -13.0
@@ -188,6 +192,10 @@ offset_bottom = 1102.0
 stream = ExtResource("5_km0xu")
 volume_db = -5.0
 
-[connection signal="button_down" from="Button" to="." method="_on_sprite_input"]
-[connection signal="mouse_entered" from="Button" to="." method="mouse_enter"]
-[connection signal="mouse_exited" from="Button" to="." method="mouse_exit"]
+[node name="disconnect_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_na4ef")
+volume_db = -5.0
+
+[connection signal="button_down" from="Parent2D/Button" to="." method="_on_sprite_input"]
+[connection signal="mouse_entered" from="Parent2D/Button" to="." method="mouse_enter"]
+[connection signal="mouse_exited" from="Parent2D/Button" to="." method="mouse_exit"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt2t7cgg75aot"]
+
+[ext_resource type="PackedScene" uid="uid://dhrrkj5xdmdeb" path="res://scenes/cat_display.tscn" id="1_0derp"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_67l7x"]
+viewport_path = NodePath(".")
+
+[node name="CatDisplayBoss" instance=ExtResource("1_0derp")]
+
+[node name="CatDisplaySprite" parent="Parent2D" index="0"]
+texture = SubResource("ViewportTexture_67l7x")

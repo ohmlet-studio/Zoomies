@@ -18,7 +18,7 @@ var cam_default_fov
 
 var is_aligned = false
 
-func _on_ready() -> void:
+func _ready() -> void:
 	# Keep default
 	cam_default_pos_x = camera_pivot.rotation_degrees.x
 	cam_default_pos_y = camera_pivot.rotation_degrees.y

@@ -25,12 +25,11 @@ const lines: Array[String] = [
 const test_position = Vector2(960, 250)
 
 func _ready() -> void:
-	# make CatDisplay invisible
-	$Boss.visible = false
-	
 	# wait for 2 seconds
-	await get_tree().create_timer(5.0)
+	await get_tree().create_timer(0.5).timeout
 	
-	$Boss.visible = true
+	$Boss.connect_cat()
+	
+	await get_tree().create_timer(0.5).timeout
 	
 	DialogManager.start_dialog(test_position, lines)
