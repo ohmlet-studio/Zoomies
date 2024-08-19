@@ -11,24 +11,24 @@ load_path = "res://.godot/imported/arrow.png-a613ef7a4a4a9b11967293b825e6393a.ct
 script = ExtResource("1_kutmv")
 
 [node name="ZoomiesUI" parent="." instance=ExtResource("2_pkgyb")]
-position = Vector2(-957, -536)
+position = Vector2(-960, -540)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="UpButton" type="TextureButton" parent="."]
-offset_left = 764.367
-offset_top = -392.317
-offset_right = 847.367
-offset_bottom = -324.317
+offset_left = 758.0
+offset_top = -392.0
+offset_right = 905.0
+offset_bottom = -276.0
 rotation = -4.71238
 pivot_offset = Vector2(70.7335, 58.3076)
 texture_normal = SubResource("CompressedTexture2D_1ajsv")
 
 [node name="DownButton" type="TextureButton" parent="."]
-offset_left = 804.0
-offset_top = 251.0
-offset_right = 887.0
-offset_bottom = 319.0
+offset_left = 803.0
+offset_top = 294.0
+offset_right = 950.0
+offset_bottom = 410.0
 rotation = -1.57079
 pivot_offset = Vector2(79, 58)
 texture_normal = ExtResource("3_b7cfu")
