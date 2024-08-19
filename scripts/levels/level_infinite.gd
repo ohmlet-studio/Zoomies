@@ -87,7 +87,7 @@ func _process(delta: float) -> void:
 		pos_shift_y += PIX_SPEED
 
 	# Handle loading/unloading of scenes based on visibility
-	_check_visibility()
+	#_check_visibility()
 
 func _check_visibility() -> void:
 	for item in scene_array:
