@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyeax2coh1p0u"
-valid=false
+uid="uid://clhhq5y5ua6sl"
+path="res://.godot/imported/Body4.png-5653591b2d0bb692215c466c1ce37482.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://assets/textures/cat_parts/eyes/eyes.png"
+source_file="res://assets/textures/cat_parts/body/Body4.png"
+dest_files=["res://.godot/imported/Body4.png-5653591b2d0bb692215c466c1ce37482.ctex"]
 
 [params]
 

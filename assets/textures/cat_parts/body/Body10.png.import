@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3yb7u878qgsp"
-path.s3tc="res://.godot/imported/bouche.png-80c8fe88dd40c96d7f50a886f2f7a39b.s3tc.ctex"
+uid="uid://psdxtb0f6bkj"
+path="res://.godot/imported/Body10.png-0cf3332019ecb79d38446764d83df12c.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/cat_parts/mouth/bouche.png"
-dest_files=["res://.godot/imported/bouche.png-80c8fe88dd40c96d7f50a886f2f7a39b.s3tc.ctex"]
+source_file="res://assets/textures/cat_parts/body/Body10.png"
+dest_files=["res://.godot/imported/Body10.png-0cf3332019ecb79d38446764d83df12c.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

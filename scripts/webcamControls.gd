@@ -7,6 +7,8 @@ var _zoom_speed: float = 1
 @onready var camera = $world/WebcamPivot/Camera3D;
 @onready var camera_pivot = $world/WebcamPivot
 
+var is_aligned = false
+
 func _process(delta: float) -> void:
 	if !is_active:
 		return

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2rskphkhcspx"]
+[gd_scene load_steps=5 format=3 uid="uid://d2rskphkhcspx"]
 
 [ext_resource type="FontFile" uid="uid://djf30q323awye" path="res://assets/fonts/Vividly-Regular.ttf" id="1_r48s2"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="2_v6ora"]
+[ext_resource type="AudioStream" uid="uid://b3i0482cg5esx" path="res://assets/sounds/Menu Theme.wav" id="3_ehhgd"]
 
 [sub_resource type="Theme" id="Theme_jyfsc"]
 default_font = ExtResource("1_r48s2")
@@ -86,6 +87,10 @@ focus_next = NodePath("../StartGameButton")
 focus_previous = NodePath("../OptionsButton")
 theme_override_font_sizes/font_size = 32
 text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ehhgd")
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/ButtonsVBox/StartGameButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/ButtonsVBox/OptionsButton" to="." method="_on_options_button_pressed"]

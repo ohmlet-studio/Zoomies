@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bns87magxt27f"
-valid=false
+uid="uid://c3867pvu4ex0e"
+path="res://.godot/imported/Body14.png-1a596d0e153ab7a626dda07248053e06.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://assets/textures/cat_parts/mouth/mouth_closed.png"
+source_file="res://assets/textures/cat_parts/body/Body14.png"
+dest_files=["res://.godot/imported/Body14.png-1a596d0e153ab7a626dda07248053e06.ctex"]
 
 [params]
 
