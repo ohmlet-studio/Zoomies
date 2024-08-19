@@ -5,6 +5,8 @@ extends Node2D
 @onready var sub_viewport = $SubViewport
 @onready var parent2D = $Parent2D
 @onready var parent3D = $SubViewport/Parent3D
+@onready var cat = $SubViewport/Parent3D/cat
+
 
 # Objects sprites
 @onready var first_plan_obj = %firstPlan
@@ -27,6 +29,7 @@ extends Node2D
 @export var floor: Texture2D
 #@export var room_objects: Array[Texture2D]
 
+# object list for web compatibility
 @export var first_plan_objects_list: Array[Texture]
 @export var second_plan_objects_list: Array[Texture]
 @export var third_plan_objects_list: Array[Texture]
@@ -36,8 +39,11 @@ extends Node2D
 @export var cat_eyes_list: Array[Texture]
 @export var mug_list: Array[Texture]
 
+# mouth animations
+@export var mouth_talking_poses: Array[Texture2D] = []
+@export var mouth_idle_texture: Texture2D
 
-
+var is_talking = false
 var border_color = default_boder_color
 
 # Called when the node enters the scene tree for the first time.
@@ -133,6 +139,18 @@ func connect_cat():
 func disconnect_cat():
 	$disconnect_sound.play()
 	parent2D.visible = false
+	
+func change_mouth_pose():
+	# get a random element from mouth_talking_poses
+	var random_texture = mouth_talking_poses[randi() % mouth_talking_poses.size()]
+	cat.get_node("mouth").texture = random_texture
+
+func set_mouth_idle():
+	cat.get_node("mouth").texture = mouth_idle_texture
+	
+func blink():
+	pass #TODO
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -144,7 +162,6 @@ func _process(delta: float) -> void:
 		border_color = Color("Green")
 	else:
 		border_color = Color(0, 0, 0.545098, 1)
-	
 
 func mouse_enter():
 	border_color = border_color_hover

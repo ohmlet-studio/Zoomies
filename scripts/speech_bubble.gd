@@ -17,6 +17,7 @@ var punctuation_time = 0.2
 
 var text_aggreator = ""
 var bubble_position
+var cat_display
 
 @export var voice_A: Array[AudioStream]
 @export var voice_B: Array[AudioStream]
@@ -31,9 +32,11 @@ func _ready():
 	sounds['B'] = voice_B
 	sounds['C'] = voice_C
 
-func display_text(text_to_display: String, position: Vector2):
+func display_text(text_to_display: String, position: Vector2, cat_display: Node2D):
 	text = text_to_display
 	bubble_position = position
+	self.cat_display = cat_display
+	
 	_display_letter()
 
 
@@ -66,6 +69,7 @@ func _display_letter():
 	
 	letter_index += 1
 	if letter_index >= text.length():
+		self.cat_display.set_mouth_idle()
 		finished_displaying.emit()
 		display_all = false
 		return
@@ -81,6 +85,7 @@ func _display_letter():
 				timer.start(space_time)
 			_:
 				_play_meow(voice)
+				self.cat_display.change_mouth_pose()
 				timer.start(letter_time)
 			
 	
