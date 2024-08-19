@@ -1,16 +1,45 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1k3dsa6xyl3y"]
+[gd_scene load_steps=32 format=3 uid="uid://c1k3dsa6xyl3y"]
 
 [ext_resource type="Script" path="res://scripts/speech_bubble.gd" id="1_ekv2r"]
 [ext_resource type="Texture2D" uid="uid://bnjpc6iqqytx" path="res://assets/textures/bubbles/speech_bubble.png" id="2_s5hkw"]
 [ext_resource type="FontFile" uid="uid://djf30q323awye" path="res://assets/fonts/Vividly-Regular.ttf" id="3_3qy4i"]
+[ext_resource type="AudioStream" uid="uid://cl0t5efav2inp" path="res://assets/sounds/fonts/A/A (2).wav" id="3_ixsv7"]
+[ext_resource type="AudioStream" uid="uid://vjpj1g878o01" path="res://assets/sounds/fonts/A/A (3).wav" id="4_4t43t"]
 [ext_resource type="Texture2D" uid="uid://b8fmxgq5p6en2" path="res://assets/textures/bubbles/bubble_tail.png" id="4_se7q3"]
+[ext_resource type="AudioStream" uid="uid://1l5jg4e2pisi" path="res://assets/sounds/fonts/A/A (4).wav" id="5_gsu2q"]
 [ext_resource type="AudioStream" uid="uid://bwh4e4bip5d5r" path="res://assets/sounds/fonts/A/A (1).wav" id="5_noj14"]
+[ext_resource type="AudioStream" uid="uid://v7dm5plrlodw" path="res://assets/sounds/fonts/A/A (5).wav" id="6_5d4y0"]
+[ext_resource type="AudioStream" uid="uid://hj5dm3pxo5n4" path="res://assets/sounds/fonts/A/A (6).wav" id="7_moi6e"]
+[ext_resource type="AudioStream" uid="uid://dlnbpfk8uebs4" path="res://assets/sounds/fonts/A/A (7).wav" id="8_jfmfe"]
+[ext_resource type="AudioStream" uid="uid://bdfoio8tmdffj" path="res://assets/sounds/fonts/A/A (8).wav" id="9_mws2u"]
+[ext_resource type="AudioStream" uid="uid://7f31e58fnyig" path="res://assets/sounds/fonts/A/A (9).wav" id="10_f3cbv"]
+[ext_resource type="AudioStream" uid="uid://q8lofqgvk5l2" path="res://assets/sounds/fonts/B/B (1).wav" id="11_j3lhd"]
+[ext_resource type="AudioStream" uid="uid://n2vb2ngmotnm" path="res://assets/sounds/fonts/B/B (2).wav" id="12_s0jvb"]
+[ext_resource type="AudioStream" uid="uid://0dnrwbyhqpq7" path="res://assets/sounds/fonts/B/B (3).wav" id="13_w0wp0"]
+[ext_resource type="AudioStream" uid="uid://bbkw3n6sxu4h" path="res://assets/sounds/fonts/B/B (4).wav" id="14_5thm7"]
+[ext_resource type="AudioStream" uid="uid://c6hq6nl5gk8kh" path="res://assets/sounds/fonts/B/B (5).wav" id="15_53rgn"]
+[ext_resource type="AudioStream" uid="uid://c72gd63f0kexx" path="res://assets/sounds/fonts/B/B (6).wav" id="16_aicv3"]
+[ext_resource type="AudioStream" uid="uid://d1urhwpnanlgi" path="res://assets/sounds/fonts/B/B (7).wav" id="17_bwaks"]
+[ext_resource type="AudioStream" uid="uid://dkd2u75m0lacx" path="res://assets/sounds/fonts/B/B (8).wav" id="18_7ngv4"]
+[ext_resource type="AudioStream" uid="uid://i0cpcs0mjw3k" path="res://assets/sounds/fonts/B/B (9).wav" id="19_pobk4"]
+[ext_resource type="AudioStream" uid="uid://dv0ucu7iwbtv8" path="res://assets/sounds/fonts/C/C (1).wav" id="20_volox"]
+[ext_resource type="AudioStream" uid="uid://buquys7glechc" path="res://assets/sounds/fonts/C/C (2).wav" id="21_ckoag"]
+[ext_resource type="AudioStream" uid="uid://dk4una1t8y3wm" path="res://assets/sounds/fonts/C/C (3).wav" id="22_exhx5"]
+[ext_resource type="AudioStream" uid="uid://co0oy1yeycvrd" path="res://assets/sounds/fonts/C/C (4).wav" id="23_cf07f"]
+[ext_resource type="AudioStream" uid="uid://cv1xthwvdpfv8" path="res://assets/sounds/fonts/C/C (5).wav" id="24_wdkpt"]
+[ext_resource type="AudioStream" uid="uid://b6rj8ee37khcj" path="res://assets/sounds/fonts/C/C (6).wav" id="25_g52nl"]
+[ext_resource type="AudioStream" uid="uid://d1wf4ku0udsdv" path="res://assets/sounds/fonts/C/C (7).wav" id="26_chqsm"]
+[ext_resource type="AudioStream" uid="uid://dfiw5jny28ogh" path="res://assets/sounds/fonts/C/C (8).wav" id="27_4des1"]
+[ext_resource type="AudioStream" uid="uid://d08uqghjpohtd" path="res://assets/sounds/fonts/C/C (9).wav" id="28_gv5sc"]
 
 [node name="SpeechBubble" type="MarginContainer"]
 texture_filter = 1
 offset_right = 195.0
 offset_bottom = 128.0
 script = ExtResource("1_ekv2r")
+voice_A = Array[AudioStream]([ExtResource("5_noj14"), ExtResource("3_ixsv7"), ExtResource("4_4t43t"), ExtResource("5_gsu2q"), ExtResource("6_5d4y0"), ExtResource("7_moi6e"), ExtResource("8_jfmfe"), ExtResource("9_mws2u"), ExtResource("10_f3cbv")])
+voice_B = Array[AudioStream]([ExtResource("11_j3lhd"), ExtResource("12_s0jvb"), ExtResource("13_w0wp0"), ExtResource("14_5thm7"), ExtResource("15_53rgn"), ExtResource("16_aicv3"), ExtResource("17_bwaks"), ExtResource("18_7ngv4"), ExtResource("19_pobk4")])
+voice_C = Array[AudioStream]([ExtResource("20_volox"), ExtResource("21_ckoag"), ExtResource("22_exhx5"), ExtResource("23_cf07f"), ExtResource("24_wdkpt"), ExtResource("25_g52nl"), ExtResource("26_chqsm"), ExtResource("27_4des1"), ExtResource("28_gv5sc")])
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 2

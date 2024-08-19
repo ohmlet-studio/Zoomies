@@ -27,6 +27,17 @@ extends Node2D
 @export var floor: Texture2D
 #@export var room_objects: Array[Texture2D]
 
+@export var first_plan_objects_list: Array[Texture]
+@export var second_plan_objects_list: Array[Texture]
+@export var third_plan_objects_list: Array[Texture]
+@export var floors_list: Array[Texture]
+@export var wallpapers_list: Array[Texture]
+@export var cat_bodies_list: Array[Texture]
+@export var cat_eyes_list: Array[Texture]
+@export var mug_list: Array[Texture]
+
+
+
 var border_color = default_boder_color
 
 # Called when the node enters the scene tree for the first time.
