@@ -18,9 +18,29 @@ grow_vertical = 2
 texture = ExtResource("1_a80tg")
 expand_mode = 1
 
+[node name="UpRectangle" type="ColorRect" parent="."]
+visible = false
+top_level = true
+offset_left = 99.0
+offset_top = 75.9999
+offset_right = 1819.0
+offset_bottom = 292.0
+scale = Vector2(1, 0.560001)
+color = Color(0.72549, 0.882353, 0.960784, 1)
+
 [node name="bottom_bar" type="Node2D" parent="."]
+top_level = true
 position = Vector2(159, 174)
 scale = Vector2(0.830135, 0.830135)
+
+[node name="DownRectangle" type="ColorRect" parent="bottom_bar"]
+visible = false
+offset_left = 101.188
+offset_top = 944.425
+offset_right = 1821.19
+offset_bottom = 1160.42
+scale = Vector2(1, 0.560001)
+color = Color(0.72549, 0.882353, 0.960784, 1)
 
 [node name="menu" type="TextureButton" parent="bottom_bar"]
 offset_left = 692.0

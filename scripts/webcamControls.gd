@@ -6,8 +6,8 @@ var is_input_enabled = true;
 var _pan_speed: float = 1
 var _zoom_speed: float = 1
 
-@onready var camera = $WebcamPivot/Camera3D;
-@onready var camera_pivot = $WebcamPivot
+@onready var camera = $Parent3D/WebcamPivot/Camera3D;
+@onready var camera_pivot = $Parent3D/WebcamPivot
 @onready var ding_player = $ding_player
 
 # Keep camera default FOV and position

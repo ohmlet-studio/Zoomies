@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dhrrkj5xdmdeb"]
+[gd_scene load_steps=26 format=3 uid="uid://dhrrkj5xdmdeb"]
 
 [ext_resource type="Script" path="res://scripts/cat_display.gd" id="1_0xj6i"]
 [ext_resource type="Texture2D" uid="uid://bj6o55ei14h8x" path="res://assets/textures/cat_display/hint.png" id="1_kwfk6"]
@@ -28,15 +28,19 @@ albedo_texture = ExtResource("13_ceeji")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ctksj"]
 shading_mode = 0
 albedo_texture = ExtResource("14_ys5lk")
-uv1_scale = Vector3(20, 20, 20)
+uv1_scale = Vector3(2.5, 2.5, 2.5)
 distance_fade_max_distance = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v6h4j"]
+shading_mode = 0
+albedo_color = Color(0.393086, 0.393086, 0.393085, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_gnht0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5fpeg"]
 shading_mode = 0
 albedo_texture = ExtResource("15_tsi68")
-uv1_scale = Vector3(10, 10, 10)
+uv1_scale = Vector3(2.5, 2.5, 2.5)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_hixn4"]
 viewport_path = NodePath("SubViewport")
@@ -70,75 +74,77 @@ stream = ExtResource("5_lgkhl")
 stream = ExtResource("5_lgkhl")
 volume_db = -3.0
 
-[node name="WebcamPivot" type="Node3D" parent="SubViewport"]
+[node name="Parent3D" type="Node3D" parent="SubViewport"]
+
+[node name="WebcamPivot" type="Node3D" parent="SubViewport/Parent3D"]
 transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 2.70772, 2.92663)
 
-[node name="Camera3D" type="Camera3D" parent="SubViewport/WebcamPivot"]
+[node name="Camera3D" type="Camera3D" parent="SubViewport/Parent3D/WebcamPivot"]
 transform = Transform3D(1, 0, 0, 0, 0.967749, 0.251917, 0, -0.251917, 0.967749, 0, 0.0243332, -0.871258)
 current = true
 fov = 49.0
 
-[node name="objects" type="Node3D" parent="SubViewport"]
+[node name="objects" type="Node3D" parent="SubViewport/Parent3D"]
 
-[node name="Sprite3D2" type="Sprite3D" parent="SubViewport/objects"]
+[node name="Sprite3D2" type="Sprite3D" parent="SubViewport/Parent3D/objects"]
 transform = Transform3D(0.93, 0, 0, 0, 0.93, 0, 0, 0, 0.6, 3.80722, 4.84387, -3.58676)
 alpha_cut = 2
 texture = ExtResource("7_6hpya")
 
-[node name="Sprite3D4" type="Sprite3D" parent="SubViewport/objects"]
+[node name="Sprite3D4" type="Sprite3D" parent="SubViewport/Parent3D/objects"]
 transform = Transform3D(0.96, 0, 0, 0, 0.96, 0, 0, 0, 0.6, -2.76095, 3.95506, -4.2005)
 texture = ExtResource("8_roypx")
 
-[node name="cat" type="Node3D" parent="SubViewport"]
+[node name="cat" type="Node3D" parent="SubViewport/Parent3D"]
 transform = Transform3D(0.361119, 0, 0, 0, 0.361119, 0, 0, 0, 0.555758, -0.00206745, 2.35139, -0.896537)
 
-[node name="baseplate" type="Sprite3D" parent="SubViewport/cat"]
+[node name="baseplate" type="Sprite3D" parent="SubViewport/Parent3D/cat"]
 texture = ExtResource("10_8edfj")
 
-[node name="mouth" type="Sprite3D" parent="SubViewport/cat"]
+[node name="mouth" type="Sprite3D" parent="SubViewport/Parent3D/cat"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.229643, 0.043834)
 alpha_cut = 2
 texture = ExtResource("11_cxlok")
 
-[node name="eyes" type="Sprite3D" parent="SubViewport/cat"]
+[node name="eyes" type="Sprite3D" parent="SubViewport/Parent3D/cat"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30041, 0.0459423)
 alpha_cut = 2
 texture = ExtResource("12_uor7u")
 
-[node name="room" type="Node3D" parent="SubViewport"]
+[node name="room" type="Node3D" parent="SubViewport/Parent3D"]
 
-[node name="table" type="MeshInstance3D" parent="SubViewport/room"]
+[node name="table" type="MeshInstance3D" parent="SubViewport/Parent3D/room"]
 transform = Transform3D(10.1837, 0, 0, 0, -2.59266e-07, 5.28388, 0, -5.93132, -2.30966e-07, 0.00234455, 1.08041, 2.08177)
 mesh = SubResource("QuadMesh_jcuwj")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_mkma4")
 
-[node name="wallpaper" type="MeshInstance3D" parent="SubViewport/room"]
-transform = Transform3D(382.885, 0, 0, 0, 204.644, 0, 0, 0, 5.28388, -0.0193001, 12.6509, -15.4421)
+[node name="wall_right" type="MeshInstance3D" parent="SubViewport/Parent3D/room"]
+transform = Transform3D(-2.12179e-06, 0, -0.56421, 0, 25.9439, 0, 48.5409, 0, -2.46624e-08, 23.9107, 10.9102, 6.48066)
 mesh = SubResource("QuadMesh_jcuwj")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_ctksj")
 
-[node name="ceiling" type="MeshInstance3D" parent="SubViewport/room"]
-transform = Transform3D(382.885, 0, 0, 0, 3.05176e-05, -5.28388, 0, 204.644, 4.17233e-07, -0.0193001, 22.6509, -15.4421)
+[node name="wall_behind" type="MeshInstance3D" parent="SubViewport/Parent3D/room"]
+transform = Transform3D(48.5409, 0, -1.77636e-15, 0, 25.9439, 0, 0, 0, 0.56421, 0.00514221, 11.0583, -16.557)
 mesh = SubResource("QuadMesh_jcuwj")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_ctksj")
 
-[node name="wall_left" type="MeshInstance3D" parent="SubViewport/room"]
-transform = Transform3D(-1.67364e-05, 0, 5.28388, 0, 204.644, 0, -382.885, 0, -2.30966e-07, -28.0193, 12.6509, -15.4421)
+[node name="wall_ceiling" type="MeshInstance3D" parent="SubViewport/Parent3D/room"]
+transform = Transform3D(48.5409, 0, -1.77636e-15, 1.02789e-20, -1.13404e-06, -0.56421, 1.02789e-20, 25.9439, -2.46624e-08, 0.00514221, 23.0583, -3.557)
+mesh = SubResource("QuadMesh_jcuwj")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_v6h4j")
+
+[node name="wall_left" type="MeshInstance3D" parent="SubViewport/Parent3D/room"]
+transform = Transform3D(-2.12179e-06, 0, 0.56421, 0, 25.9439, 0, -48.5409, 0, -2.46624e-08, -23.7914, 11.022, 6.8348)
 mesh = SubResource("QuadMesh_jcuwj")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_ctksj")
 
-[node name="wallpaper3" type="MeshInstance3D" parent="SubViewport/room"]
-transform = Transform3D(-1.67364e-05, 0, -5.28388, 0, 204.644, 0, 382.885, 0, -2.30966e-07, 28.9807, 12.6509, -15.4421)
-mesh = SubResource("QuadMesh_jcuwj")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_ctksj")
-
-[node name="floor" type="MeshInstance3D" parent="SubViewport/room"]
-transform = Transform3D(340.919, 0, 0, 0, -8.27892e-06, 0.95, 0, -189.4, -4.15258e-08, 0, 0, 0)
+[node name="floor" type="MeshInstance3D" parent="SubViewport/Parent3D/room"]
+transform = Transform3D(51.3319, 0, 0, 0, -1.24655e-06, 0.143041, 0, -28.5178, -6.25251e-09, 0.00270176, 0.147467, -2.23176)
 mesh = SubResource("QuadMesh_gnht0")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_5fpeg")

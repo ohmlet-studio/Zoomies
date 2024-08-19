@@ -19,6 +19,8 @@ var buttonDownPressed = false
 var buttonUpPressed = false
 
 @export var scene_array = Array()
+@onready var zoomiesui = $ZoomiesUI
+
 var idx = 0
 
 # Add scene when pressing 'A' (or 'Q' in QWERTY mode), only used in debug mode
@@ -34,8 +36,10 @@ func _instantiate_cat_display():
 	# this fails because the instance is not ready, help
 	# Add scene to parent node
 	add_child(cat_scene_node)
+	
 	cat_scene_node.unalign_camera_random(DIFFICULTY, DIFFICULTY)
 	cat_scene_node.connect_cat()
+	WebcamManager.add_new_display(cat_scene_node)
 	
 	scene_array.append({
 		"scene": cat_scene_node,

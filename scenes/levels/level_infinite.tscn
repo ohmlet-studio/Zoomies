@@ -1,53 +1,34 @@
 [gd_scene load_steps=4 format=3 uid="uid://dst57avkngwuw"]
 
-[ext_resource type="Texture2D" uid="uid://0l2ayk71gk40" path="res://assets/textures/zoomies_interface.jpg" id="1_ht0o4"]
-[ext_resource type="Script" path="res://scripts/level_infinite.gd" id="1_kutmv"]
-[ext_resource type="Texture2D" uid="uid://b8fmxgq5p6en2" path="res://assets/textures/bubbles/bubble_tail.png" id="3_0vlbl"]
+[ext_resource type="Script" path="res://scripts/levels/level_infinite.gd" id="1_kutmv"]
+[ext_resource type="PackedScene" uid="uid://cs6sy82mme6s4" path="res://scenes/ui/zoomies_ui.tscn" id="2_pkgyb"]
+[ext_resource type="Texture2D" uid="uid://e8j6a0ql6ryr" path="res://assets/textures/UI/arrow.png" id="3_b7cfu"]
 
 [node name="LevelInfinite" type="Node2D"]
 script = ExtResource("1_kutmv")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_ht0o4")
+[node name="ZoomiesUI" parent="." instance=ExtResource("2_pkgyb")]
+position = Vector2(-957, -533)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="UpButton" type="TextureButton" parent="."]
-offset_left = 808.0
-offset_top = -368.0
-offset_right = 904.0
-offset_bottom = -272.0
-rotation = -3.15528
-pivot_offset = Vector2(49, 46)
-texture_normal = ExtResource("3_0vlbl")
+offset_left = 764.367
+offset_top = -392.317
+offset_right = 911.367
+offset_bottom = -276.317
+rotation = -4.71238
+pivot_offset = Vector2(70.7335, 58.3076)
+texture_normal = ExtResource("3_b7cfu")
 
 [node name="DownButton" type="TextureButton" parent="."]
-offset_left = 808.0
-offset_top = 248.0
-offset_right = 904.0
-offset_bottom = 344.0
-texture_normal = ExtResource("3_0vlbl")
-
-[node name="UpRectangle" type="ColorRect" parent="."]
-top_level = true
-offset_left = -936.0
-offset_top = -456.0
-offset_right = 776.0
-offset_bottom = -376.0
-color = Color(0.72549, 0.882353, 0.960784, 1)
-
-[node name="DownRectangle" type="ColorRect" parent="."]
-top_level = true
-offset_left = -944.0
-offset_top = 328.0
-offset_right = 776.0
-offset_bottom = 544.0
-color = Color(0.72549, 0.882353, 0.960784, 1)
+offset_left = 756.0
+offset_top = 294.0
+offset_right = 903.0
+offset_bottom = 410.0
+rotation = -1.57079
+pivot_offset = Vector2(79, 58)
+texture_normal = ExtResource("3_b7cfu")
 
 [connection signal="button_down" from="UpButton" to="." method="_on_up_button_button_down"]
 [connection signal="button_up" from="UpButton" to="." method="_on_up_button_button_up"]

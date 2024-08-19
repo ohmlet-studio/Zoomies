@@ -4,6 +4,7 @@ extends Node2D
 @onready var sprite = $Parent2D/CatDisplaySprite
 @onready var sub_viewport = $SubViewport
 @onready var parent2D = $Parent2D
+@onready var parent3D = $SubViewport/Parent3D
 
 @export var default_boder_color = Color("d7d7d7")
 @export var border_color_focus = Color(0, 0, 0.545098, 1)
@@ -31,15 +32,24 @@ func _ready() -> void:
 		wallpaper = _get_random_texture("res://assets/textures/rooms/wallpapers/")
 	# ---------------------------------------------
 	
-	$SubViewport/cat/baseplate.texture = cat_body
-	$SubViewport/cat/eyes.texture = cat_eyes
+	$SubViewport/Parent3D/cat/baseplate.texture = cat_body
+	$SubViewport/Parent3D/cat/eyes.texture = cat_eyes
 	
-	var wallpaper_material = $SubViewport/room/wallpaper.get_surface_override_material(0)
+	var original_wall_material = $SubViewport/Parent3D/room/wall_behind.get_surface_override_material(0)
+	var wallpaper_material = original_wall_material.duplicate()
+	# duplicate material and reaplly it so it only changes this one
+	$SubViewport/Parent3D/room/wall_behind.set_surface_override_material(0, wallpaper_material)
+	$SubViewport/Parent3D/room/wall_left.set_surface_override_material(0, wallpaper_material)
+	$SubViewport/Parent3D/room/wall_right.set_surface_override_material(0, wallpaper_material)
+
 	wallpaper_material.albedo_texture = wallpaper
-	
-	var floor_material = $SubViewport/room/floor.get_surface_override_material(0)
+
+	var original_floor_material = $SubViewport/Parent3D/room/floor.get_surface_override_material(0)
+	var floor_material = original_floor_material.duplicate()
+	# duplicate material and reaplly it so it only changes this one
+	$SubViewport/Parent3D/room/floor.set_surface_override_material(0, floor_material)
 	floor_material.albedo_texture = floor
-	
+
 	#sub_viewport.room_objects = room_objects
 	
 	# set the sprite texture to the viewport
@@ -113,12 +123,22 @@ func mouse_exit():
 func mouse_focus():
 	border_color = border_color_focus
 
+func activate():
+	sub_viewport.is_active = true
+	border_color = border_color_focus
+	sub_viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
+
+func deactivate():
+	sub_viewport.is_active = false
+	border_color = Color("#d7d7d7")
+	update_once()
+
+func move_room(n):
+	parent3D.position.z += 100 * n
+
+func update_once():
+	sub_viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
+
 # Function to handle the sprite click
 func _on_sprite_input():
-	sub_viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
-	sub_viewport.is_active = true
-	border_color = Color(0, 0, 0.545098, 1)
-	await get_tree().create_timer(60).timeout
-	sub_viewport.is_active = false
-	sub_viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
-	border_color = Color("#d7d7d7")
+	WebcamManager.change_focus(self)
