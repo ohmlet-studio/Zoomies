@@ -23,7 +23,7 @@ func _ready() -> void:
 
 	var dialog_signal_call = Callable(self, "_on_first_dialog_finish")
 	DialogManager.dialog_finish.connect(dialog_signal_call)
-	DialogManager.start_dialog(test_position, dialog_one)
+	DialogManager.start_dialog(test_position, dialog_one, $Boss)
 
 func _on_first_dialog_finish():
 	await get_tree().create_timer(1).timeout
@@ -36,12 +36,12 @@ func _on_first_dialog_finish():
 	
 	var dialog_signal_call = Callable(self, "_on_second_dialog_finish")
 	DialogManager.dialog_finish.connect(dialog_signal_call)
-	DialogManager.start_dialog(test_position, dialog_two)
+	DialogManager.start_dialog(test_position, dialog_two, $Boss)
 
 func _on_second_dialog_finish():
 	var dialog_signal_call = Callable(self, "_on_third_dialog_finish")
 	DialogManager.dialog_finish.connect(dialog_signal_call)
-	DialogManager.start_dialog(test_position, dialog_three)
+	DialogManager.start_dialog(test_position, dialog_three, $Boss)
 	
 func _on_third_dialog_finish():
-	DialogManager.start_dialog(test_position, dialog_three)
+	pass

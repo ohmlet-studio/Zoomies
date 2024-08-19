@@ -38,7 +38,7 @@ func _ready() -> void:
 	var dialog_signal_call = Callable(self, "_on_dialog_finished")
 	DialogManager.dialog_finish.connect(dialog_signal_call)
 	# Start dialog
-	DialogManager.start_dialog(test_position, lines)
+	DialogManager.start_dialog(test_position, lines, $Boss)
 	
 func _on_dialog_finished():
 	get_tree().change_scene_to_file("res://scenes/intro/part_two.tscn")
