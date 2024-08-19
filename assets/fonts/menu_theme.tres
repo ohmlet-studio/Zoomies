@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c62861x5fnjo1"]
+
+[ext_resource type="FontFile" uid="uid://djf30q323awye" path="res://assets/fonts/Vividly-Regular.ttf" id="1_mrew3"]
+
+[resource]
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("1_mrew3")
+Label/constants/outline_size = 15
+Label/font_sizes/font_size = 40
+Label/fonts/font = ExtResource("1_mrew3")
