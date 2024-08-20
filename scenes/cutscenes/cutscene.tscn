@@ -68,42 +68,42 @@ scale = Vector2(4, 4)
 texture = SubResource("NoiseTexture2D_86jqt")
 
 [node name="BackgroundSky9" type="Sprite2D" parent="Sky"]
-position = Vector2(0, -17123)
+position = Vector2(68, -17191)
 scale = Vector2(4, 4)
 texture = SubResource("NoiseTexture2D_86jqt")
 
 [node name="BackgroundSky10" type="Sprite2D" parent="Sky"]
-position = Vector2(0, -19109)
+position = Vector2(68, -19177)
 scale = Vector2(4, 4)
 texture = SubResource("NoiseTexture2D_86jqt")
 
 [node name="BackgroundSky11" type="Sprite2D" parent="Sky"]
-position = Vector2(0, -21079)
+position = Vector2(68, -21147)
 scale = Vector2(4, 4)
 texture = SubResource("NoiseTexture2D_86jqt")
 
 [node name="BackgroundSky12" type="Sprite2D" parent="Sky"]
-position = Vector2(0, -23065)
+position = Vector2(68, -23133)
 scale = Vector2(4, 4)
 texture = SubResource("NoiseTexture2D_86jqt")
 
 [node name="BackgroundSky13" type="Sprite2D" parent="Sky"]
-position = Vector2(0, -24997)
+position = Vector2(68, -25065)
 scale = Vector2(4, 4)
 texture = SubResource("NoiseTexture2D_86jqt")
 
 [node name="BackgroundSky14" type="Sprite2D" parent="Sky"]
-position = Vector2(0, -26983)
+position = Vector2(68, -27051)
 scale = Vector2(4, 4)
 texture = SubResource("NoiseTexture2D_86jqt")
 
 [node name="BackgroundSky15" type="Sprite2D" parent="Sky"]
-position = Vector2(0, -28953)
+position = Vector2(68, -29021)
 scale = Vector2(4, 4)
 texture = SubResource("NoiseTexture2D_86jqt")
 
 [node name="BackgroundSky16" type="Sprite2D" parent="Sky"]
-position = Vector2(0, -30939)
+position = Vector2(68, -31007)
 scale = Vector2(4, 4)
 texture = SubResource("NoiseTexture2D_86jqt")
 

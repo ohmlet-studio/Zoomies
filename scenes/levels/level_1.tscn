@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/levels/level_1.gd" id="1_h1cfy"]
 [ext_resource type="PackedScene" uid="uid://cs6sy82mme6s4" path="res://scenes/ui/zoomies_ui.tscn" id="2_cjmvs"]
 [ext_resource type="PackedScene" uid="uid://gi8h4kub3elw" path="res://scenes/cats/random.tscn" id="3_b6dnx"]
-[ext_resource type="Theme" uid="uid://bvgy3ocm8j6i3" path="res://assets/fonts/label_theme.tres" id="4_fegij"]
+[ext_resource type="PackedScene" uid="uid://c4wfxjktfnjdu" path="res://scenes/timer.tscn" id="4_pr1n3"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_h1cfy")
@@ -12,27 +12,15 @@ script = ExtResource("1_h1cfy")
 position = Vector2(-960, -540)
 
 [node name="Cat1" parent="." instance=ExtResource("3_b6dnx")]
-unique_name_in_owner = true
 position = Vector2(-914, -260)
 scale = Vector2(0.45, 0.45)
 
 [node name="Cat2" parent="." instance=ExtResource("3_b6dnx")]
-unique_name_in_owner = true
 position = Vector2(48, -260)
 scale = Vector2(0.45, 0.45)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="timer" type="Timer" parent="."]
-autostart = true
-
-[node name="timer_label" type="Label" parent="."]
-unique_name_in_owner = true
-offset_left = -671.0
-offset_top = 428.0
-offset_right = -465.0
-offset_bottom = 500.0
-theme = ExtResource("4_fegij")
+[node name="timer" parent="." instance=ExtResource("4_pr1n3")]
 
 [connection signal="ready" from="." to="." method="_on_ready"]
-[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

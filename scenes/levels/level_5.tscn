@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://djl24a6tu3dcp"]
+[gd_scene load_steps=5 format=3 uid="uid://djl24a6tu3dcp"]
 
 [ext_resource type="Script" path="res://scripts/levels/level_5.gd" id="1_72u7l"]
 [ext_resource type="PackedScene" uid="uid://cs6sy82mme6s4" path="res://scenes/ui/zoomies_ui.tscn" id="2_8qnsk"]
 [ext_resource type="PackedScene" uid="uid://gi8h4kub3elw" path="res://scenes/cats/random.tscn" id="3_016xn"]
+[ext_resource type="PackedScene" uid="uid://c4wfxjktfnjdu" path="res://scenes/timer.tscn" id="4_frncq"]
 
 [node name="Level5" type="Node2D"]
 script = ExtResource("1_72u7l")
@@ -41,5 +42,7 @@ position = Vector2(343, -16)
 scale = Vector2(0.3, 0.3)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="timer" parent="." instance=ExtResource("4_frncq")]
 
 [connection signal="ready" from="." to="." method="_on_ready"]

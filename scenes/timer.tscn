@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4wfxjktfnjdu"]
+
+[ext_resource type="Script" path="res://scripts/timer.gd" id="1_r36yq"]
+[ext_resource type="Theme" uid="uid://bvgy3ocm8j6i3" path="res://assets/fonts/label_theme.tres" id="2_8j2l0"]
+
+[node name="timer" type="Timer"]
+autostart = true
+script = ExtResource("1_r36yq")
+
+[node name="timer_label" type="Label" parent="."]
+offset_left = -671.0
+offset_top = 428.0
+offset_right = -465.0
+offset_bottom = 500.0
+theme = ExtResource("2_8j2l0")
+
+[connection signal="timeout" from="." to="." method="_on_timer_timeout"]

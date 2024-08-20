@@ -3,7 +3,7 @@ extends Node2D
 @export var number_of_floors:int = 15
 @export var floor_scroll_time:float = 0.2
 
-var target_scale_y = Vector2(1, 1) # Assuming uniform scale, adjust as needed
+var target_scale_y = Vector2(1, 1)
 var midsection_height
 var first_floor_height
 
@@ -12,6 +12,11 @@ var tick_count = 0
 
 
 func _ready():
+	if number_of_floors < 1:
+		await get_tree().create_timer(0.5).timeout
+		return
+		
+		
 	midsection_height = $midsections/building_mid.get_rect().size.y * 0.95
 	first_floor_height = 70
 	
