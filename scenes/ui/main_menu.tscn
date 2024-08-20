@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://djf30q323awye" path="res://assets/fonts/Vividly-Regular.ttf" id="1_r48s2"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="2_v6ora"]
 [ext_resource type="AudioStream" uid="uid://b3i0482cg5esx" path="res://assets/sounds/Menu Theme.wav" id="3_ehhgd"]
-[ext_resource type="Theme" uid="uid://c62861x5fnjo1" path="res://assets/fonts/menu_theme.tres" id="3_qjtdt"]
+[ext_resource type="Theme" uid="uid://cssgsvi4n3gf2" path="res://assets/fonts/menu_theme.tres" id="3_qjtdt"]
 [ext_resource type="Texture2D" uid="uid://de8pb6aaspoep" path="res://assets/textures/UI/Menu/Title.png" id="3_ugpel"]
 [ext_resource type="Texture2D" uid="uid://cilqc0ctpmceq" path="res://assets/textures/UI/Menu/IMG_0803.png" id="5_2qtbx"]
 [ext_resource type="Script" path="res://scripts/cat_node_menu.gd" id="5_cjjct"]

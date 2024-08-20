@@ -1,9 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://dhrrkj5xdmdeb"]
+[gd_scene load_steps=68 format=3 uid="uid://dhrrkj5xdmdeb"]
 
 [ext_resource type="Script" path="res://scripts/cat_display.gd" id="1_0xj6i"]
 [ext_resource type="Texture2D" uid="uid://bj6o55ei14h8x" path="res://assets/textures/cat_display/hint.png" id="1_kwfk6"]
 [ext_resource type="Script" path="res://scripts/webcamControls.gd" id="2_ppm4p"]
 [ext_resource type="Texture2D" uid="uid://bdhf1sp0wm158" path="res://assets/textures/cat_parts/mouth/big_smile.png" id="2_q7keh"]
+[ext_resource type="Texture2D" uid="uid://css1xgr44nuft" path="res://assets/textures/rooms/objects/second_plan/aloevera.png" id="3_2hd2q"]
 [ext_resource type="Texture2D" uid="uid://bnnrbq5gnlfk4" path="res://assets/textures/cat_parts/mouth/smile.png" id="3_j3f6i"]
 [ext_resource type="AudioStream" uid="uid://bo31i5hi71rn3" path="res://assets/sounds/effects/zoom_in.wav" id="3_r24hr"]
 [ext_resource type="Texture2D" uid="uid://cb8ply4wtyueq" path="res://assets/textures/cat_display/border.png" id="4_3yo0l"]
@@ -12,19 +13,53 @@
 [ext_resource type="AudioStream" uid="uid://htf26qrq8weu" path="res://assets/sounds/effects/zoom_out.wav" id="5_j6drw"]
 [ext_resource type="AudioStream" uid="uid://c202x3vi4wpai" path="res://assets/sounds/effects/connect.wav" id="5_km0xu"]
 [ext_resource type="AudioStream" uid="uid://dq4wwwaoujahu" path="res://assets/sounds/effects/BIP.wav" id="5_lgkhl"]
-[ext_resource type="Texture2D" uid="uid://5yoy8jbc5vuo" path="res://assets/textures/cat_parts/body/boss.png" id="10_8edfj"]
+[ext_resource type="Texture2D" uid="uid://di85pyxabr7mh" path="res://assets/textures/rooms/objects/third__plan/meuble.png" id="6_jhti7"]
+[ext_resource type="Texture2D" uid="uid://ccapb0rlso7g1" path="res://assets/textures/rooms/floors/tiles.jpg" id="8_xyc1g"]
+[ext_resource type="Texture2D" uid="uid://5yoy8jbc5vuo" path="res://assets/textures/cat_parts/boss_body.png" id="10_8edfj"]
+[ext_resource type="Texture2D" uid="uid://bqaogofcjfar5" path="res://assets/textures/rooms/wallpapers/fish.jpg" id="10_ej143"]
+[ext_resource type="Texture2D" uid="uid://0pgj3dwjn3ir" path="res://assets/textures/rooms/wallpapers/paws.jpg" id="11_7kail"]
 [ext_resource type="Texture2D" uid="uid://blnd1jvhiwla8" path="res://assets/textures/cat_parts/mouth/neutral.png" id="11_cxlok"]
+[ext_resource type="Texture2D" uid="uid://cyg3s24oy6myn" path="res://assets/textures/rooms/wallpapers/squares.jpg" id="12_f5yd4"]
 [ext_resource type="Texture2D" uid="uid://dw2j1ndf53q5w" path="res://assets/textures/rooms/objects/second_plan/monstera.png" id="12_jafud"]
 [ext_resource type="Texture2D" uid="uid://5h71h82dfhcp" path="res://assets/textures/cat_parts/eyes/boss/normal.png" id="12_uor7u"]
 [ext_resource type="Texture2D" uid="uid://cu0sb3nl4t17m" path="res://assets/textures/rooms/table.png" id="13_ceeji"]
+[ext_resource type="Texture2D" uid="uid://vgid0565xngf" path="res://assets/textures/rooms/wallpapers/vertical_stripes.jpg" id="13_d612c"]
 [ext_resource type="Texture2D" uid="uid://21gyx8ffouly" path="res://assets/textures/rooms/objects/third__plan/drawer.png" id="13_e8e18"]
 [ext_resource type="Texture2D" uid="uid://cl3r2jyo5vkdm" path="res://assets/textures/rooms/objects/mug/boss.png" id="13_s3b2k"]
+[ext_resource type="Texture2D" uid="uid://csgoetggiwq4m" path="res://assets/textures/cat_parts/body/Body1.png" id="14_4r54b"]
 [ext_resource type="Texture2D" uid="uid://benihwxolii8c" path="res://assets/textures/rooms/wallpapers/duck.jpg" id="14_ys5lk"]
+[ext_resource type="Texture2D" uid="uid://dor0uvye52fxs" path="res://assets/textures/cat_parts/body/Body2.png" id="15_l2y38"]
 [ext_resource type="Texture2D" uid="uid://jovk6cvvllfn" path="res://assets/textures/rooms/objects/first_plan/lavalamp.png" id="15_siqhc"]
 [ext_resource type="Texture2D" uid="uid://d1na8so6vxeu" path="res://assets/textures/rooms/floors/boards.jpg" id="15_tsi68"]
+[ext_resource type="Texture2D" uid="uid://cdp1l7bqy2mhq" path="res://assets/textures/cat_parts/body/Body3.png" id="16_oq1qh"]
+[ext_resource type="Texture2D" uid="uid://clhhq5y5ua6sl" path="res://assets/textures/cat_parts/body/Body4.png" id="17_qei20"]
+[ext_resource type="Texture2D" uid="uid://vnfiju28nkao" path="res://assets/textures/cat_parts/body/Body5.png" id="18_h1tjl"]
+[ext_resource type="Texture2D" uid="uid://dmstk24v2rxg1" path="res://assets/textures/cat_parts/body/Body6.png" id="19_duikx"]
+[ext_resource type="Texture2D" uid="uid://cr8ts0rq4dn7h" path="res://assets/textures/cat_parts/body/Body7.png" id="20_chvlg"]
 [ext_resource type="Texture2D" uid="uid://b6ohimri07lta" path="res://assets/textures/rooms/objects/mouse/blue.png" id="20_difki"]
 [ext_resource type="AudioStream" uid="uid://bxuhtxxwap2hj" path="res://assets/sounds/effects/disconnect.mp3" id="20_na4ef"]
 [ext_resource type="Texture2D" uid="uid://2iseiunvfxlx" path="res://assets/textures/cat_display/hint_ok.png" id="21_bedwd"]
+[ext_resource type="Texture2D" uid="uid://pddcqpltc8w2" path="res://assets/textures/cat_parts/body/Body8.png" id="21_l1f18"]
+[ext_resource type="Texture2D" uid="uid://baalc2s2xf4cv" path="res://assets/textures/cat_parts/body/Body9.png" id="22_nblrs"]
+[ext_resource type="Texture2D" uid="uid://psdxtb0f6bkj" path="res://assets/textures/cat_parts/body/Body10.png" id="23_mauew"]
+[ext_resource type="Texture2D" uid="uid://cb6q244h5q3k2" path="res://assets/textures/cat_parts/body/Body11.png" id="24_dni6o"]
+[ext_resource type="Texture2D" uid="uid://dddusi7xgoxnn" path="res://assets/textures/cat_parts/body/Body12.png" id="25_5owbq"]
+[ext_resource type="Texture2D" uid="uid://cxgiqdhrsegjp" path="res://assets/textures/cat_parts/body/Body13.png" id="26_8bnwj"]
+[ext_resource type="Texture2D" uid="uid://c3867pvu4ex0e" path="res://assets/textures/cat_parts/body/Body14.png" id="27_ty0nq"]
+[ext_resource type="Texture2D" uid="uid://b2rf7gsm48dwp" path="res://assets/textures/cat_parts/body/Body15.png" id="28_6mr35"]
+[ext_resource type="Texture2D" uid="uid://dqq7mnpujd88s" path="res://assets/textures/cat_parts/body/Body16.png" id="29_cbo25"]
+[ext_resource type="Texture2D" uid="uid://bfe6ihywocdd2" path="res://assets/textures/cat_parts/body/Body17.png" id="30_mpl1m"]
+[ext_resource type="Texture2D" uid="uid://btpu0irfsh50y" path="res://assets/textures/cat_parts/body/Body18.png" id="31_2vk75"]
+[ext_resource type="Texture2D" uid="uid://cgs3a6oyshjdd" path="res://assets/textures/cat_parts/eyes/normal/oval.png" id="32_yvc20"]
+[ext_resource type="Texture2D" uid="uid://cvdp21b8iwdh8" path="res://assets/textures/cat_parts/eyes/normal/sexy.png" id="33_dxwdj"]
+[ext_resource type="Texture2D" uid="uid://ll4p6tvan17b" path="res://assets/textures/cat_parts/eyes/normal/wide.png" id="34_b4npv"]
+[ext_resource type="Texture2D" uid="uid://6og6vwjp4ueg" path="res://assets/textures/rooms/objects/mug/colored/blanc.png" id="35_w1282"]
+[ext_resource type="Texture2D" uid="uid://ob8h5lsr2t2m" path="res://assets/textures/rooms/objects/mug/colored/bleu.png" id="36_6r7a7"]
+[ext_resource type="Texture2D" uid="uid://cir1d1nq4vy4k" path="res://assets/textures/rooms/objects/mug/colored/greenyarn.png" id="37_78s0l"]
+[ext_resource type="Texture2D" uid="uid://cbxtcckngur5f" path="res://assets/textures/rooms/objects/mug/colored/orange.png" id="38_iu1nr"]
+[ext_resource type="Texture2D" uid="uid://bchbqnlnd8rgc" path="res://assets/textures/rooms/objects/mug/colored/orangeyarn.png" id="39_0nhqh"]
+[ext_resource type="Texture2D" uid="uid://ct8o5nx4611y1" path="res://assets/textures/rooms/objects/mouse/purple.png" id="41_ripqn"]
+[ext_resource type="Texture2D" uid="uid://bqxxhxehfyw8r" path="res://assets/textures/rooms/objects/mouse/yellow.png" id="42_85ck8"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_jcuwj"]
 
@@ -56,6 +91,15 @@ viewport_path = NodePath("SubViewport")
 script = ExtResource("1_0xj6i")
 default_boder_color = Color(0.733005, 0.733006, 0.733005, 1)
 border_color_focus = Color(0.463838, 0.635312, 1, 1)
+first_plan_objects_list = Array[Texture]([ExtResource("15_siqhc")])
+second_plan_objects_list = Array[Texture]([ExtResource("3_2hd2q"), ExtResource("12_jafud")])
+third_plan_objects_list = Array[Texture]([ExtResource("13_e8e18"), ExtResource("6_jhti7")])
+floors_list = Array[Texture]([ExtResource("15_tsi68"), ExtResource("8_xyc1g")])
+wallpapers_list = Array[Texture]([ExtResource("14_ys5lk"), ExtResource("10_ej143"), ExtResource("11_7kail"), ExtResource("12_f5yd4"), ExtResource("13_d612c")])
+cat_bodies_list = Array[Texture]([ExtResource("14_4r54b"), ExtResource("15_l2y38"), ExtResource("16_oq1qh"), ExtResource("17_qei20"), ExtResource("18_h1tjl"), ExtResource("19_duikx"), ExtResource("20_chvlg"), ExtResource("21_l1f18"), ExtResource("22_nblrs"), ExtResource("23_mauew"), ExtResource("24_dni6o"), ExtResource("25_5owbq"), ExtResource("26_8bnwj"), ExtResource("27_ty0nq"), ExtResource("28_6mr35"), ExtResource("29_cbo25"), ExtResource("30_mpl1m"), ExtResource("31_2vk75")])
+cat_eyes_list = Array[Texture]([ExtResource("32_yvc20"), ExtResource("33_dxwdj"), ExtResource("34_b4npv")])
+mug_list = Array[Texture]([ExtResource("35_w1282"), ExtResource("36_6r7a7"), ExtResource("37_78s0l"), ExtResource("38_iu1nr"), ExtResource("39_0nhqh")])
+mouse_list = Array[Texture]([ExtResource("20_difki"), ExtResource("41_ripqn"), ExtResource("42_85ck8")])
 mouth_talking_poses = Array[Texture2D]([ExtResource("2_q7keh"), ExtResource("3_j3f6i"), ExtResource("4_28g3f")])
 mouth_idle_texture = ExtResource("11_cxlok")
 

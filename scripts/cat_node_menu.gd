@@ -27,18 +27,19 @@ func _ready() -> void:
 
 
 func _process(delta : float) -> void :
-	var rand_idx = 0
-	#cat_array[rand_idx].set_position(cat_array[rand_idx].position + incr)
-	incr_max = 0
-	set_process(false)
-	while true:
-		if incr_max < MAX :
-			cat_array[rand_idx].set_position(cat_array[rand_idx].position + incr)
-			incr_max += 1
-		else :
-			cat_array[rand_idx].set_position(cat_array[rand_idx].position + decr)
-			print("here")
-			
-		if cat_array[rand_idx].position ==  cat_default_pos[rand_idx]:
-			break
-	set_process(true)
+	#var rand_idx = 0
+	##cat_array[rand_idx].set_position(cat_array[rand_idx].position + incr)
+	#incr_max = 0
+	#set_process(false)
+	#while true:
+		#if incr_max < MAX :
+			#cat_array[rand_idx].set_position(cat_array[rand_idx].position + incr)
+			#incr_max += 1
+		#else :
+			#cat_array[rand_idx].set_position(cat_array[rand_idx].position + decr)
+			#print("here")
+			#
+		#if cat_array[rand_idx].position ==  cat_default_pos[rand_idx]:
+			#break
+	#set_process(true)
+	pass
