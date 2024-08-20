@@ -230,37 +230,43 @@ _data = {
 [node name="Cutscene" instance=ExtResource("1_nv6vo")]
 gameover = true
 
-[node name="ScoreLabel" type="Label" parent="Camera2D" index="0"]
+[node name="Victory" parent="." index="7"]
+stream = ExtResource("2_ujvys")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" index="0"]
+follow_viewport_enabled = true
+
+[node name="ScoreLabel" type="Label" parent="Camera2D/CanvasLayer" index="0"]
 unique_name_in_owner = true
 top_level = true
+clip_contents = true
 offset_left = -887.0
 offset_top = -490.0
-offset_right = -847.0
-offset_bottom = -467.0
+offset_right = -581.0
+offset_bottom = -418.0
 theme = ExtResource("2_w47su")
 text = "Score : 0"
 metadata/_edit_use_anchors_ = true
 
-[node name="Victory" parent="." index="8"]
-stream = ExtResource("2_ujvys")
-
 [node name="Letter_node" type="Node2D" parent="." index="9"]
+unique_name_in_owner = true
 visible = false
 top_level = true
 
 [node name="Letter" type="Sprite2D" parent="Letter_node" index="0"]
-visible = false
 position = Vector2(-538, -518)
 rotation = -0.370063
 scale = Vector2(1.54237, 1.54237)
 texture = ExtResource("4_li6rl")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Letter_node" index="1"]
+[node name="letterAnim" type="AnimationPlayer" parent="Letter_node" index="1"]
+unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_h10r7")
 }
 
 [node name="YesNo_node" type="Node2D" parent="." index="10"]
+unique_name_in_owner = true
 visible = false
 top_level = true
 
@@ -294,7 +300,8 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_np8na")
 theme_override_styles/normal = SubResource("StyleBoxFlat_wfyyu")
 text = "No.."
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="YesNo_node" index="2"]
+[node name="yesnoAnim" type="AnimationPlayer" parent="YesNo_node" index="2"]
+unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_ys00m")
 }
