@@ -1,6 +1,30 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cssgsvi4n3gf2"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://c62861x5fnjo1"]
 
 [ext_resource type="FontFile" uid="uid://djf30q323awye" path="res://assets/fonts/Vividly-Regular.ttf" id="1_mrew3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhese"]
+bg_color = Color(0.347592, 0.531008, 0.75993, 1)
+border_width_left = 50
+border_width_top = 20
+border_width_right = 50
+border_width_bottom = 20
+border_color = Color(0.34902, 0.529412, 0.760784, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6busl"]
+bg_color = Color(0.207843, 0.356863, 0.541176, 1)
+border_width_left = 50
+border_width_top = 20
+border_width_right = 50
+border_width_bottom = 20
+border_color = Color(0.207843, 0.356863, 0.541176, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4tv16"]
 bg_color = Color(0.144062, 0.144063, 0.144062, 0.494118)
@@ -12,6 +36,8 @@ corner_radius_bottom_left = 50
 [resource]
 Button/font_sizes/font_size = 40
 Button/fonts/font = ExtResource("1_mrew3")
+Button/styles/hover = SubResource("StyleBoxFlat_mhese")
+Button/styles/normal = SubResource("StyleBoxFlat_6busl")
 Label/constants/outline_size = 15
 Label/font_sizes/font_size = 40
 Label/fonts/font = ExtResource("1_mrew3")
