@@ -12,14 +12,16 @@ var is_dialog_active = false
 var can_advance_line = false
 
 var cat_display
+var autoskip = false
 
 signal dialog_finish()
 
-func start_dialog(lines: Array[String], cat_display: Node2D):
+func start_dialog(lines: Array[String], cat_display: Node2D, autoskip: bool = false):
 	if is_dialog_active:
 		return
 	
 	self.cat_display = cat_display
+	self.autoskip = autoskip
 	self.dialog_lines = lines
 		
 	var display_size = cat_display.get_node("Parent2D/CatDisplaySprite").get_rect().size
@@ -37,24 +39,30 @@ func _show_text_box():
 	can_advance_line = false
 	
 func _on_text_box_finished_displaying():
-	can_advance_line = true
+	if autoskip:
+		_advance_line()
+	else:
+		can_advance_line = true
+
+func _advance_line():
+	text_box.queue_free()
 	
+	current_line_index += 1
+	if current_line_index >= dialog_lines.size():
+		is_dialog_active = false
+		current_line_index = 0
+		dialog_finish.emit()
+		return
+		
+	_show_text_box()
+
 func _unhandled_input(event):
 	if (
 		event.is_action_pressed("ui_accept") &&	
 		is_dialog_active &&
 		can_advance_line
 	):
-		text_box.queue_free()
-		
-		current_line_index += 1
-		if current_line_index >= dialog_lines.size():
-			is_dialog_active = false
-			current_line_index = 0
-			dialog_finish.emit()
-			return
-			
-		_show_text_box()
+		_advance_line()
 		
 	elif (
 		event.is_action_pressed("ui_accept") &&
