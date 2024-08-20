@@ -7,7 +7,8 @@
 [node name="Cutscene" instance=ExtResource("1_nv6vo")]
 gameover = true
 
-[node name="Label" type="Label" parent="Camera2D" index="0"]
+[node name="ScoreLabel" type="Label" parent="Camera2D" index="0"]
+unique_name_in_owner = true
 top_level = true
 offset_left = -887.0
 offset_top = -490.0

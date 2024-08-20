@@ -4,6 +4,8 @@ extends Node2D
 @export var floor_scroll_time:float = 0.2
 @export var gameover = false
 
+@onready var score_label = %ScoreLabel
+
 var target_scale_y = Vector2(1, 1)
 var first_floor_height = 70
 var midsection_height
@@ -72,8 +74,9 @@ func _on_Timer_timeout():
 	if tick_count < number_of_floors:
 		$Building_tick.play()
 		tick_count += 1
-		score += 1
-		print(score)
+		if gameover :
+			score_label.text = "Score : " + str(score)
+			score += 1
 	else:
 		tick_timer.stop() # Stop the timer after 10 ticks
 			
