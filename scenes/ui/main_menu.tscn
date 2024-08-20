@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://djf30q323awye" path="res://assets/fonts/Vividly-Regular.ttf" id="1_r48s2"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="2_v6ora"]
 [ext_resource type="AudioStream" uid="uid://b3i0482cg5esx" path="res://assets/sounds/Menu Theme.wav" id="3_ehhgd"]
-[ext_resource type="Theme" uid="uid://c62861x5fnjo1" path="res://assets/fonts/menu_theme.tres" id="3_qjtdt"]
+[ext_resource type="Theme" uid="uid://cssgsvi4n3gf2" path="res://assets/fonts/menu_theme.tres" id="3_qjtdt"]
 
 [sub_resource type="Theme" id="Theme_jyfsc"]
 default_font = ExtResource("1_r48s2")
@@ -67,7 +67,18 @@ focus_neighbor_bottom = NodePath("../OptionsButton")
 focus_next = NodePath("../OptionsButton")
 focus_previous = NodePath("../QuitGameButton")
 theme = ExtResource("3_qjtdt")
-text = "Start"
+text = "Story mode"
+
+[node name="InfiniteModeButton" type="Button" parent="StartContainer/ButtonsVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../StartGameButton")
+focus_neighbor_bottom = NodePath("../QuitGameButton")
+focus_next = NodePath("../QuitGameButton")
+focus_previous = NodePath("../StartGameButton")
+theme = ExtResource("3_qjtdt")
+text = "Infinite mode"
 
 [node name="OptionsButton" type="Button" parent="StartContainer/ButtonsVBox"]
 layout_mode = 2
@@ -173,6 +184,7 @@ autoplay = true
 bus = &"Music"
 
 [connection signal="pressed" from="StartContainer/ButtonsVBox/StartGameButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="StartContainer/ButtonsVBox/InfiniteModeButton" to="." method="_on_infinite_mode_button_pressed"]
 [connection signal="pressed" from="StartContainer/ButtonsVBox/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="StartContainer/ButtonsVBox/QuitGameButton" to="." method="_on_quit_button_pressed"]
 [connection signal="drag_ended" from="OptionContainer/ButtonsVBox/MusicCtrlBox/MusicCtrlSlider" to="." method="_on_music_ctrl_slider_drag_ended"]

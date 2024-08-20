@@ -14,7 +14,7 @@ var tick_count = 0
 func _ready():
 	if number_of_floors < 1:
 		$Victory.play()
-		await get_tree().create_timer(3).timeout
+		await get_tree().create_timer(2.5).timeout
 		return
 		
 		
@@ -31,7 +31,7 @@ func _ready():
 	
 	# wait a bit
 	$Victory.play()
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(2.5).timeout
 	
 	$Camera2D.offset.y = 0
 	var target_camera_y = -first_floor_height + -number_of_floors * midsection_height

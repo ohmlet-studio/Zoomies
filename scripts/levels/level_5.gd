@@ -24,4 +24,4 @@ func _on_ready() -> void:
 	$Cat6.unalign_camera_random(DIFFICULTY, DIFFICULTY)
 	$Cat6.connect_cat()
 
-	$timer.set_time(timer_sec)
+	$LevelTimer.set_time(timer_sec)

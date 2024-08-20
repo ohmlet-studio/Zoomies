@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://wl48b0bak38o" path="res://assets/textures/UI/bottom_bar/menu.png" id="2_detra"]
 [ext_resource type="Texture2D" uid="uid://blobdkiyaf60p" path="res://assets/textures/UI/bottom_bar/pause.png" id="3_hin76"]
 [ext_resource type="Texture2D" uid="uid://c3gm7x028s8jt" path="res://assets/textures/UI/bottom_bar/grid.png" id="4_nv8s6"]
-[ext_resource type="PackedScene" path="res://scenes/ui/pause_menu.tscn" id="6_t3sjs"]
+[ext_resource type="PackedScene" uid="uid://bdao8ti38nvhb" path="res://scenes/ui/pause_menu.tscn" id="6_t3sjs"]
 
 [node name="ZoomiesUI" type="Node2D"]
 script = ExtResource("1_rr6no")
@@ -55,6 +55,14 @@ offset_bottom = 1135.84
 scale = Vector2(0.7553, 0.7553)
 texture_normal = ExtResource("4_nv8s6")
 
+[node name="TopButtons" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1756.0
+offset_top = 65.0
+offset_right = 1764.0
+offset_bottom = 73.0
+scale = Vector2(18.2809, -6.8588)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("6_t3sjs")]
@@ -62,3 +70,4 @@ unique_name_in_owner = true
 visible = false
 
 [connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="TopButtons" to="." method="_on_pause_pressed"]

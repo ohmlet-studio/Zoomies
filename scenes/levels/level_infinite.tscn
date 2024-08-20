@@ -1,14 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://dst57avkngwuw"]
+[gd_scene load_steps=5 format=3 uid="uid://dst57avkngwuw"]
 
 [ext_resource type="Script" path="res://scripts/levels/level_infinite.gd" id="1_kutmv"]
 [ext_resource type="PackedScene" uid="uid://cs6sy82mme6s4" path="res://scenes/ui/zoomies_ui.tscn" id="2_pkgyb"]
 [ext_resource type="Texture2D" uid="uid://dfw1ecbuyggk6" path="res://assets/textures/UI/Arrow.png" id="3_b7cfu"]
 [ext_resource type="PackedScene" uid="uid://c4wfxjktfnjdu" path="res://scenes/timer.tscn" id="4_avp3g"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1ajsv"]
-
 [node name="LevelInfinite" type="Node2D"]
 script = ExtResource("1_kutmv")
+
+[node name="CatSpawner" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
 
 [node name="ZoomiesUI" parent="." instance=ExtResource("2_pkgyb")]
 position = Vector2(-960, -540)
@@ -16,13 +18,12 @@ position = Vector2(-960, -540)
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="UpButton" type="TextureButton" parent="."]
-offset_left = 758.0
-offset_top = -392.0
-offset_right = 905.0
-offset_bottom = -276.0
+offset_left = 888.0
+offset_top = -408.0
+offset_right = 971.0
+offset_bottom = -340.0
 rotation = -4.71238
-pivot_offset = Vector2(70.7335, 58.3076)
-texture_normal = SubResource("CompressedTexture2D_1ajsv")
+texture_normal = ExtResource("3_b7cfu")
 
 [node name="DownButton" type="TextureButton" parent="."]
 offset_left = 803.0
@@ -33,8 +34,9 @@ rotation = -1.57079
 pivot_offset = Vector2(79, 58)
 texture_normal = ExtResource("3_b7cfu")
 
-[node name="timer" parent="." instance=ExtResource("4_avp3g")]
+[node name="LevelTimer" parent="." instance=ExtResource("4_avp3g")]
 
+[connection signal="timeout" from="CatSpawner" to="." method="_spawn_cats"]
 [connection signal="button_down" from="UpButton" to="." method="_on_up_button_button_down"]
 [connection signal="button_up" from="UpButton" to="." method="_on_up_button_button_up"]
 [connection signal="button_down" from="DownButton" to="." method="_on_down_button_button_down"]

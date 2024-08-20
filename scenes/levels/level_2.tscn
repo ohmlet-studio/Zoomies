@@ -25,6 +25,6 @@ scale = Vector2(0.3, 0.3)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="timer" parent="." instance=ExtResource("4_3364f")]
+[node name="LevelTimer" parent="." instance=ExtResource("4_3364f")]
 
 [connection signal="ready" from="." to="." method="_on_ready"]

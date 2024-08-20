@@ -21,12 +21,18 @@ var buttonUpPressed = false
 @export var scene_array = Array()
 @onready var zoomiesui = $ZoomiesUI
 
+@export var cat_number_by_wave:int = 3
+
 var idx = 0
 
-# Add scene when pressing 'A' (or 'Q' in QWERTY mode), only used in debug mode
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("create_scene"):
+func _ready() -> void:
+	_spawn_cats()
+
+func _spawn_cats() -> void:
+	for i in range(cat_number_by_wave-1):
 		_instantiate_cat_display()
+		await get_tree().create_timer(0.25).timeout
+	_instantiate_cat_display()
 
 func _instantiate_cat_display():	
 	# ------ Scene instantiation ----------
