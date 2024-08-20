@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdmlwiqmqtulo"]
+[gd_scene load_steps=5 format=3 uid="uid://bdmlwiqmqtulo"]
 
 [ext_resource type="Script" path="res://scripts/levels/level_2.gd" id="1_rtukf"]
 [ext_resource type="PackedScene" uid="uid://cs6sy82mme6s4" path="res://scenes/ui/zoomies_ui.tscn" id="2_myug6"]
 [ext_resource type="PackedScene" uid="uid://gi8h4kub3elw" path="res://scenes/cats/random.tscn" id="3_33dxy"]
+[ext_resource type="PackedScene" uid="uid://c4wfxjktfnjdu" path="res://scenes/timer.tscn" id="4_3364f"]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_rtukf")
@@ -11,20 +12,19 @@ script = ExtResource("1_rtukf")
 position = Vector2(-960, -540)
 
 [node name="Cat1" parent="." instance=ExtResource("3_33dxy")]
-unique_name_in_owner = true
 position = Vector2(-914, -160)
 scale = Vector2(0.3, 0.3)
 
 [node name="Cat2" parent="." instance=ExtResource("3_33dxy")]
-unique_name_in_owner = true
 position = Vector2(-292, -160)
 scale = Vector2(0.3, 0.3)
 
 [node name="Cat3" parent="." instance=ExtResource("3_33dxy")]
-unique_name_in_owner = true
 position = Vector2(336, -160)
 scale = Vector2(0.3, 0.3)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="timer" parent="." instance=ExtResource("4_3364f")]
 
 [connection signal="ready" from="." to="." method="_on_ready"]
