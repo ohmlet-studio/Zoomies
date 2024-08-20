@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://cqlbtobfrdgrt"]
+[gd_scene load_steps=15 format=3 uid="uid://bwx0ogshho4dc"]
 
 [ext_resource type="PackedScene" uid="uid://boioovjvf2bll" path="res://scenes/cutscenes/cutscene.tscn" id="1_nv6vo"]
 [ext_resource type="AudioStream" uid="uid://bfq1bm6g0rl7x" path="res://assets/sounds/Fail.wav" id="2_ujvys"]
 [ext_resource type="Theme" uid="uid://bvgy3ocm8j6i3" path="res://assets/fonts/label_theme.tres" id="2_w47su"]
+[ext_resource type="Texture2D" uid="uid://djpjy45ffbi1" path="res://assets/textures/gameover/Chaton_Vire.png" id="4_dxsry"]
 [ext_resource type="Texture2D" uid="uid://cw0re1ra4353r" path="res://assets/textures/gameover/youre_fired.png" id="4_li6rl"]
 [ext_resource type="FontFile" uid="uid://djf30q323awye" path="res://assets/fonts/Vividly-Regular.ttf" id="5_1001y"]
 
@@ -230,37 +231,50 @@ _data = {
 [node name="Cutscene" instance=ExtResource("1_nv6vo")]
 gameover = true
 
-[node name="ScoreLabel" type="Label" parent="Camera2D" index="0"]
+[node name="Victory" parent="." index="7"]
+stream = ExtResource("2_ujvys")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" index="0"]
+follow_viewport_enabled = true
+
+[node name="ScoreLabel" type="Label" parent="Camera2D/CanvasLayer" index="0"]
 unique_name_in_owner = true
 top_level = true
+clip_contents = true
 offset_left = -887.0
 offset_top = -490.0
-offset_right = -847.0
-offset_bottom = -467.0
+offset_right = -581.0
+offset_bottom = -418.0
 theme = ExtResource("2_w47su")
 text = "Score : 0"
 metadata/_edit_use_anchors_ = true
 
-[node name="Victory" parent="." index="8"]
-stream = ExtResource("2_ujvys")
+[node name="Cat" type="Node2D" parent="." index="9"]
 
-[node name="Letter_node" type="Node2D" parent="." index="9"]
+[node name="cat_walking" type="Sprite2D" parent="Cat" index="0"]
+position = Vector2(-394, 311)
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("4_dxsry")
+
+[node name="Letter_node" type="Node2D" parent="." index="10"]
+unique_name_in_owner = true
 visible = false
 top_level = true
 
 [node name="Letter" type="Sprite2D" parent="Letter_node" index="0"]
-visible = false
 position = Vector2(-538, -518)
 rotation = -0.370063
 scale = Vector2(1.54237, 1.54237)
 texture = ExtResource("4_li6rl")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Letter_node" index="1"]
+[node name="letterAnim" type="AnimationPlayer" parent="Letter_node" index="1"]
+unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_h10r7")
 }
 
-[node name="YesNo_node" type="Node2D" parent="." index="10"]
+[node name="YesNo_node" type="Node2D" parent="." index="11"]
+unique_name_in_owner = true
 visible = false
 top_level = true
 
@@ -294,7 +308,8 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_np8na")
 theme_override_styles/normal = SubResource("StyleBoxFlat_wfyyu")
 text = "No.."
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="YesNo_node" index="2"]
+[node name="yesnoAnim" type="AnimationPlayer" parent="YesNo_node" index="2"]
+unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_ys00m")
 }

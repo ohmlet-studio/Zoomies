@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfw1ecbuyggk6"
-path="res://.godot/imported/arrow.png-de188478b7d02ee454522b23541484cc.ctex"
+uid="uid://b62fuywt45xu6"
+path="res://.godot/imported/Cadre9.png-e3d43f03cb5790b087419264e5971a65.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/UI/arrow.png"
-dest_files=["res://.godot/imported/arrow.png-de188478b7d02ee454522b23541484cc.ctex"]
+source_file="res://assets/textures/rooms/objects/wallstuck/Cadre9.png"
+dest_files=["res://.godot/imported/Cadre9.png-e3d43f03cb5790b087419264e5971a65.ctex"]
 
 [params]
 

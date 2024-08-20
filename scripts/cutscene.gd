@@ -5,6 +5,10 @@ extends Node2D
 @export var gameover = false
 
 @onready var score_label = %ScoreLabel
+@onready var letter_node = %Letter_node
+@onready var yesno_node = %YesNo_node
+@onready var letter_anim = %letterAnim
+@onready var yesno_anim = %yesnoAnim
 
 var target_scale_y = Vector2(1, 1)
 var first_floor_height = 70
@@ -61,8 +65,9 @@ func _ready():
 
 	if !gameover:
 		tween_camera_move.tween_callback(_spawn_last_level)
-	else:
-		cutscene_over.emit()
+	#else:
+		#print("bottom reached")
+		#cutscene_over.emit()
 	
 	# create a timer and play tick sound every floor_scroll_time s
 	tick_timer = Timer.new()
@@ -79,6 +84,16 @@ func _on_Timer_timeout():
 		if gameover :
 			score_label.text = "Score : " + str(score)
 			score += 1
+			if score == GameManager.current_level :
+				await get_tree().create_timer(2.5).timeout
+				print("bottom reached")
+				cutscene_over.emit()
+				letter_node.visible = true
+				yesno_node.visible = true
+				letter_anim.play("youre_fired_anim")
+				yesno_anim.play("yes_no_anim")
+				
+				
 	else:
 		tick_timer.stop() # Stop the timer after 10 ticks
 			
@@ -112,8 +127,10 @@ func play_pop():
 
 
 func _on_yes_pressed() -> void:
+	self.queue_free()
 	GameManager.restart_level()
 
 
 func _on_no_pressed() -> void:
+	self.queue_free()
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")

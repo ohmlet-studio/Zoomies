@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfw1ecbuyggk6"
-path="res://.godot/imported/arrow.png-de188478b7d02ee454522b23541484cc.ctex"
+uid="uid://lqqygvvei85x"
+path="res://.godot/imported/Grid hover .png-50f6119eee5ebe84fa6328ba61f7db68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/UI/arrow.png"
-dest_files=["res://.godot/imported/arrow.png-de188478b7d02ee454522b23541484cc.ctex"]
+source_file="res://assets/textures/UI/bottom_bar/Grid hover .png"
+dest_files=["res://.godot/imported/Grid hover .png-50f6119eee5ebe84fa6328ba61f7db68.ctex"]
 
 [params]
 
