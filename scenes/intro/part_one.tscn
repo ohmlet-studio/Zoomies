@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/intro/part_one.gd" id="1_6muly"]
 [ext_resource type="PackedScene" uid="uid://cs6sy82mme6s4" path="res://scenes/ui/zoomies_ui.tscn" id="3_khsjq"]
 [ext_resource type="PackedScene" uid="uid://bt2t7cgg75aot" path="res://scenes/cats/boss.tscn" id="3_lbx7h"]
-[ext_resource type="Texture2D" uid="uid://cp5y11q2qlpjn" path="res://assets/textures/cat_parts/body/boss.png" id="4_486o4"]
+[ext_resource type="Texture2D" uid="uid://5yoy8jbc5vuo" path="res://assets/textures/cat_parts/boss_body.png" id="4_486o4"]
 [ext_resource type="AudioStream" uid="uid://y0jkwjbupk6e" path="res://assets/sounds/Videocall.mp3" id="4_e2mxu"]
 
 [node name="IntroPartOne" type="Node2D"]

@@ -16,10 +16,14 @@ position = Vector2(-960, -540)
 [node name="Cat1" parent="." instance=ExtResource("3_b6dnx")]
 position = Vector2(-761, -218)
 scale = Vector2(0.38, 0.38)
+default_boder_color = Color(0.733005, 0.733006, 0.733005, 1)
+border_color_focus = Color(0.463838, 0.635312, 1, 1)
 
 [node name="Cat2" parent="." instance=ExtResource("3_b6dnx")]
 position = Vector2(27, -218)
 scale = Vector2(0.38, 0.38)
+default_boder_color = Color(0.733005, 0.733006, 0.733005, 1)
+border_color_focus = Color(0.463838, 0.635312, 1, 1)
 
 [node name="LevelTimer" parent="." instance=ExtResource("4_pr1n3")]
 

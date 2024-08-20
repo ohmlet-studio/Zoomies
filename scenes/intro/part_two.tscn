@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bt2t7cgg75aot" path="res://scenes/cats/boss.tscn" id="3_vupdj"]
 [ext_resource type="AudioStream" uid="uid://y0jkwjbupk6e" path="res://assets/sounds/Videocall.mp3" id="4_udv23"]
 [ext_resource type="AudioStream" uid="uid://cynmdpvcdqqj5" path="res://assets/sounds/effects/Patoune.wav" id="5_twyvj"]
-[ext_resource type="Texture2D" uid="uid://cp5y11q2qlpjn" path="res://assets/textures/cat_parts/body/boss.png" id="6_icupb"]
+[ext_resource type="Texture2D" uid="uid://5yoy8jbc5vuo" path="res://assets/textures/cat_parts/boss_body.png" id="6_icupb"]
 
 [node name="IntroPartTwo" type="Node2D"]
 script = ExtResource("1_l0xbq")
@@ -26,6 +26,8 @@ bus = &"SFX"
 [node name="Boss" parent="." instance=ExtResource("3_vupdj")]
 position = Vector2(256, 119)
 scale = Vector2(0.720302, 0.720302)
+default_boder_color = Color(0.733005, 0.733006, 0.733005, 1)
+border_color_focus = Color(0.463838, 0.635312, 1, 1)
 cat_body = ExtResource("6_icupb")
 
 [connection signal="ready" from="." to="." method="_on_ready"]

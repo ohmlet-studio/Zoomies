@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bjonmciq4nenn"]
 
-[ext_resource type="Texture2D" uid="uid://cp5y11q2qlpjn" path="res://assets/textures/cat_parts/body/boss.png" id="1_5e8ya"]
+[ext_resource type="Texture2D" uid="uid://5yoy8jbc5vuo" path="res://assets/textures/cat_parts/boss_body.png" id="1_5e8ya"]
 [ext_resource type="Texture2D" uid="uid://blnd1jvhiwla8" path="res://assets/textures/cat_parts/mouth/neutral.png" id="2_6aa2f"]
 [ext_resource type="Texture2D" uid="uid://5h71h82dfhcp" path="res://assets/textures/cat_parts/eyes/boss/normal.png" id="3_3452v"]
 
