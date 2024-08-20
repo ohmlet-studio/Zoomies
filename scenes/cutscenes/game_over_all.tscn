@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqlbtobfrdgrt"]
+[gd_scene load_steps=3 format=3 uid="uid://bwx0ogshho4dc"]
 
 [ext_resource type="PackedScene" uid="uid://boioovjvf2bll" path="res://scenes/cutscenes/cutscene.tscn" id="1_nv6vo"]
 [ext_resource type="AudioStream" uid="uid://bfq1bm6g0rl7x" path="res://assets/sounds/Fail.wav" id="2_ujvys"]
