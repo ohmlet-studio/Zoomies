@@ -21,6 +21,10 @@ var buttonUpPressed = false
 @export var scene_array = Array()
 @onready var zoomiesui = $ZoomiesUI
 
+@onready var cat_node = %CatNode
+
+@onready var level_timer = %LevelTimer
+
 @export var cat_number_by_wave:int = 3
 
 var idx = 0
@@ -42,7 +46,8 @@ func _instantiate_cat_display():
 	
 	# this fails because the instance is not ready, help
 	# Add scene to parent node
-	add_child(cat_scene_node)
+	#add_child(cat_scene_node)
+	cat_node.add_child(cat_scene_node)
 	
 	cat_scene_node.unalign_camera_random(DIFFICULTY, DIFFICULTY)
 	cat_scene_node.connect_cat()

@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dst57avkngwuw"]
+[gd_scene load_steps=11 format=3 uid="uid://dst57avkngwuw"]
 
 [ext_resource type="Script" path="res://scripts/levels/level_infinite.gd" id="1_kutmv"]
-[ext_resource type="PackedScene" uid="uid://cs6sy82mme6s4" path="res://scenes/ui/zoomies_ui.tscn" id="2_pkgyb"]
-[ext_resource type="Texture2D" uid="uid://dfw1ecbuyggk6" path="res://assets/textures/UI/Arrow.png" id="3_b7cfu"]
+[ext_resource type="Script" path="res://scripts/zoomies_ui.gd" id="2_1bhgf"]
+[ext_resource type="Texture2D" uid="uid://dfw1ecbuyggk6" path="res://assets/textures/UI/arrow.png" id="3_b7cfu"]
+[ext_resource type="Texture2D" uid="uid://0l2ayk71gk40" path="res://assets/textures/zoomies_interface.jpg" id="3_rqunf"]
 [ext_resource type="PackedScene" uid="uid://c4wfxjktfnjdu" path="res://scenes/timer.tscn" id="4_avp3g"]
+[ext_resource type="Texture2D" uid="uid://wl48b0bak38o" path="res://assets/textures/UI/bottom_bar/menu.png" id="4_swbrd"]
+[ext_resource type="Texture2D" uid="uid://blobdkiyaf60p" path="res://assets/textures/UI/bottom_bar/pause.png" id="5_85dtw"]
+[ext_resource type="Texture2D" uid="uid://cqmt4i33ush74" path="res://assets/textures/zoomies_interface_top.jpg" id="5_cwgdu"]
+[ext_resource type="Texture2D" uid="uid://c3gm7x028s8jt" path="res://assets/textures/UI/bottom_bar/grid.png" id="6_q6jo7"]
+[ext_resource type="PackedScene" uid="uid://bdao8ti38nvhb" path="res://scenes/ui/pause_menu.tscn" id="7_3on2j"]
 
 [node name="LevelInfinite" type="Node2D"]
 script = ExtResource("1_kutmv")
@@ -12,8 +18,74 @@ script = ExtResource("1_kutmv")
 wait_time = 5.0
 autostart = true
 
-[node name="ZoomiesUI" parent="." instance=ExtResource("2_pkgyb")]
+[node name="ZoomiesUI" type="Node2D" parent="."]
 position = Vector2(-960, -540)
+script = ExtResource("2_1bhgf")
+
+[node name="Background" type="TextureRect" parent="ZoomiesUI"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_rqunf")
+expand_mode = 1
+
+[node name="UpRectangle" type="ColorRect" parent="ZoomiesUI"]
+visible = false
+top_level = true
+scale = Vector2(1, 0.560001)
+color = Color(0.72549, 0.882353, 0.960784, 1)
+
+[node name="CatNode" type="Node2D" parent="ZoomiesUI"]
+unique_name_in_owner = true
+position = Vector2(960, 540)
+
+[node name="DownRectangle" type="ColorRect" parent="ZoomiesUI"]
+offset_left = -2.0
+offset_top = 925.0
+offset_right = 1718.0
+offset_bottom = 1141.0
+scale = Vector2(1, 0.719999)
+color = Color(0.72549, 0.882353, 0.960784, 1)
+
+[node name="menu" type="TextureButton" parent="ZoomiesUI"]
+visibility_layer = 5
+offset_left = 733.453
+offset_top = 951.836
+offset_right = 963.453
+offset_bottom = 1135.84
+scale = Vector2(0.7553, 0.7553)
+texture_normal = ExtResource("4_swbrd")
+
+[node name="pause" type="TextureButton" parent="ZoomiesUI"]
+visibility_layer = 5
+offset_left = 878.727
+offset_top = 951.836
+offset_right = 1108.73
+offset_bottom = 1135.84
+scale = Vector2(0.7553, 0.7553)
+texture_normal = ExtResource("5_85dtw")
+
+[node name="grid" type="TextureButton" parent="ZoomiesUI"]
+visibility_layer = 5
+offset_left = 1023.17
+offset_top = 951.836
+offset_right = 1253.17
+offset_bottom = 1135.84
+scale = Vector2(0.7553, 0.7553)
+texture_normal = ExtResource("6_q6jo7")
+
+[node name="TopButtons" type="Button" parent="ZoomiesUI"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1756.0
+offset_top = 65.0
+offset_right = 1764.0
+offset_bottom = 73.0
+scale = Vector2(18.2809, -6.8588)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="ZoomiesUI"]
+
+[node name="PauseMenu" parent="ZoomiesUI/CanvasLayer" instance=ExtResource("7_3on2j")]
+unique_name_in_owner = true
+visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -35,8 +107,16 @@ pivot_offset = Vector2(79, 58)
 texture_normal = ExtResource("3_b7cfu")
 
 [node name="LevelTimer" parent="." instance=ExtResource("4_avp3g")]
+unique_name_in_owner = true
+timer_sec = 30
+
+[node name="TopBar" type="Sprite2D" parent="."]
+position = Vector2(0, -487)
+texture = ExtResource("5_cwgdu")
 
 [connection signal="timeout" from="CatSpawner" to="." method="_spawn_cats"]
+[connection signal="pressed" from="ZoomiesUI/pause" to="ZoomiesUI" method="_on_pause_pressed"]
+[connection signal="pressed" from="ZoomiesUI/TopButtons" to="ZoomiesUI" method="_on_pause_pressed"]
 [connection signal="button_down" from="UpButton" to="." method="_on_up_button_button_down"]
 [connection signal="button_up" from="UpButton" to="." method="_on_up_button_button_up"]
 [connection signal="button_down" from="DownButton" to="." method="_on_down_button_button_down"]
