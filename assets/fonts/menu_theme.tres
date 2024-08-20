@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://c62861x5fnjo1"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://c62861x5fnjo1"]
 
 [ext_resource type="FontFile" uid="uid://djf30q323awye" path="res://assets/fonts/Vividly-Regular.ttf" id="1_mrew3"]
 
@@ -26,6 +26,22 @@ corner_radius_top_right = 40
 corner_radius_bottom_right = 40
 corner_radius_bottom_left = 40
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xm6dl"]
+bg_color = Color(0.647578, 0.76541, 0.915283, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.162889, 0.290036, 0.447073, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4tv16"]
 bg_color = Color(0.144062, 0.144063, 0.144062, 0.494118)
 corner_radius_top_left = 50
@@ -34,11 +50,13 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
 [resource]
-Button/font_sizes/font_size = 40
+Button/font_sizes/font_size = 80
 Button/fonts/font = ExtResource("1_mrew3")
 Button/styles/hover = SubResource("StyleBoxFlat_mhese")
 Button/styles/normal = SubResource("StyleBoxFlat_6busl")
+HSlider/styles/slider = SubResource("StyleBoxFlat_xm6dl")
+Label/colors/font_outline_color = Color(0.162889, 0.290036, 0.447073, 1)
 Label/constants/outline_size = 15
-Label/font_sizes/font_size = 40
+Label/font_sizes/font_size = 80
 Label/fonts/font = ExtResource("1_mrew3")
 Panel/styles/panel = SubResource("StyleBoxFlat_4tv16")
