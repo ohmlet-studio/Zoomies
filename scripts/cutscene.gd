@@ -58,9 +58,11 @@ func _ready():
 	var tween_camera_move = get_tree().create_tween()
 	tween_camera_move.tween_property($Camera2D, "offset:y", target_camera_y, floor_scroll_time*number_of_floors)
 	tween_camera_move.set_ease(Tween.EASE_IN_OUT)
-	
+
 	if !gameover:
 		tween_camera_move.tween_callback(_spawn_last_level)
+	else:
+		cutscene_over.emit()
 	
 	# create a timer and play tick sound every floor_scroll_time s
 	tick_timer = Timer.new()

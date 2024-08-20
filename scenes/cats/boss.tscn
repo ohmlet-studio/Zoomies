@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bt2t7cgg75aot"]
+[gd_scene load_steps=8 format=3 uid="uid://bt2t7cgg75aot"]
 
 [ext_resource type="PackedScene" uid="uid://dhrrkj5xdmdeb" path="res://scenes/cat_display.tscn" id="1_0derp"]
 [ext_resource type="Texture2D" uid="uid://d2all7fua5qfo" path="res://assets/textures/cat_parts/boss_body.png" id="2_b11pb"]
 [ext_resource type="Texture2D" uid="uid://5h71h82dfhcp" path="res://assets/textures/cat_parts/eyes/boss/normal.png" id="2_wpukm"]
 [ext_resource type="Texture2D" uid="uid://vgid0565xngf" path="res://assets/textures/rooms/wallpapers/vertical_stripes.jpg" id="3_3f5l1"]
+[ext_resource type="Texture2D" uid="uid://ccapb0rlso7g1" path="res://assets/textures/rooms/floors/tiles.jpg" id="5_tfa6k"]
+[ext_resource type="Texture2D" uid="uid://blnd1jvhiwla8" path="res://assets/textures/cat_parts/mouth/neutral.png" id="6_8y7f3"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_67l7x"]
 viewport_path = NodePath("SubViewport")
@@ -12,6 +14,8 @@ viewport_path = NodePath("SubViewport")
 cat_body = ExtResource("2_b11pb")
 cat_eyes = ExtResource("2_wpukm")
 wallpaper = ExtResource("3_3f5l1")
+floor_texture = ExtResource("5_tfa6k")
+mouth_idle_texture = ExtResource("6_8y7f3")
 
 [node name="mug" parent="SubViewport/Parent3D/objects" index="3"]
 transform = Transform3D(0.0926422, 0, -0.451318, 0, 0.0971439, 0, 0.0747955, 0, 0.559005, 3.06126, -3.37343, 0.337024)
