@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfw1ecbuyggk6"
-path="res://.godot/imported/Arrow.png-8e2c136a7e94231eec7781ed31aef9c8.ctex"
+uid="uid://7dfds08rwvxg"
+path="res://.godot/imported/zoomies_interface_top.jpg-84451e5e0201cfdcff8a56e9fd67ffd1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/UI/Arrow.png"
-dest_files=["res://.godot/imported/Arrow.png-8e2c136a7e94231eec7781ed31aef9c8.ctex"]
+source_file="res://assets/textures/zoomies_interface_top.jpg"
+dest_files=["res://.godot/imported/zoomies_interface_top.jpg-84451e5e0201cfdcff8a56e9fd67ffd1.ctex"]
 
 [params]
 

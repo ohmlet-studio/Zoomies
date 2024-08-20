@@ -21,6 +21,7 @@ var object_lim_x_axis = 10
 @export var default_boder_color = Color("d7d7d7")
 @export var border_color_focus = Color(0, 0, 0.545098, 1)
 @export var border_color_hover = Color("white")
+@export var infinite_mode: bool = false
 
 @export var randomize_room: bool
 @export var randomize_cat: bool
@@ -251,6 +252,10 @@ func on_ears_aligned_in():
 	$Parent2D/EarHintAligned.show()
 	ears_aligned_in.emit()
 	WebcamManager.check_are_cats_aligned()
+	
+	if infinite_mode:
+		GameManager.add_time_infinite_mode()
+		GameManager.add_to_score_infinite_mode()
 	
 func on_ears_aligned_out():
 	if cinematic_mode:

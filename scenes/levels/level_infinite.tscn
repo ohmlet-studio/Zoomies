@@ -35,6 +35,7 @@ pivot_offset = Vector2(79, 58)
 texture_normal = ExtResource("3_b7cfu")
 
 [node name="LevelTimer" parent="." instance=ExtResource("4_avp3g")]
+unique_name_in_owner = true
 
 [connection signal="timeout" from="CatSpawner" to="." method="_spawn_cats"]
 [connection signal="button_down" from="UpButton" to="." method="_on_up_button_button_down"]

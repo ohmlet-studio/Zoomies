@@ -2,6 +2,9 @@ extends Node
 
 var current_level = 1
 
+var infinite_score = 0
+var infinite_timer
+
 # ce script gère les transitions entre niveaux (cutscene, gameover, dialogues, etc.)
 func next_level():
 	await get_tree().create_timer(1).timeout
@@ -51,13 +54,23 @@ func game_over():
 	add_child(gameover_instance)
 	await gameover_instance.cutscene_over
 	
-
 	#gameover_instance.Letter_node.AnimationPlayer.play("youre_fired_anim")
 	#remove_child(gameover_instance)
 	
+	# TODO switch to letter scene 
+
+func set_infinte_timer(timer):
+	self.infinite_timer = timer
+
+func add_time_infinite_mode():
+	print("gegeges")
+	var time = self.infinite_timer.time_left + 5
+	self.infinite_timer.wait_time = time
+	
+func add_to_score_infinite_mode():
+	infinite_score += 0.2
+	current_level = int(infinite_score)
 	
 
-	# TODO switch to letter scene 
-	
 func unlock_infinite_mode():
 	pass #TODO
