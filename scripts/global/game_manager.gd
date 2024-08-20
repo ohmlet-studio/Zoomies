@@ -51,7 +51,7 @@ func game_over():
 	add_child(gameover_instance)
 	await gameover_instance.cutscene_over
 	
-	#remove_child(gameover_instance)
+	remove_child(gameover_instance)
 
 	# TODO switch to letter scene 
 	
