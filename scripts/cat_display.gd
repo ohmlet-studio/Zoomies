@@ -12,7 +12,8 @@ extends Node2D
 @onready var first_plan_obj = %firstPlan
 @onready var second_plan_obj = %secondPlan
 @onready var third_plan_obj = %thirdPlan
-@onready var mug_obg = %mug
+@onready var mug_obj = %mug
+@onready var mouse_obj = %mouse
 
 # Object position boundary
 var object_lim_x_axis = 10
@@ -67,7 +68,8 @@ func _ready() -> void:
 		first_plan_obj.set_texture(_get_random_texture("res://assets/textures/rooms/objects/first_plan/"))
 		second_plan_obj.set_texture(_get_random_texture("res://assets/textures/rooms/objects/second_plan/"))
 		third_plan_obj.set_texture(_get_random_texture("res://assets/textures/rooms/objects/third__plan/"))
-		mug_obg.set_texture(_get_random_texture("res://assets/textures/rooms/objects/mug/colored/"))
+		mug_obj.set_texture(_get_random_texture("res://assets/textures/rooms/objects/mug/colored/"))
+		mouse_obj.set_texture(_get_random_texture("res://assets/textures/rooms/objects/mouse/"))
 		# Randomize object X axis
 		first_plan_obj.translate(Vector3(randf_range(5, object_lim_x_axis), 0, 0))
 		second_plan_obj.translate(Vector3(randf_range(5, object_lim_x_axis), 0, 0))

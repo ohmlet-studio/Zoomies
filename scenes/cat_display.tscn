@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dhrrkj5xdmdeb"]
+[gd_scene load_steps=33 format=3 uid="uid://dhrrkj5xdmdeb"]
 
 [ext_resource type="Script" path="res://scripts/cat_display.gd" id="1_0xj6i"]
 [ext_resource type="Texture2D" uid="uid://bj6o55ei14h8x" path="res://assets/textures/cat_display/hint.png" id="1_kwfk6"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://benihwxolii8c" path="res://assets/textures/rooms/wallpapers/duck.jpg" id="14_ys5lk"]
 [ext_resource type="Texture2D" uid="uid://jovk6cvvllfn" path="res://assets/textures/rooms/objects/first_plan/lavalamp.png" id="15_siqhc"]
 [ext_resource type="Texture2D" uid="uid://d1na8so6vxeu" path="res://assets/textures/rooms/floors/boards.jpg" id="15_tsi68"]
+[ext_resource type="Texture2D" uid="uid://b6ohimri07lta" path="res://assets/textures/rooms/objects/mouse/blue.png" id="20_difki"]
 [ext_resource type="AudioStream" uid="uid://bxuhtxxwap2hj" path="res://assets/sounds/effects/disconnect.mp3" id="20_na4ef"]
 [ext_resource type="Texture2D" uid="uid://2iseiunvfxlx" path="res://assets/textures/cat_display/hint_ok.png" id="21_bedwd"]
 
@@ -176,9 +177,15 @@ texture = ExtResource("15_siqhc")
 
 [node name="mug" type="Sprite3D" parent="SubViewport/Parent3D/objects"]
 unique_name_in_owner = true
-transform = Transform3D(0.0926422, 0, -0.451318, 0, 0.0971439, 0, 0.0747955, 0, 0.559005, 3.06126, -3.37343, 0.337024)
+transform = Transform3D(0.33342, 0, -1.90187, 0, 0.497478, 0, 0.269189, 0, 2.35566, 15.1676, 1.66929, 0.223936)
 alpha_cut = 2
 texture = ExtResource("13_s3b2k")
+
+[node name="mouse" type="Sprite3D" parent="SubViewport/Parent3D/objects"]
+unique_name_in_owner = true
+transform = Transform3D(0.405539, -0.106863, 0.7307, -0.0252646, 0.308253, 2.36961, -0.13613, -0.37556, 1.73702, 10.692, 1.40206, 0.52474)
+alpha_cut = 2
+texture = ExtResource("20_difki")
 
 [node name="Parent2D" type="Node2D" parent="."]
 
