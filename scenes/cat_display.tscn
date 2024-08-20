@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://htf26qrq8weu" path="res://assets/sounds/effects/zoom_out.wav" id="5_j6drw"]
 [ext_resource type="AudioStream" uid="uid://c202x3vi4wpai" path="res://assets/sounds/effects/connect.wav" id="5_km0xu"]
 [ext_resource type="AudioStream" uid="uid://dq4wwwaoujahu" path="res://assets/sounds/effects/BIP.wav" id="5_lgkhl"]
-[ext_resource type="Texture2D" uid="uid://cp5y11q2qlpjn" path="res://assets/textures/cat_parts/body/boss.png" id="10_8edfj"]
+[ext_resource type="Texture2D" uid="uid://5yoy8jbc5vuo" path="res://assets/textures/cat_parts/body/boss.png" id="10_8edfj"]
 [ext_resource type="Texture2D" uid="uid://blnd1jvhiwla8" path="res://assets/textures/cat_parts/mouth/neutral.png" id="11_cxlok"]
 [ext_resource type="Texture2D" uid="uid://dw2j1ndf53q5w" path="res://assets/textures/rooms/objects/second_plan/monstera.png" id="12_jafud"]
 [ext_resource type="Texture2D" uid="uid://5h71h82dfhcp" path="res://assets/textures/cat_parts/eyes/boss/normal.png" id="12_uor7u"]
