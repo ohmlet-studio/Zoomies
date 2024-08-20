@@ -13,35 +13,34 @@ const dialog_three: Array[String] = [
 	"quickly, preferably..."
 ]
 
-const test_position = Vector2(960, 250)
-
 var handle_dial_finish : Callable
 
+var dialog_step = 0
+
 func _ready() -> void:
+	await get_tree().create_timer(.5).timeout
+	
 	$Boss.connect_cat()
 	$Boss.disable_input()
-
-	var dialog_signal_call = Callable(self, "_on_first_dialog_finish")
-	DialogManager.dialog_finish.connect(dialog_signal_call)
-	DialogManager.start_dialog(test_position, dialog_one, $Boss)
-
-func _on_first_dialog_finish():
-	await get_tree().create_timer(1).timeout
 	
+	await get_tree().create_timer(.5).timeout
+
+	var dialog_signal_call = Callable(self, "_on_dialog_finish")
+	DialogManager.dialog_finish.connect(dialog_signal_call)
+	DialogManager.start_dialog(dialog_one, $Boss)
+
+func _on_dialog_finish():
 	# when dialog is over
-	$Boss.enable_input()
-	$sfx.play()
 	
-	$Boss.unalign_camera_random(0.5, 0.5)
+	dialog_step += 1
 	
-	var dialog_signal_call = Callable(self, "_on_second_dialog_finish")
-	DialogManager.dialog_finish.connect(dialog_signal_call)
-	DialogManager.start_dialog(test_position, dialog_two, $Boss)
-
-func _on_second_dialog_finish():
-	var dialog_signal_call = Callable(self, "_on_third_dialog_finish")
-	DialogManager.dialog_finish.connect(dialog_signal_call)
-	DialogManager.start_dialog(test_position, dialog_three, $Boss)
-	
-func _on_third_dialog_finish():
-	pass
+	if dialog_step == 1:
+		await get_tree().create_timer(.5).timeout
+		$Boss.enable_input()
+		$sfx.play()
+		$Boss.unalign_camera_random(0.5, 0.5)
+		DialogManager.start_dialog(dialog_two, $Boss)
+	elif dialog_step == 2:
+		DialogManager.start_dialog(dialog_three, $Boss)
+	else:
+		pass

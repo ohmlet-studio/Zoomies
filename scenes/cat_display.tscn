@@ -175,7 +175,6 @@ alpha_cut = 2
 texture = ExtResource("13_s3b2k")
 
 [node name="Parent2D" type="Node2D" parent="."]
-scale = Vector2(1.00639, 1.00639)
 
 [node name="CatDisplaySprite" type="Sprite2D" parent="Parent2D"]
 texture = SubResource("ViewportTexture_hixn4")

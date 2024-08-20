@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://chnxoqmxylub0"]
+[gd_scene load_steps=4 format=3 uid="uid://bdmlwiqmqtulo"]
 
 [ext_resource type="Script" path="res://scripts/levels/level_2.gd" id="1_rtukf"]
 [ext_resource type="PackedScene" uid="uid://cs6sy82mme6s4" path="res://scenes/ui/zoomies_ui.tscn" id="2_myug6"]

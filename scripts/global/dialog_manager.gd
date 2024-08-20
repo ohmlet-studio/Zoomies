@@ -15,14 +15,15 @@ var cat_display
 
 signal dialog_finish()
 
-func start_dialog(position: Vector2, lines: Array[String], cat_display: Node2D):
+func start_dialog(lines: Array[String], cat_display: Node2D):
 	if is_dialog_active:
 		return
 	
 	self.cat_display = cat_display
+	self.dialog_lines = lines
 		
-	dialog_lines = lines
-	text_box_position = position
+	var display_size = cat_display.get_node("Parent2D/CatDisplaySprite").get_rect().size
+	text_box_position = cat_display.global_position + Vector2(display_size.x/3, display_size.y/12)
 	_show_text_box()
 	
 	is_dialog_active = true

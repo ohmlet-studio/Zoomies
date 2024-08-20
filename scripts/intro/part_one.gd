@@ -22,8 +22,6 @@ const lines: Array[String] = [
 	"I'll show you how to properly do your job."
 ]
 
-const test_position = Vector2(960, 250)
-
 func _ready() -> void:
 	$Boss.disable_input()
 	
@@ -38,7 +36,7 @@ func _ready() -> void:
 	var dialog_signal_call = Callable(self, "_on_dialog_finished")
 	DialogManager.dialog_finish.connect(dialog_signal_call)
 	# Start dialog
-	DialogManager.start_dialog(test_position, lines, $Boss)
+	DialogManager.start_dialog(lines, $Boss)
 	
 func _on_dialog_finished():
 	get_tree().change_scene_to_file("res://scenes/intro/part_two.tscn")

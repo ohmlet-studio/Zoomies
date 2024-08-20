@@ -18,8 +18,8 @@ autoplay = true
 [node name="ZoomiesUI" parent="." instance=ExtResource("3_khsjq")]
 
 [node name="Boss" parent="." instance=ExtResource("3_lbx7h")]
-position = Vector2(227, 119)
-scale = Vector2(0.981965, 0.981965)
+position = Vector2(256, 119)
+scale = Vector2(0.720302, 0.720302)
 cat_body = ExtResource("4_486o4")
 floor = ExtResource("6_tdv12")
 

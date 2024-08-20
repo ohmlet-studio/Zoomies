@@ -1,0 +1,140 @@
+[gd_scene load_steps=13 format=3 uid="uid://boioovjvf2bll"]
+
+[ext_resource type="Texture2D" uid="uid://c82k4cm1kuwke" path="res://assets/textures/cutscene/Background.jpg" id="1_dgydu"]
+[ext_resource type="Script" path="res://scripts/cutscene.gd" id="1_fvtvi"]
+[ext_resource type="Texture2D" uid="uid://b7f2fcx0rnvhx" path="res://assets/textures/cutscene/Building_Top.png" id="2_2emj1"]
+[ext_resource type="Texture2D" uid="uid://b7vedyl1mq2om" path="res://assets/textures/cutscene/Building_bottom.png" id="3_fk8c6"]
+[ext_resource type="Texture2D" uid="uid://dr6xuruk2evij" path="res://assets/textures/cutscene/Building_Mid.png" id="4_8lxqt"]
+[ext_resource type="Texture2D" uid="uid://mw37plkcg2qm" path="res://assets/textures/cutscene/Building_Mid2.png" id="5_fatp3"]
+[ext_resource type="Texture2D" uid="uid://cg5d71fjof3j1" path="res://assets/textures/cutscene/Building_Mid3.png" id="6_jmmxm"]
+[ext_resource type="AudioStream" uid="uid://ca3nbwb7dsyd8" path="res://assets/sounds/effects/Building Pop.wav" id="8_an50c"]
+[ext_resource type="AudioStream" uid="uid://bvblhh7ijsnms" path="res://assets/sounds/effects/scroll.mp3" id="9_qv2f5"]
+
+[sub_resource type="Gradient" id="Gradient_onss8"]
+colors = PackedColorArray(0.573994, 0.630966, 0.74921, 1, 0.596078, 0.666667, 0.784314, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_amt4s"]
+frequency = 0.3407
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_86jqt"]
+color_ramp = SubResource("Gradient_onss8")
+noise = SubResource("FastNoiseLite_amt4s")
+
+[node name="Cutscene" type="Node2D"]
+script = ExtResource("1_fvtvi")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sky" type="Node2D" parent="."]
+
+[node name="BackgroundSky" type="Sprite2D" parent="Sky"]
+position = Vector2(0, -1397)
+scale = Vector2(4, 4)
+texture = SubResource("NoiseTexture2D_86jqt")
+
+[node name="BackgroundSky2" type="Sprite2D" parent="Sky"]
+position = Vector2(0, -3383)
+scale = Vector2(4, 4)
+texture = SubResource("NoiseTexture2D_86jqt")
+
+[node name="BackgroundSky3" type="Sprite2D" parent="Sky"]
+position = Vector2(0, -5353)
+scale = Vector2(4, 4)
+texture = SubResource("NoiseTexture2D_86jqt")
+
+[node name="BackgroundSky4" type="Sprite2D" parent="Sky"]
+position = Vector2(0, -7339)
+scale = Vector2(4, 4)
+texture = SubResource("NoiseTexture2D_86jqt")
+
+[node name="BackgroundSky5" type="Sprite2D" parent="Sky"]
+position = Vector2(0, -9271)
+scale = Vector2(4, 4)
+texture = SubResource("NoiseTexture2D_86jqt")
+
+[node name="BackgroundSky6" type="Sprite2D" parent="Sky"]
+position = Vector2(0, -11257)
+scale = Vector2(4, 4)
+texture = SubResource("NoiseTexture2D_86jqt")
+
+[node name="BackgroundSky7" type="Sprite2D" parent="Sky"]
+position = Vector2(0, -13227)
+scale = Vector2(4, 4)
+texture = SubResource("NoiseTexture2D_86jqt")
+
+[node name="BackgroundSky8" type="Sprite2D" parent="Sky"]
+position = Vector2(0, -15213)
+scale = Vector2(4, 4)
+texture = SubResource("NoiseTexture2D_86jqt")
+
+[node name="BackgroundSky9" type="Sprite2D" parent="Sky"]
+position = Vector2(0, -17123)
+scale = Vector2(4, 4)
+texture = SubResource("NoiseTexture2D_86jqt")
+
+[node name="BackgroundSky10" type="Sprite2D" parent="Sky"]
+position = Vector2(0, -19109)
+scale = Vector2(4, 4)
+texture = SubResource("NoiseTexture2D_86jqt")
+
+[node name="BackgroundSky11" type="Sprite2D" parent="Sky"]
+position = Vector2(0, -21079)
+scale = Vector2(4, 4)
+texture = SubResource("NoiseTexture2D_86jqt")
+
+[node name="BackgroundSky12" type="Sprite2D" parent="Sky"]
+position = Vector2(0, -23065)
+scale = Vector2(4, 4)
+texture = SubResource("NoiseTexture2D_86jqt")
+
+[node name="BackgroundSky13" type="Sprite2D" parent="Sky"]
+position = Vector2(0, -24997)
+scale = Vector2(4, 4)
+texture = SubResource("NoiseTexture2D_86jqt")
+
+[node name="BackgroundSky14" type="Sprite2D" parent="Sky"]
+position = Vector2(0, -26983)
+scale = Vector2(4, 4)
+texture = SubResource("NoiseTexture2D_86jqt")
+
+[node name="BackgroundSky15" type="Sprite2D" parent="Sky"]
+position = Vector2(0, -28953)
+scale = Vector2(4, 4)
+texture = SubResource("NoiseTexture2D_86jqt")
+
+[node name="BackgroundSky16" type="Sprite2D" parent="Sky"]
+position = Vector2(0, -30939)
+scale = Vector2(4, 4)
+texture = SubResource("NoiseTexture2D_86jqt")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_dgydu")
+
+[node name="Building_roof" type="Sprite2D" parent="."]
+position = Vector2(0, -165)
+texture = ExtResource("2_2emj1")
+
+[node name="Building_bottom" type="Sprite2D" parent="."]
+position = Vector2(0, 241)
+texture = ExtResource("3_fk8c6")
+
+[node name="midsections" type="Node2D" parent="."]
+visible = false
+
+[node name="building_mid" type="Sprite2D" parent="midsections"]
+position = Vector2(0, 241)
+texture = ExtResource("4_8lxqt")
+
+[node name="building_mid2" type="Sprite2D" parent="midsections"]
+position = Vector2(0, 241)
+texture = ExtResource("5_fatp3")
+
+[node name="building_mid3" type="Sprite2D" parent="midsections"]
+position = Vector2(0, 241)
+texture = ExtResource("6_jmmxm")
+
+[node name="Building_pop_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_an50c")
+
+[node name="Building_tick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_qv2f5")

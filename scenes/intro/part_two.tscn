@@ -23,8 +23,8 @@ stream = ExtResource("5_twyvj")
 volume_db = 24.0
 
 [node name="Boss" parent="." instance=ExtResource("3_vupdj")]
-position = Vector2(227, 119)
-scale = Vector2(0.981965, 0.981965)
+position = Vector2(256, 119)
+scale = Vector2(0.720302, 0.720302)
 cat_body = ExtResource("6_icupb")
 floor = ExtResource("7_ut5dj")
 

@@ -135,8 +135,18 @@ func _get_random_texture(path : String) -> Texture2D:
 	return res
 
 func connect_cat():
+	var tween = get_tree().create_tween()
+	
 	$connect_sound.play()
 	parent2D.visible = true
+	
+	# connect animation
+	var target_scale_y = parent2D.scale.y
+	parent2D.scale.y = 0
+	
+	# Create and configure the tween
+	tween.tween_property(parent2D, "scale:y", target_scale_y, 0.2).set_trans(Tween.TRANS_SINE)
+
 	
 func disconnect_cat():
 	$disconnect_sound.play()
@@ -151,8 +161,7 @@ func set_mouth_idle():
 	cat.get_node("mouth").texture = mouth_idle_texture
 	
 func blink():
-	pass #TODO
-	
+	pass #TODO	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
