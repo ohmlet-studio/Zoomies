@@ -111,6 +111,7 @@ func set_cinematic_mode(is_enabled):
 		disable_input()
 		$Parent2D/EarHint.hide()
 	else:
+		$Parent2D/EarHint.hide()
 		enable_input()
 
 func disable_input():
@@ -121,7 +122,7 @@ func enable_input():
 
 func unalign_camera_random(scale_fov, scale_rotation):
 	var rng = RandomNumberGenerator.new()
-	sub_viewport.camera.fov =  rng.randf_range(scale_fov*sub_viewport.LIMIT_FOV_MIN, scale_fov*sub_viewport.LIMIT_FOV_MAX)
+	sub_viewport.camera.fov = rng.randf_range(scale_fov*sub_viewport.LIMIT_FOV_MIN, scale_fov*sub_viewport.LIMIT_FOV_MAX)
 	
 	var random_rotation = Vector3(
 		 rng.randf_range(scale_rotation*sub_viewport.LIMIT_X_MIN, scale_rotation*sub_viewport.LIMIT_X_MAX),

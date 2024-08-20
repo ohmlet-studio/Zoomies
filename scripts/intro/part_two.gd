@@ -13,10 +13,6 @@ const dialog_getting_closer: Array[String] = [
 	"quickly, preferably..."
 ]
 
-const dialog_getting_further: Array[String] = [
-	"You're going the wrong way now."
-]
-
 const dialog_tutorial_over: Array[String] = [
 	"I think you get the jist of it.",
 	"Good luck now!",
@@ -65,14 +61,16 @@ func _on_dialog_finish():
 		# start level 1
 		WebcamManager.reset_cats()
 		get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")
-
+		
+	elif next_dialog_step == "unlock_controls":
+		$Boss.enable_input()
+		$Boss.activate()
 
 func getting_closer():
+	next_dialog_step = "unlock_controls"
+	$Boss.disable_input()
 	DialogManager.start_dialog(dialog_getting_closer, $Boss)
 	
-func getting_further():
-	DialogManager.start_dialog(dialog_getting_further, $Boss)
-
 func finish_tutorial():
 	next_dialog_step = "last_step"
 	$Boss.set_cinematic_mode(true)

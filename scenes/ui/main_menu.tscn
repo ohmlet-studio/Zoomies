@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2rskphkhcspx"]
+[gd_scene load_steps=7 format=3 uid="uid://d2rskphkhcspx"]
 
 [ext_resource type="FontFile" uid="uid://djf30q323awye" path="res://assets/fonts/Vividly-Regular.ttf" id="1_r48s2"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="2_v6ora"]
 [ext_resource type="AudioStream" uid="uid://b3i0482cg5esx" path="res://assets/sounds/Menu Theme.wav" id="3_ehhgd"]
+[ext_resource type="Texture2D" uid="uid://de8pb6aaspoep" path="res://assets/textures/UI/Menu/Title.png" id="3_nlvcu"]
 [ext_resource type="Theme" uid="uid://cssgsvi4n3gf2" path="res://assets/fonts/menu_theme.tres" id="3_qjtdt"]
 
 [sub_resource type="Theme" id="Theme_jyfsc"]
@@ -26,7 +27,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.116741, 0.116741, 0.116741, 1)
+color = Color(0.329412, 0.643137, 0.886275, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 787.0
+offset_top = 145.0
+offset_right = 2707.0
+offset_bottom = 1225.0
+scale = Vector2(0.181188, 0.181188)
+texture = ExtResource("3_nlvcu")
 
 [node name="StartContainer" type="MarginContainer" parent="."]
 unique_name_in_owner = true
