@@ -107,3 +107,11 @@ func play_pop():
 	$Building_pop_sound.play()
 	await get_tree().create_timer(1).timeout
 	cutscene_over.emit()
+
+
+func _on_yes_pressed() -> void:
+	GameManager.restart_level()
+
+
+func _on_no_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")

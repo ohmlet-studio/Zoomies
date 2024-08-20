@@ -298,3 +298,6 @@ text = "No.."
 libraries = {
 "": SubResource("AnimationLibrary_ys00m")
 }
+
+[connection signal="pressed" from="YesNo_node/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="YesNo_node/No" to="." method="_on_no_pressed"]
