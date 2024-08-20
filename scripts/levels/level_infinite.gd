@@ -31,6 +31,7 @@ var idx = 0
 
 func _ready() -> void:
 	WebcamManager.reset_cats()
+	GameManager.set_infinte_timer($LevelTimer)
 	_spawn_cats()
 
 func _spawn_cats() -> void:
@@ -51,6 +52,7 @@ func _instantiate_cat_display():
 	
 	cat_scene_node.unalign_camera_random(DIFFICULTY, DIFFICULTY)
 	cat_scene_node.connect_cat()
+	cat_scene_node.infinite_mode = true
 	#WebcamManager.add_new_display(cat_scene_node)
 	
 	scene_array.append({

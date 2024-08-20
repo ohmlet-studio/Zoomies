@@ -32,6 +32,7 @@ scale = Vector2(1, 0.560001)
 color = Color(0.72549, 0.882353, 0.960784, 1)
 
 [node name="menu" type="TextureButton" parent="."]
+top_level = true
 offset_left = 733.453
 offset_top = 951.836
 offset_right = 963.453
@@ -40,6 +41,7 @@ scale = Vector2(0.7553, 0.7553)
 texture_normal = ExtResource("2_detra")
 
 [node name="pause" type="TextureButton" parent="."]
+top_level = true
 offset_left = 878.727
 offset_top = 951.836
 offset_right = 1108.73
@@ -48,6 +50,7 @@ scale = Vector2(0.7553, 0.7553)
 texture_normal = ExtResource("3_hin76")
 
 [node name="grid" type="TextureButton" parent="."]
+top_level = true
 offset_left = 1023.17
 offset_top = 951.836
 offset_right = 1253.17

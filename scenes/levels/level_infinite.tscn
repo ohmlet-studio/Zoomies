@@ -108,11 +108,6 @@ texture_normal = ExtResource("3_b7cfu")
 
 [node name="LevelTimer" parent="." instance=ExtResource("4_avp3g")]
 unique_name_in_owner = true
-timer_sec = 30
-
-[node name="TopBar" type="Sprite2D" parent="."]
-position = Vector2(0, -487)
-texture = ExtResource("5_cwgdu")
 
 [connection signal="timeout" from="CatSpawner" to="." method="_spawn_cats"]
 [connection signal="pressed" from="ZoomiesUI/pause" to="ZoomiesUI" method="_on_pause_pressed"]
