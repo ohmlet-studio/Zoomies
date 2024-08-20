@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5yoy8jbc5vuo"
-path="res://.godot/imported/boss.png-6de7fa67add0d1c2f5e2cdcae67fdf21.ctex"
+uid="uid://cir1d1nq4vy4k"
+path="res://.godot/imported/greenyarn.png-e22465989faf48648ff165b437a0825f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/cat_parts/body/boss.png"
-dest_files=["res://.godot/imported/boss.png-6de7fa67add0d1c2f5e2cdcae67fdf21.ctex"]
+source_file="res://assets/textures/rooms/objects/mug/colored/greenyarn.png"
+dest_files=["res://.godot/imported/greenyarn.png-e22465989faf48648ff165b437a0825f.ctex"]
 
 [params]
 
