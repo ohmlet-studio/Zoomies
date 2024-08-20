@@ -7,7 +7,7 @@
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_h1cfy")
-timer_sec = 3
+timer_sec = 25
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
