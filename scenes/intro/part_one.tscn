@@ -1,13 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhrtnjiydddt4"]
+[gd_scene load_steps=5 format=3 uid="uid://dhrtnjiydddt4"]
 
 [ext_resource type="Script" path="res://scripts/intro/part_one.gd" id="1_6muly"]
 [ext_resource type="PackedScene" uid="uid://cs6sy82mme6s4" path="res://scenes/ui/zoomies_ui.tscn" id="3_khsjq"]
 [ext_resource type="PackedScene" uid="uid://bt2t7cgg75aot" path="res://scenes/cats/boss.tscn" id="3_lbx7h"]
-[ext_resource type="Texture2D" uid="uid://5yoy8jbc5vuo" path="res://assets/textures/cat_parts/boss_body.png" id="4_486o4"]
 [ext_resource type="AudioStream" uid="uid://y0jkwjbupk6e" path="res://assets/sounds/Videocall.mp3" id="4_e2mxu"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f4dp7"]
-load_path = "res://.godot/imported/boss.png-6de7fa67add0d1c2f5e2cdcae67fdf21.s3tc.ctex"
 
 [node name="IntroPartOne" type="Node2D"]
 script = ExtResource("1_6muly")
@@ -23,6 +19,5 @@ bus = &"Music"
 [node name="Boss" parent="." instance=ExtResource("3_lbx7h")]
 position = Vector2(256, 119)
 scale = Vector2(0.720302, 0.720302)
-cat_body = SubResource("CompressedTexture2D_f4dp7")
 
 [connection signal="ready" from="." to="." method="_on_ready"]

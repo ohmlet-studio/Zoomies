@@ -34,7 +34,7 @@
 
 [node name="SpeechBubble" type="MarginContainer"]
 texture_filter = 1
-offset_right = 195.0
+offset_right = 128.0
 offset_bottom = 128.0
 script = ExtResource("1_ekv2r")
 voice_A = Array[AudioStream]([ExtResource("5_noj14"), ExtResource("3_ixsv7"), ExtResource("4_4t43t"), ExtResource("5_gsu2q"), ExtResource("6_5d4y0"), ExtResource("7_moi6e"), ExtResource("8_jfmfe"), ExtResource("9_mws2u"), ExtResource("10_f3cbv")])

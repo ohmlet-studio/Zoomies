@@ -21,3 +21,27 @@ func _on_ready() -> void:
 	
 	var signal_call = Callable(GameManager, "next_level")
 	WebcamManager.all_cats_aligned.connect(signal_call)
+	
+	# dialogs
+	DialogManager.start_dialog(["Hi guys !!!"], $Cat1, true)
+	await DialogManager.dialog_finish
+	DialogManager.start_dialog(["Hey chat !!!!"], $Cat2, true)
+	await DialogManager.dialog_finish
+	DialogManager.start_dialog(["Today we're with MouseDestroyer69 and CuriosityKilled !"], $Cat3, true)
+	await DialogManager.dialog_finish
+	DialogManager.start_dialog(["Yeah, thanks for having us Shroedie."], $Cat2, true)
+	await DialogManager.dialog_finish
+	DialogManager.start_dialog(["You rule my puss."], $Cat1, true)
+	await DialogManager.dialog_finish
+	DialogManager.start_dialog(["Today we're together to try a game by Ohmlet studio."], $Cat3, true)
+	await DialogManager.dialog_finish
+	DialogManager.start_dialog(["Something about a Pug ??? I don't really get it ahah."], $Cat1, true)
+	await DialogManager.dialog_finish
+	DialogManager.start_dialog(["So you're the owner of this pug who wants more treats ?"], $Cat2, true)
+	await DialogManager.dialog_finish
+	DialogManager.start_dialog(["Exactly and in order to get them he trains you to plan a heist !"], $Cat3, true)
+	await DialogManager.dialog_finish
+	DialogManager.start_dialog(["I never thought a dog could be that smart lol."], $Cat2, true)
+	await DialogManager.dialog_finish
+	DialogManager.start_dialog(["Ahah good one bro !"], $Cat1, true)
+	await DialogManager.dialog_finish

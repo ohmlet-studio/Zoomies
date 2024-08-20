@@ -24,8 +24,8 @@ func start_dialog(lines: Array[String], cat_display: Node2D, autoskip: bool = fa
 	self.autoskip = autoskip
 	self.dialog_lines = lines
 		
-	var display_size = cat_display.get_node("Parent2D/CatDisplaySprite").get_rect().size
-	text_box_position = cat_display.global_position + Vector2(display_size.x/3, display_size.y/12)
+	var display_size = cat_display.get_node("Parent2D/CatDisplaySprite").get_rect().size * cat_display.scale
+	text_box_position = cat_display.global_position + Vector2(display_size.x/2, display_size.y/20)
 	_show_text_box()
 	
 	is_dialog_active = true

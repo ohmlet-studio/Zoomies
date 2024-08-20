@@ -51,7 +51,13 @@ func _play_meow(voice):
 	meowplayer.play()
 	
 	
-func _display_letter():
+func _display_letter():	
+	if !is_instance_valid(self.cat_display):
+		DialogManager.dialog_finish.emit()
+		DialogManager.text_box.queue_free()
+		DialogManager.is_dialog_active = false
+		return
+	
 	text_aggreator += text[letter_index]
 	
 	label.text = text_aggreator
