@@ -15,5 +15,8 @@ cat_body = ExtResource("2_b11pb")
 cat_eyes = ExtResource("2_wpukm")
 wallpaper = ExtResource("3_3f5l1")
 
+[node name="mouse" parent="SubViewport/Parent3D/objects" index="4"]
+visible = false
+
 [node name="CatDisplaySprite" parent="Parent2D" index="0"]
 texture = SubResource("ViewportTexture_67l7x")
