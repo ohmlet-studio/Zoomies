@@ -1,7 +1,8 @@
 extends Node2D
 
 const dialog_one: Array[String] = [
-	"Ok try to find me in the room using WASD to move around and simultaneously hold SHIFT to zoom in or out."
+	"Ok try to find me in the room using WASD to move around",
+	"and hold SHIFT whith W and S to zoom in and out."
 ]
 
 const dialog_two: Array[String] = [

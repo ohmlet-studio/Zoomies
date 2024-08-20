@@ -14,6 +14,8 @@ func _on_timer_timeout() -> void:
 	
 	# Format the time as MM:SS
 	$timer_label.text = str(minutes).pad_zeros(2) + ":" + str(seconds).pad_zeros(2)
+	
+	GameManager.game_over()
 
 func set_time(seconds: int):
 	self.timer_sec = seconds

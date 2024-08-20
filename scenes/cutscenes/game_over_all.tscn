@@ -6,5 +6,14 @@
 [node name="Cutscene" instance=ExtResource("1_nv6vo")]
 gameover = true
 
+[node name="Label" type="Label" parent="Camera2D" index="0"]
+top_level = true
+offset_left = -887.0
+offset_top = -490.0
+offset_right = -847.0
+offset_bottom = -467.0
+text = "zffzfz"
+metadata/_edit_use_anchors_ = true
+
 [node name="Victory" parent="." index="8"]
 stream = ExtResource("2_ujvys")

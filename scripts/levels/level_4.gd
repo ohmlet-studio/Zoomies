@@ -31,7 +31,11 @@ func _on_ready() -> void:
 	# dialogs
 	DialogManager.start_dialog(["Hey guys can everyone hear me?"], $Cat1, true)
 	await DialogManager.dialog_finish
-	DialogManager.start_dialog(["Yes!"], $Everyone, true)
+	DialogManager.start_dialog(["Yes!"], $Cat2, true)
+	await DialogManager.dialog_finish
+	DialogManager.start_dialog(["Yes!"], $Cat5, true)
+	await DialogManager.dialog_finish
+	
 	await DialogManager.dialog_finish
 	DialogManager.start_dialog(["Does anyone have any idea what we're getting Felix?"], $Cat2, true)
 	await DialogManager.dialog_finish

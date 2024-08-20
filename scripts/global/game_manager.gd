@@ -37,5 +37,18 @@ func restart_level():
 	WebcamManager.reset_cats()
 	get_tree().change_scene_to_file(str("res://scenes/levels/level_",current_level,".tscn"))
 	
+func game_over():
+	get_tree().current_scene.free()
+	
+	# Load the cutscene scene and wait for it to finish by listening to "cutscene_over" signal
+	var cutscene_scene = load("res://scenes/cutscenes/game_over_all.tscn")
+	var cutscene_instance = cutscene_scene.instantiate()
+	cutscene_instance.number_of_floors = current_level + 3
+	
+	add_child(cutscene_instance)
+	await cutscene_instance.cutscene_over
+	
+	# TODO switch to letter scene 
+	
 func unlock_infinite_mode():
 	pass #TODO

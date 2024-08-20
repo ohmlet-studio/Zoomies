@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5yoy8jbc5vuo"
-path.s3tc="res://.godot/imported/boss_body.png-1f996cc29e9d575b13e8e7e745ba621d.s3tc.ctex"
+uid="uid://d2all7fua5qfo"
+path="res://.godot/imported/boss_body.png-1f996cc29e9d575b13e8e7e745ba621d.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/textures/cat_parts/boss_body.png"
-dest_files=["res://.godot/imported/boss_body.png-1f996cc29e9d575b13e8e7e745ba621d.s3tc.ctex"]
+dest_files=["res://.godot/imported/boss_body.png-1f996cc29e9d575b13e8e7e745ba621d.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
