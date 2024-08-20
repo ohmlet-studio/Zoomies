@@ -7,7 +7,7 @@ const lines: Array[String] = [
 	"you have the responsibility of making us look good.",
 	"You see, we may have fast tracked the production process...",
 	"And our product was maybe not entirely...",
-	"… built to scale ya know.",
+	"...built to scale ya know.",
 	"These days we provide a video call software.",
 	"And contrary to what we advertised.",
 	"We didn't have the time to code an AI to make sure everyone is in frame.",
@@ -18,7 +18,7 @@ const lines: Array[String] = [
 	"If you're not fast enough people will notice.",
 	"Then zoomies' reputation will suffer.",
 	"Which is not good...",
-	"… for you.",
+	"...for you.",
 	"I'll show you how to properly do your job."
 ]
 
