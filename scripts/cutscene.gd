@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var number_of_floors:int = 15
+@export var number_of_floors:int = 1
 @export var floor_scroll_time:float = 0.2
 
 var target_scale_y = Vector2(1, 1)
@@ -10,8 +10,11 @@ var first_floor_height
 var tick_timer
 var tick_count = 0
 
+signal cutscene_over()
 
 func _ready():
+	number_of_floors -= 2
+	
 	if number_of_floors < 1:
 		$Victory.play()
 		await get_tree().create_timer(2.5).timeout
@@ -80,3 +83,5 @@ func _spawn_roof():
 
 func play_pop():
 	$Building_pop_sound.play()
+	await get_tree().create_timer(1).timeout
+	cutscene_over.emit()
