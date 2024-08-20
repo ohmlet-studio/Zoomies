@@ -39,6 +39,7 @@ var object_lim_x_axis = 10
 @export var cat_bodies_list: Array[Texture]
 @export var cat_eyes_list: Array[Texture]
 @export var mug_list: Array[Texture]
+@export var mouse_list: Array[Texture]
 
 # mouth animations
 @export var mouth_talking_poses: Array[Texture2D] = []
@@ -57,19 +58,31 @@ var cinematic_mode = true
 func _ready() -> void:
 	# ----------- Pick random texture -------------
 	if randomize_cat:
-		cat_body = _get_random_texture("res://assets/textures/cat_parts/body/")
-		cat_eyes = _get_random_texture("res://assets/textures/cat_parts/eyes/normal/")
+		#cat_body = _get_random_texture("res://assets/textures/cat_parts/body/")
+		cat_body = cat_bodies_list[randi() % cat_bodies_list.size()]
+		#cat_eyes = _get_random_texture("res://assets/textures/cat_parts/eyes/normal/")
+		cat_eyes = cat_eyes_list[randi() % cat_eyes_list.size()]
 	
 	if randomize_room:
 		# Get wall and floor texture
-		floor_texture = _get_random_texture("res://assets/textures/rooms/floors/")
-		wallpaper = _get_random_texture("res://assets/textures/rooms/wallpapers/")
+		#floor_texture = _get_random_texture("res://assets/textures/rooms/floors/")
+		floor_texture = floors_list[randi() % floors_list.size()]
+		#wallpaper = _get_random_texture("res://assets/textures/rooms/wallpapers/")
+		wallpaper = wallpapers_list[randi() % wallpapers_list.size()]
+		
 		# Get object texture
-		first_plan_obj.set_texture(_get_random_texture("res://assets/textures/rooms/objects/first_plan/"))
-		second_plan_obj.set_texture(_get_random_texture("res://assets/textures/rooms/objects/second_plan/"))
-		third_plan_obj.set_texture(_get_random_texture("res://assets/textures/rooms/objects/third__plan/"))
-		mug_obj.set_texture(_get_random_texture("res://assets/textures/rooms/objects/mug/colored/"))
-		mouse_obj.set_texture(_get_random_texture("res://assets/textures/rooms/objects/mouse/"))
+		#first_plan_obj.set_texture(_get_random_texture("res://assets/textures/rooms/objects/first_plan/"))
+		first_plan_obj.set_texture(first_plan_objects_list[randi() % first_plan_objects_list.size()])
+		#second_plan_obj.set_texture(_get_random_texture("res://assets/textures/rooms/objects/second_plan/"))
+		second_plan_obj.set_texture(second_plan_objects_list[randi() % second_plan_objects_list.size()])
+		
+		#third_plan_obj.set_texture(_get_random_texture("res://assets/textures/rooms/objects/third__plan/"))
+		third_plan_obj.set_texture(third_plan_objects_list[randi() % third_plan_objects_list.size()])
+		#mug_obj.set_texture(_get_random_texture("res://assets/textures/rooms/objects/mug/colored/"))
+		mug_obj.set_texture(mug_list[randi() % mug_list.size()])
+		#mouse_obj.set_texture(_get_random_texture("res://assets/textures/rooms/objects/mouse/"))
+		mouse_obj.set_texture(mouse_list[randi() % mouse_list.size()])
+		
 		# Randomize object X axis
 		first_plan_obj.translate(Vector3(randf_range(5, object_lim_x_axis), 0, 0))
 		second_plan_obj.translate(Vector3(randf_range(5, object_lim_x_axis), 0, 0))
