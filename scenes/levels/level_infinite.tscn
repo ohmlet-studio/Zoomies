@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c4wfxjktfnjdu" path="res://scenes/timer.tscn" id="4_avp3g"]
 [ext_resource type="Texture2D" uid="uid://wl48b0bak38o" path="res://assets/textures/UI/bottom_bar/menu.png" id="4_swbrd"]
 [ext_resource type="Texture2D" uid="uid://blobdkiyaf60p" path="res://assets/textures/UI/bottom_bar/pause.png" id="5_85dtw"]
-[ext_resource type="Texture2D" uid="uid://cqmt4i33ush74" path="res://assets/textures/zoomies_interface_top.jpg" id="5_cwgdu"]
+[ext_resource type="Texture2D" uid="uid://7dfds08rwvxg" path="res://assets/textures/zoomies_interface_top.jpg" id="5_cwgdu"]
 [ext_resource type="Texture2D" uid="uid://c3gm7x028s8jt" path="res://assets/textures/UI/bottom_bar/grid.png" id="6_q6jo7"]
 [ext_resource type="PackedScene" uid="uid://bdao8ti38nvhb" path="res://scenes/ui/pause_menu.tscn" id="7_3on2j"]
 
@@ -108,6 +108,13 @@ texture_normal = ExtResource("3_b7cfu")
 
 [node name="LevelTimer" parent="." instance=ExtResource("4_avp3g")]
 unique_name_in_owner = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 958.0
+offset_bottom = -434.0
+texture = ExtResource("5_cwgdu")
 
 [connection signal="timeout" from="CatSpawner" to="." method="_spawn_cats"]
 [connection signal="pressed" from="ZoomiesUI/pause" to="ZoomiesUI" method="_on_pause_pressed"]
