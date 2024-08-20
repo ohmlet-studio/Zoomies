@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dokjkeoyx71t3"
-path="res://.godot/imported/Inserted_Image.png-adbac5c4160def27687f373e51f0e6bc.ctex"
+uid="uid://bchbqnlnd8rgc"
+path="res://.godot/imported/orangeyarn.png-675f1c7925e53afe69cad3a2a2170b29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/UI/Menu/Inserted_Image.png"
-dest_files=["res://.godot/imported/Inserted_Image.png-adbac5c4160def27687f373e51f0e6bc.ctex"]
+source_file="res://assets/textures/rooms/objects/mug/colored/orangeyarn.png"
+dest_files=["res://.godot/imported/orangeyarn.png-675f1c7925e53afe69cad3a2a2170b29.ctex"]
 
 [params]
 
