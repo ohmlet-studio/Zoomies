@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfw1ecbuyggk6"
-path="res://.godot/imported/arrow.png-de188478b7d02ee454522b23541484cc.ctex"
+uid="uid://b6ohimri07lta"
+path="res://.godot/imported/blue.png-b597264e8f2f7a8e7369bbebfde9ef9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/UI/arrow.png"
-dest_files=["res://.godot/imported/arrow.png-de188478b7d02ee454522b23541484cc.ctex"]
+source_file="res://assets/textures/rooms/objects/mouse/blue.png"
+dest_files=["res://.godot/imported/blue.png-b597264e8f2f7a8e7369bbebfde9ef9c.ctex"]
 
 [params]
 

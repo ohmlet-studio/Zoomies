@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chqiqvf2sfy85"
-path="res://.godot/imported/Inserted_Image 1.png-b0fecb2f3a85686c43c8e94bf237b933.ctex"
+uid="uid://ct8o5nx4611y1"
+path="res://.godot/imported/purple.png-0bf14731b9847fb35888bee9a2758338.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/UI/Menu/Inserted_Image 1.png"
-dest_files=["res://.godot/imported/Inserted_Image 1.png-b0fecb2f3a85686c43c8e94bf237b933.ctex"]
+source_file="res://assets/textures/rooms/objects/mouse/purple.png"
+dest_files=["res://.godot/imported/purple.png-0bf14731b9847fb35888bee9a2758338.ctex"]
 
 [params]
 

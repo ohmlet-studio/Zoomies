@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://djf30q323awye" path="res://assets/fonts/Vividly-Regular.ttf" id="1_c0o0a"]
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="2_aqcaf"]
-[ext_resource type="Theme" uid="uid://cssgsvi4n3gf2" path="res://assets/fonts/menu_theme.tres" id="3_p0ab6"]
+[ext_resource type="Theme" uid="uid://c62861x5fnjo1" path="res://assets/fonts/menu_theme.tres" id="3_p0ab6"]
 
 [sub_resource type="Theme" id="Theme_jyfsc"]
 default_font = ExtResource("1_c0o0a")
@@ -35,6 +35,7 @@ grow_vertical = 2
 theme = ExtResource("3_p0ab6")
 
 [node name="ColorRect" type="ColorRect" parent="Panel"]
+layout_mode = 0
 offset_left = -660.0
 offset_top = -240.0
 offset_right = -620.0
@@ -105,7 +106,7 @@ size_flags_vertical = 4
 theme = ExtResource("3_p0ab6")
 text = "Return"
 
-[connection signal="pressed" from="Panel/VBoxContainer/MainMenu" to="." method="_on_main_menu_button_pressed"]
 [connection signal="value_changed" from="Panel/VBoxContainer/MusicCtrlBox/MusicCtrlSlider" to="." method="_on_music_ctrl_slider_value_changed"]
 [connection signal="value_changed" from="Panel/VBoxContainer/SFXCtrlBox2/SFXCtrlSlider" to="." method="_on_sfx_ctrl_slider_value_changed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MainMenu" to="." method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]

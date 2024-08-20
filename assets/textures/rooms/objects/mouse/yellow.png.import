@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xlnu04w3pfs5"
-path="res://.godot/imported/Inserted_Image 3.png-15c29a269b7d7d3c8cf0ef5663651ffa.ctex"
+uid="uid://bqxxhxehfyw8r"
+path="res://.godot/imported/yellow.png-432b6e8ebde81c5c40051bee400969b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/UI/Menu/Inserted_Image 3.png"
-dest_files=["res://.godot/imported/Inserted_Image 3.png-15c29a269b7d7d3c8cf0ef5663651ffa.ctex"]
+source_file="res://assets/textures/rooms/objects/mouse/yellow.png"
+dest_files=["res://.godot/imported/yellow.png-432b6e8ebde81c5c40051bee400969b6.ctex"]
 
 [params]
 

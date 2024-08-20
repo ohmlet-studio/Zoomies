@@ -3,8 +3,8 @@
 [ext_resource type="FontFile" uid="uid://djf30q323awye" path="res://assets/fonts/Vividly-Regular.ttf" id="1_r48s2"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="2_v6ora"]
 [ext_resource type="AudioStream" uid="uid://b3i0482cg5esx" path="res://assets/sounds/Menu Theme.wav" id="3_ehhgd"]
-[ext_resource type="Texture2D" uid="uid://de8pb6aaspoep" path="res://assets/textures/UI/Menu/Title.png" id="3_nlvcu"]
 [ext_resource type="Theme" uid="uid://cssgsvi4n3gf2" path="res://assets/fonts/menu_theme.tres" id="3_qjtdt"]
+[ext_resource type="Texture2D" uid="uid://de8pb6aaspoep" path="res://assets/textures/UI/Menu/Title.png" id="3_ugpel"]
 
 [sub_resource type="Theme" id="Theme_jyfsc"]
 default_font = ExtResource("1_r48s2")
@@ -29,15 +29,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.329412, 0.643137, 0.886275, 1)
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 787.0
-offset_top = 145.0
-offset_right = 2707.0
-offset_bottom = 1225.0
-scale = Vector2(0.181188, 0.181188)
-texture = ExtResource("3_nlvcu")
-
 [node name="StartContainer" type="MarginContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
@@ -51,27 +42,33 @@ theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="VBoxContainer" type="VBoxContainer" parent="StartContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="StartContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="StartContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 2
-theme_override_font_sizes/font_size = 60
-text = "Zoomies"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ButtonsVBox" type="VBoxContainer" parent="StartContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 4
-alignment = 1
-
-[node name="StartGameButton" type="Button" parent="StartContainer/ButtonsVBox"]
+[node name="VBoxContainer" type="VBoxContainer" parent="StartContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 0
+
+[node name="Label" type="TextureRect" parent="StartContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_ugpel")
+
+[node name="MarginContainer" type="MarginContainer" parent="StartContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="ButtonsVBox" type="VBoxContainer" parent="StartContainer/VBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 350)
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="StartGameButton" type="Button" parent="StartContainer/VBoxContainer2/ButtonsVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
 focus_neighbor_top = NodePath("../QuitGameButton")
 focus_neighbor_bottom = NodePath("../OptionsButton")
 focus_next = NodePath("../OptionsButton")
@@ -79,10 +76,10 @@ focus_previous = NodePath("../QuitGameButton")
 theme = ExtResource("3_qjtdt")
 text = "Story mode"
 
-[node name="InfiniteModeButton" type="Button" parent="StartContainer/ButtonsVBox"]
+[node name="InfiniteModeButton" type="Button" parent="StartContainer/VBoxContainer2/ButtonsVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 2
 focus_neighbor_top = NodePath("../StartGameButton")
 focus_neighbor_bottom = NodePath("../QuitGameButton")
 focus_next = NodePath("../QuitGameButton")
@@ -90,10 +87,10 @@ focus_previous = NodePath("../StartGameButton")
 theme = ExtResource("3_qjtdt")
 text = "Infinite mode"
 
-[node name="OptionsButton" type="Button" parent="StartContainer/ButtonsVBox"]
+[node name="OptionsButton" type="Button" parent="StartContainer/VBoxContainer2/ButtonsVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 2
 focus_neighbor_top = NodePath("../StartGameButton")
 focus_neighbor_bottom = NodePath("../QuitGameButton")
 focus_next = NodePath("../QuitGameButton")
@@ -101,10 +98,10 @@ focus_previous = NodePath("../StartGameButton")
 theme = ExtResource("3_qjtdt")
 text = "Options"
 
-[node name="QuitGameButton" type="Button" parent="StartContainer/ButtonsVBox"]
+[node name="QuitGameButton" type="Button" parent="StartContainer/VBoxContainer2/ButtonsVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 2
 focus_neighbor_top = NodePath("../OptionsButton")
 focus_neighbor_bottom = NodePath("../StartGameButton")
 focus_next = NodePath("../StartGameButton")
@@ -126,16 +123,17 @@ theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="VBoxContainer" type="VBoxContainer" parent="OptionContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="OptionContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 
-[node name="Label" type="Label" parent="OptionContainer/VBoxContainer"]
+[node name="Label" type="TextureRect" parent="OptionContainer/VBoxContainer2"]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 2
-theme_override_font_sizes/font_size = 60
-text = "Zoomies"
-horizontal_alignment = 1
-vertical_alignment = 1
+texture = ExtResource("3_ugpel")
+stretch_mode = 2
 
 [node name="ButtonsVBox" type="VBoxContainer" parent="OptionContainer"]
 layout_mode = 2
@@ -147,7 +145,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="MusicCtrlLabel" type="Label" parent="OptionContainer/ButtonsVBox/MusicCtrlBox"]
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme = ExtResource("3_qjtdt")
 text = "Music"
@@ -156,6 +154,7 @@ text = "Music"
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 8
+theme = ExtResource("3_qjtdt")
 min_value = -50.0
 max_value = 0.0
 step = 0.1
@@ -165,7 +164,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="SFXCtrlLabel" type="Label" parent="OptionContainer/ButtonsVBox/SFXCtrlBox2"]
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme = ExtResource("3_qjtdt")
 text = "SFX"
@@ -174,6 +173,7 @@ text = "SFX"
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 8
+theme = ExtResource("3_qjtdt")
 min_value = -50.0
 max_value = 0.0
 
@@ -193,10 +193,10 @@ stream = ExtResource("3_ehhgd")
 autoplay = true
 bus = &"Music"
 
-[connection signal="pressed" from="StartContainer/ButtonsVBox/StartGameButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="StartContainer/ButtonsVBox/InfiniteModeButton" to="." method="_on_infinite_mode_button_pressed"]
-[connection signal="pressed" from="StartContainer/ButtonsVBox/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="StartContainer/ButtonsVBox/QuitGameButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="StartContainer/VBoxContainer2/ButtonsVBox/StartGameButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="StartContainer/VBoxContainer2/ButtonsVBox/InfiniteModeButton" to="." method="_on_infinite_mode_button_pressed"]
+[connection signal="pressed" from="StartContainer/VBoxContainer2/ButtonsVBox/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="StartContainer/VBoxContainer2/ButtonsVBox/QuitGameButton" to="." method="_on_quit_button_pressed"]
 [connection signal="drag_ended" from="OptionContainer/ButtonsVBox/MusicCtrlBox/MusicCtrlSlider" to="." method="_on_music_ctrl_slider_drag_ended"]
 [connection signal="value_changed" from="OptionContainer/ButtonsVBox/MusicCtrlBox/MusicCtrlSlider" to="." method="_on_music_ctrl_slider_value_changed"]
 [connection signal="value_changed" from="OptionContainer/ButtonsVBox/SFXCtrlBox2/SFXCtrlSlider" to="." method="_on_sfx_ctrl_slider_value_changed"]
