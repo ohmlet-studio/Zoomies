@@ -1,18 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqlbtobfrdgrt"]
+[gd_scene load_steps=4 format=3 uid="uid://bwx0ogshho4dc"]
 
 [ext_resource type="PackedScene" uid="uid://boioovjvf2bll" path="res://scenes/cutscenes/cutscene.tscn" id="1_nv6vo"]
 [ext_resource type="AudioStream" uid="uid://bfq1bm6g0rl7x" path="res://assets/sounds/Fail.wav" id="2_ujvys"]
+[ext_resource type="Theme" uid="uid://bvgy3ocm8j6i3" path="res://assets/fonts/label_theme.tres" id="2_w47su"]
 
 [node name="Cutscene" instance=ExtResource("1_nv6vo")]
 gameover = true
 
-[node name="Label" type="Label" parent="Camera2D" index="0"]
+[node name="ScoreLabel" type="Label" parent="Camera2D" index="0"]
+unique_name_in_owner = true
 top_level = true
 offset_left = -887.0
 offset_top = -490.0
 offset_right = -847.0
 offset_bottom = -467.0
-text = "zffzfz"
+theme = ExtResource("2_w47su")
+text = "Score : 0"
 metadata/_edit_use_anchors_ = true
 
 [node name="Victory" parent="." index="8"]

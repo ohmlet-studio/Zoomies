@@ -4,12 +4,15 @@ extends Node2D
 @export var floor_scroll_time:float = 0.2
 @export var gameover = false
 
+@onready var score_label = %ScoreLabel
+
 var target_scale_y = Vector2(1, 1)
 var first_floor_height = 70
 var midsection_height
 
 var tick_timer
 var tick_count = 0
+var score = 0
 
 signal cutscene_over()
 
@@ -28,6 +31,7 @@ func _ready():
 		target_camera_y = 0
 		roof.position.y = $Camera2D.offset.y - 100
 		add_child(midsection)
+		
 	else:
 		$Camera2D.offset.y = 0
 		target_camera_y = -first_floor_height + -number_of_floors * midsection_height
@@ -70,6 +74,9 @@ func _on_Timer_timeout():
 	if tick_count < number_of_floors:
 		$Building_tick.play()
 		tick_count += 1
+		if gameover :
+			score_label.text = "Score : " + str(score)
+			score += 1
 	else:
 		tick_timer.stop() # Stop the timer after 10 ticks
 			
