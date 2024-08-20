@@ -15,31 +15,43 @@ position = Vector2(-960, -540)
 unique_name_in_owner = true
 position = Vector2(-907, -388)
 scale = Vector2(0.3, 0.3)
+default_boder_color = Color(0.636083, 0.677255, 0.753501, 1)
+border_color_focus = Color(1.03481e-06, 0.720339, 1.54018e-06, 1)
 
 [node name="Cat2" parent="." instance=ExtResource("3_016xn")]
 unique_name_in_owner = true
 position = Vector2(-285, -388)
 scale = Vector2(0.3, 0.3)
+default_boder_color = Color(0.636083, 0.677255, 0.753501, 1)
+border_color_focus = Color(1.03481e-06, 0.720339, 1.54018e-06, 1)
 
 [node name="Cat3" parent="." instance=ExtResource("3_016xn")]
 unique_name_in_owner = true
 position = Vector2(343, -388)
 scale = Vector2(0.3, 0.3)
+default_boder_color = Color(0.636083, 0.677255, 0.753501, 1)
+border_color_focus = Color(1.03481e-06, 0.720339, 1.54018e-06, 1)
 
 [node name="Cat4" parent="." instance=ExtResource("3_016xn")]
 unique_name_in_owner = true
 position = Vector2(-907, -16)
 scale = Vector2(0.3, 0.3)
+default_boder_color = Color(0.636083, 0.677255, 0.753501, 1)
+border_color_focus = Color(1.03481e-06, 0.720339, 1.54018e-06, 1)
 
 [node name="Cat5" parent="." instance=ExtResource("3_016xn")]
 unique_name_in_owner = true
 position = Vector2(-285, -16)
 scale = Vector2(0.3, 0.3)
+default_boder_color = Color(0.636083, 0.677255, 0.753501, 1)
+border_color_focus = Color(1.03481e-06, 0.720339, 1.54018e-06, 1)
 
 [node name="Cat6" parent="." instance=ExtResource("3_016xn")]
 unique_name_in_owner = true
 position = Vector2(343, -16)
 scale = Vector2(0.3, 0.3)
+default_boder_color = Color(0.636083, 0.677255, 0.753501, 1)
+border_color_focus = Color(1.03481e-06, 0.720339, 1.54018e-06, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

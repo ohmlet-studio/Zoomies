@@ -8,18 +8,22 @@
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_h1cfy")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [node name="ZoomiesUI" parent="." instance=ExtResource("2_cjmvs")]
 position = Vector2(-960, -540)
 
 [node name="Cat1" parent="." instance=ExtResource("3_b6dnx")]
-position = Vector2(-914, -260)
-scale = Vector2(0.45, 0.45)
+position = Vector2(-761, -218)
+scale = Vector2(0.38, 0.38)
+default_boder_color = Color(0.636083, 0.677255, 0.753501, 1)
+border_color_focus = Color(1.03481e-06, 0.720339, 1.54018e-06, 1)
 
 [node name="Cat2" parent="." instance=ExtResource("3_b6dnx")]
-position = Vector2(48, -260)
-scale = Vector2(0.45, 0.45)
-
-[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(27, -218)
+scale = Vector2(0.38, 0.38)
+default_boder_color = Color(0.636083, 0.677255, 0.753501, 1)
+border_color_focus = Color(1.03481e-06, 0.720339, 1.54018e-06, 1)
 
 [node name="LevelTimer" parent="." instance=ExtResource("4_pr1n3")]
 

@@ -15,7 +15,7 @@ extends Node2D
 @onready var mug_obg = %mug
 
 # Object position boundary
-@export var object_lim_x_axis = 10
+var object_lim_x_axis = 10
 
 @export var default_boder_color = Color("d7d7d7")
 @export var border_color_focus = Color(0, 0, 0.545098, 1)
@@ -26,7 +26,7 @@ extends Node2D
 @export var cat_body: Texture2D
 @export var cat_eyes: Texture2D
 @export var wallpaper: Texture2D
-@export var floor: Texture2D
+@export var floor_texture: Texture2D
 #@export var room_objects: Array[Texture2D]
 
 # object list for web compatibility
@@ -43,7 +43,6 @@ extends Node2D
 @export var mouth_talking_poses: Array[Texture2D] = []
 @export var mouth_idle_texture: Texture2D
 
-var is_talking = false
 var border_color = default_boder_color
 
 # Called when the node enters the scene tree for the first time.
@@ -55,7 +54,7 @@ func _ready() -> void:
 	
 	if randomize_room:
 		# Get wall and floor texture
-		floor = _get_random_texture("res://assets/textures/rooms/floors/")
+		floor_texture = _get_random_texture("res://assets/textures/rooms/floors/")
 		wallpaper = _get_random_texture("res://assets/textures/rooms/wallpapers/")
 		# Get object texture
 		first_plan_obj.set_texture(_get_random_texture("res://assets/textures/rooms/objects/first_plan/"))
@@ -85,7 +84,7 @@ func _ready() -> void:
 	var floor_material = original_floor_material.duplicate()
 	# duplicate material and reaplly it so it only changes this one
 	$SubViewport/Parent3D/room/floor.set_surface_override_material(0, floor_material)
-	floor_material.albedo_texture = floor
+	floor_material.albedo_texture = floor_texture
 
 	#sub_viewport.room_objects = room_objects
 	
@@ -150,7 +149,12 @@ func connect_cat():
 	
 func disconnect_cat():
 	$disconnect_sound.play()
-	parent2D.visible = false
+	var target_scale_y = 0
+	
+	# Create and configure the tween
+	var tween = get_tree().create_tween()
+	tween.tween_property(parent2D, "scale:y", target_scale_y, 0.2).set_trans(Tween.TRANS_SINE)
+	tween.tween_callback(free)
 	
 func change_mouth_pose():
 	# get a random element from mouth_talking_poses
@@ -165,20 +169,28 @@ func blink():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	# set border color
 	nine_patch.modulate = border_color
+
+func on_ears_aligned_in():
+	$Parent2D/EarHint.hide()
+	$Parent2D/EarHintAligned.show()
+	WebcamManager.check_are_cats_aligned()
 	
-	# change color if aligned
-	if sub_viewport.is_aligned :
-		border_color = Color("Green")
-	else:
-		border_color = Color(0, 0, 0.545098, 1)
+func on_ears_aligned_out():
+	$Parent2D/EarHintAligned.hide()
+	$Parent2D/EarHint.show()
+
+func on_hint_aligned_in():
+	$Parent2D/EarHint.show()
+	
+func on_hint_aligned_out():
+	$Parent2D/EarHint.hide()
 
 func mouse_enter():
 	border_color = border_color_hover
 
 func mouse_exit():
-	border_color = border_color
+	border_color = default_boder_color
 
 func mouse_focus():
 	border_color = border_color_focus
@@ -190,7 +202,7 @@ func activate():
 
 func deactivate():
 	sub_viewport.is_active = false
-	border_color = Color("#d7d7d7")
+	border_color = default_boder_color
 	update_once()
 
 func move_room(n):
@@ -202,3 +214,6 @@ func update_once():
 # Function to handle the sprite click
 func _on_sprite_input():
 	WebcamManager.change_focus(self)
+
+func is_aligned():
+	return sub_viewport.is_aligned

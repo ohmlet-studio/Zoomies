@@ -1,7 +1,19 @@
 extends Node
 
 var cat_displays: Array[Node2D] = []
+
 signal all_cats_aligned()
+
+func check_are_cats_aligned() -> void:
+	if cat_displays.size() >= 2:
+		for cat_display in cat_displays:
+			if !cat_display.is_aligned():
+				return
+	
+		all_cats_aligned.emit()
+
+func reset_cats():
+	cat_displays = []
 
 func add_new_display(display: Node2D) -> void:
 	# Add the display to the list
@@ -10,7 +22,6 @@ func add_new_display(display: Node2D) -> void:
 	
 	if cat_displays.size() == 1:
 		change_focus(display)
-		
 	
 func change_focus(display: Node2D) -> void:
 	# Call activate on the passed display and deactivate on all others in the list
@@ -43,3 +54,8 @@ func get_display(index: int) -> Node2D:
 		return cat_displays[index]
 	else:
 		return null
+		
+func disconnect_all() -> void:
+	# Call deactivate on all displays
+	for cat_display in cat_displays:
+		cat_display.disconnect_cat()

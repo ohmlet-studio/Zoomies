@@ -29,6 +29,12 @@ var cam_default_fov
 
 
 var is_aligned = false
+var is_in_hint_range = false
+
+signal ears_aligned_in()
+signal ears_aligned_out()
+signal hint_range_in()
+signal hint_range_out()
 
 func _ready() -> void:
 	# Keep default
@@ -74,6 +80,31 @@ func _process(delta: float) -> void:
 				rotate_webcam_y(-_pan_speed * delta)
 			
 	# Check if ears are aligned
+	check_hint_range()
+	check_ears_aligned()
+
+func check_hint_range():
+	var hint_range_mult = 4 #this is the multiplier to know when in range
+	if (
+		# X axis
+		camera_pivot.rotation_degrees.x < (cam_default_pos_x + hint_range_mult * EARS_MARGIN_POS) &&
+		camera_pivot.rotation_degrees.x > (cam_default_pos_x - hint_range_mult * EARS_MARGIN_POS) &&
+		# Y axis
+		camera_pivot.rotation_degrees.y < (cam_default_pos_y + hint_range_mult * EARS_MARGIN_POS) &&
+		camera_pivot.rotation_degrees.y > (cam_default_pos_y - hint_range_mult * EARS_MARGIN_POS) &&
+		# FOV
+		camera.fov < (cam_default_fov + hint_range_mult * EARS_MARGIN_FOV) &&
+		camera.fov > (cam_default_fov - hint_range_mult * EARS_MARGIN_FOV)
+	) :
+		if !is_in_hint_range:
+			hint_range_in.emit()
+			is_in_hint_range = true
+	else :
+		if is_in_hint_range:
+			hint_range_out.emit()
+			is_in_hint_range = false
+		
+func check_ears_aligned():
 	if (
 		# X axis
 		camera_pivot.rotation_degrees.x < (cam_default_pos_x + EARS_MARGIN_POS) &&
@@ -86,10 +117,13 @@ func _process(delta: float) -> void:
 		camera.fov > (cam_default_fov - EARS_MARGIN_FOV)
 	) :
 		if !is_aligned:
-			ding_player.play()
 			is_aligned = true
+			ding_player.play()
+			ears_aligned_in.emit()
 	else :
-		is_aligned = false
+		if is_aligned:
+			is_aligned = false
+			ears_aligned_out.emit()
 
 func zoom(speed) -> void:
 	

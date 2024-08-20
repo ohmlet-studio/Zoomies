@@ -18,6 +18,7 @@ var handle_dial_finish : Callable
 var dialog_step = 0
 
 func _ready() -> void:
+	WebcamManager.reset()
 	await get_tree().create_timer(.5).timeout
 	
 	$Boss.connect_cat()

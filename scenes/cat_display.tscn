@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dhrrkj5xdmdeb"]
+[gd_scene load_steps=32 format=3 uid="uid://dhrrkj5xdmdeb"]
 
 [ext_resource type="Script" path="res://scripts/cat_display.gd" id="1_0xj6i"]
 [ext_resource type="Texture2D" uid="uid://bj6o55ei14h8x" path="res://assets/textures/cat_display/hint.png" id="1_kwfk6"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://jovk6cvvllfn" path="res://assets/textures/rooms/objects/first_plan/lavalamp.png" id="15_siqhc"]
 [ext_resource type="Texture2D" uid="uid://d1na8so6vxeu" path="res://assets/textures/rooms/floors/boards.jpg" id="15_tsi68"]
 [ext_resource type="AudioStream" uid="uid://bxuhtxxwap2hj" path="res://assets/sounds/effects/disconnect.mp3" id="20_na4ef"]
+[ext_resource type="Texture2D" uid="uid://2iseiunvfxlx" path="res://assets/textures/cat_display/hint_ok.png" id="21_bedwd"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_jcuwj"]
 
@@ -52,8 +53,8 @@ viewport_path = NodePath("SubViewport")
 
 [node name="CatDisplay" type="Node2D"]
 script = ExtResource("1_0xj6i")
-default_boder_color = Color(0.636083, 0.677255, 0.753501, 1)
-border_color_focus = Color(1.03481e-06, 0.720339, 1.54018e-06, 1)
+default_boder_color = Color(0.733005, 0.733006, 0.733005, 1)
+border_color_focus = Color(0.463838, 0.635312, 1, 1)
 mouth_talking_poses = Array[Texture2D]([ExtResource("2_q7keh"), ExtResource("3_j3f6i"), ExtResource("4_28g3f")])
 mouth_idle_texture = ExtResource("11_cxlok")
 
@@ -186,6 +187,7 @@ texture = SubResource("ViewportTexture_hixn4")
 centered = false
 
 [node name="EarHint" type="TextureRect" parent="Parent2D"]
+visible = false
 offset_left = 259.0
 offset_top = -53.0
 offset_right = 2510.0
@@ -195,12 +197,13 @@ texture = ExtResource("1_kwfk6")
 metadata/_edit_group_ = true
 
 [node name="EarHintAligned" type="TextureRect" parent="Parent2D"]
+visible = false
 offset_left = 259.0
 offset_top = -53.0
 offset_right = 2510.0
 offset_bottom = 1213.0
 scale = Vector2(0.600312, 0.600312)
-texture = ExtResource("1_kwfk6")
+texture = ExtResource("21_bedwd")
 metadata/_edit_group_ = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Parent2D"]
@@ -231,6 +234,10 @@ stream = ExtResource("20_na4ef")
 volume_db = -5.0
 bus = &"SFX"
 
+[connection signal="ears_aligned_in" from="SubViewport" to="." method="on_ears_aligned_in"]
+[connection signal="ears_aligned_out" from="SubViewport" to="." method="on_ears_aligned_out"]
+[connection signal="hint_range_in" from="SubViewport" to="." method="on_hint_aligned_in"]
+[connection signal="hint_range_out" from="SubViewport" to="." method="on_hint_aligned_out"]
 [connection signal="button_down" from="Parent2D/Button" to="." method="_on_sprite_input"]
 [connection signal="mouse_entered" from="Parent2D/Button" to="." method="mouse_enter"]
 [connection signal="mouse_exited" from="Parent2D/Button" to="." method="mouse_exit"]

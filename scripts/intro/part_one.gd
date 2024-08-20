@@ -23,6 +23,7 @@ const lines: Array[String] = [
 ]
 
 func _ready() -> void:
+	WebcamManager.reset()
 	$Boss.disable_input()
 	
 	# wait for a bit
@@ -37,6 +38,7 @@ func _ready() -> void:
 	DialogManager.dialog_finish.connect(dialog_signal_call)
 	# Start dialog
 	DialogManager.start_dialog(lines, $Boss)
+	
 	
 func _on_dialog_finished():
 	get_tree().change_scene_to_file("res://scenes/intro/part_two.tscn")

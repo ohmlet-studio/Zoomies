@@ -26,6 +26,7 @@ var buttonUpPressed = false
 var idx = 0
 
 func _ready() -> void:
+	WebcamManager.reset_cats()
 	_spawn_cats()
 
 func _spawn_cats() -> void:

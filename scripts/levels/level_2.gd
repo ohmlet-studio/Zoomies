@@ -16,3 +16,12 @@ func _on_ready() -> void:
 	$Cat3.connect_cat()
 
 	$LevelTimer.set_time(timer_sec)
+	
+	var signal_call = Callable(self, "_on_level_finished")
+	WebcamManager.all_cats_aligned.connect(signal_call)
+
+func _on_level_finished():
+	WebcamManager.disconnect_all()
+	await get_tree().create_timer(1).timeout
+	WebcamManager.reset_cats()
+	get_tree().change_scene_to_file("res://scenes/levels/level_3.tscn")
