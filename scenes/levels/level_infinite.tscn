@@ -1,22 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://dst57avkngwuw"]
+[gd_scene load_steps=10 format=3 uid="uid://dst57avkngwuw"]
 
 [ext_resource type="Script" path="res://scripts/levels/level_infinite.gd" id="1_kutmv"]
 [ext_resource type="Script" path="res://scripts/zoomies_ui.gd" id="2_1bhgf"]
-[ext_resource type="Texture2D" uid="uid://dfw1ecbuyggk6" path="res://assets/textures/UI/arrow.png" id="3_b7cfu"]
+[ext_resource type="Texture2D" uid="uid://dfw1ecbuyggk6" path="res://assets/textures/UI/Arrow.png" id="3_b7cfu"]
 [ext_resource type="Texture2D" uid="uid://0l2ayk71gk40" path="res://assets/textures/zoomies_interface.jpg" id="3_rqunf"]
 [ext_resource type="PackedScene" uid="uid://c4wfxjktfnjdu" path="res://scenes/timer.tscn" id="4_avp3g"]
 [ext_resource type="Texture2D" uid="uid://wl48b0bak38o" path="res://assets/textures/UI/bottom_bar/menu.png" id="4_swbrd"]
 [ext_resource type="Texture2D" uid="uid://blobdkiyaf60p" path="res://assets/textures/UI/bottom_bar/pause.png" id="5_85dtw"]
-[ext_resource type="Texture2D" uid="uid://cqmt4i33ush74" path="res://assets/textures/zoomies_interface_top.jpg" id="5_cwgdu"]
 [ext_resource type="Texture2D" uid="uid://c3gm7x028s8jt" path="res://assets/textures/UI/bottom_bar/grid.png" id="6_q6jo7"]
 [ext_resource type="PackedScene" uid="uid://bdao8ti38nvhb" path="res://scenes/ui/pause_menu.tscn" id="7_3on2j"]
 
 [node name="LevelInfinite" type="Node2D"]
 script = ExtResource("1_kutmv")
-
-[node name="CatSpawner" type="Timer" parent="."]
-wait_time = 5.0
-autostart = true
 
 [node name="ZoomiesUI" type="Node2D" parent="."]
 position = Vector2(-960, -540)
@@ -107,8 +102,8 @@ pivot_offset = Vector2(79, 58)
 texture_normal = ExtResource("3_b7cfu")
 
 [node name="LevelTimer" parent="." instance=ExtResource("4_avp3g")]
+timer_sec = 90
 
-[connection signal="timeout" from="CatSpawner" to="." method="_spawn_cats"]
 [connection signal="pressed" from="ZoomiesUI/pause" to="ZoomiesUI" method="_on_pause_pressed"]
 [connection signal="pressed" from="ZoomiesUI/TopButtons" to="ZoomiesUI" method="_on_pause_pressed"]
 [connection signal="button_down" from="UpButton" to="." method="_on_up_button_button_down"]

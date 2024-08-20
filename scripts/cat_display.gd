@@ -262,6 +262,7 @@ func on_ears_aligned_in():
 	if infinite_mode:
 		GameManager.add_time_infinite_mode()
 		GameManager.add_to_score_infinite_mode()
+		set_cinematic_mode(true)
 	
 func on_ears_aligned_out():
 	if cinematic_mode:

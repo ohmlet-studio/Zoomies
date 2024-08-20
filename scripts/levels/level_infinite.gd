@@ -31,11 +31,12 @@ var idx = 0
 
 func _ready() -> void:
 	WebcamManager.reset_cats()
-	GameManager.set_infinte_timer($LevelTimer)
-	_spawn_cats()
+	GameManager.set_infinite_script(self)
+	_spawn_cats(3)
 
-func _spawn_cats() -> void:
-	for i in range(cat_number_by_wave-1):
+
+func _spawn_cats(n) -> void:
+	for i in range(n-1):
 		_instantiate_cat_display()
 		await get_tree().create_timer(0.25).timeout
 	_instantiate_cat_display()
