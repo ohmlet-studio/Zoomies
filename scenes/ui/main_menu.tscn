@@ -164,7 +164,7 @@ text = "SFX"
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 8
-min_value = -80.0
+min_value = -50.0
 max_value = 0.0
 
 [node name="ReturnButton" type="Button" parent="OptionContainer/ButtonsVBox"]

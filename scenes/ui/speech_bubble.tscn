@@ -78,5 +78,6 @@ offset = Vector2(-16, 25)
 
 [node name="MeowPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_noj14")
+bus = &"Voice"
 
 [connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]
