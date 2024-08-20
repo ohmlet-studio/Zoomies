@@ -4,7 +4,6 @@ extends MarginContainer
 @onready var timer = $LetterDisplayTimer
 @onready var meowplayer = $MeowPlayer
 
-const voice = "B"
 const MAX_WIDTH = 700
 
 var text = ""
@@ -90,7 +89,7 @@ func _display_letter():
 			" ":
 				timer.start(space_time)
 			_:
-				_play_meow(voice)
+				_play_meow(cat_display.voice)
 				self.cat_display.change_mouth_pose()
 				timer.start(letter_time)
 			

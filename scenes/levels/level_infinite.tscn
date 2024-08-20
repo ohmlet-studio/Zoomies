@@ -107,7 +107,6 @@ pivot_offset = Vector2(79, 58)
 texture_normal = ExtResource("3_b7cfu")
 
 [node name="LevelTimer" parent="." instance=ExtResource("4_avp3g")]
-unique_name_in_owner = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -960.0

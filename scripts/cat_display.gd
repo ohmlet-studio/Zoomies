@@ -22,6 +22,7 @@ var object_lim_x_axis = 10
 @export var border_color_focus = Color(0, 0, 0.545098, 1)
 @export var border_color_hover = Color("white")
 @export var infinite_mode: bool = false
+@export var voice: String = "B"
 
 @export var randomize_room: bool
 @export var randomize_cat: bool
@@ -62,6 +63,11 @@ func _ready() -> void:
 		mouth_talking_poses.append(load(path))
 	
 	if randomize_cat or randomize_room:
+		if randf() < 0.5:
+			self.voice = "A"
+		else:
+			self.voice = "C"
+		
 		var cat_bodies_paths = ["res://assets/textures/cat_parts/body/Body1.png", "res://assets/textures/cat_parts/body/Body2.png", "res://assets/textures/cat_parts/body/Body3.png", "res://assets/textures/cat_parts/body/Body4.png", "res://assets/textures/cat_parts/body/Body5.png", "res://assets/textures/cat_parts/body/Body6.png", "res://assets/textures/cat_parts/body/Body7.png", "res://assets/textures/cat_parts/body/Body8.png", "res://assets/textures/cat_parts/body/Body9.png", "res://assets/textures/cat_parts/body/Body10.png", "res://assets/textures/cat_parts/body/Body11.png", "res://assets/textures/cat_parts/body/Body12.png", "res://assets/textures/cat_parts/body/Body13.png", "res://assets/textures/cat_parts/body/Body14.png", "res://assets/textures/cat_parts/body/Body15.png", "res://assets/textures/cat_parts/body/Body16.png", "res://assets/textures/cat_parts/body/Body17.png", "res://assets/textures/cat_parts/body/Body18.png"]
 		for path in cat_bodies_paths:
 			cat_bodies_list.append(load(path))
