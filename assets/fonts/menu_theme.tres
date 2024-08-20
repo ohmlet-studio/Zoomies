@@ -1,6 +1,13 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c62861x5fnjo1"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://c62861x5fnjo1"]
 
 [ext_resource type="FontFile" uid="uid://djf30q323awye" path="res://assets/fonts/Vividly-Regular.ttf" id="1_mrew3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4tv16"]
+bg_color = Color(0.144062, 0.144063, 0.144062, 0.494118)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [resource]
 Button/font_sizes/font_size = 40
@@ -8,3 +15,4 @@ Button/fonts/font = ExtResource("1_mrew3")
 Label/constants/outline_size = 15
 Label/font_sizes/font_size = 40
 Label/fonts/font = ExtResource("1_mrew3")
+Panel/styles/panel = SubResource("StyleBoxFlat_4tv16")

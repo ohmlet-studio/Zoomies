@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cs6sy82mme6s4"]
+[gd_scene load_steps=7 format=3 uid="uid://cs6sy82mme6s4"]
 
 [ext_resource type="Texture2D" uid="uid://0l2ayk71gk40" path="res://assets/textures/zoomies_interface.jpg" id="1_a80tg"]
+[ext_resource type="Script" path="res://scripts/zoomies_ui.gd" id="1_rr6no"]
 [ext_resource type="Texture2D" uid="uid://wl48b0bak38o" path="res://assets/textures/UI/bottom_bar/menu.png" id="2_detra"]
 [ext_resource type="Texture2D" uid="uid://blobdkiyaf60p" path="res://assets/textures/UI/bottom_bar/pause.png" id="3_hin76"]
 [ext_resource type="Texture2D" uid="uid://c3gm7x028s8jt" path="res://assets/textures/UI/bottom_bar/grid.png" id="4_nv8s6"]
+[ext_resource type="PackedScene" uid="uid://bdao8ti38nvhb" path="res://scenes/ui/pause_menu.tscn" id="6_t3sjs"]
 
 [node name="ZoomiesUI" type="Node2D"]
+script = ExtResource("1_rr6no")
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 1920.0
@@ -51,3 +54,11 @@ offset_right = 1253.17
 offset_bottom = 1135.84
 scale = Vector2(0.7553, 0.7553)
 texture_normal = ExtResource("4_nv8s6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("6_t3sjs")]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
