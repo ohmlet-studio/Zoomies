@@ -5,7 +5,7 @@ extends MarginContainer
 @onready var meowplayer = $MeowPlayer
 
 const voice = "B"
-const MAX_WIDTH = 1000
+const MAX_WIDTH = 700
 
 var text = ""
 var letter_index = 0

@@ -20,20 +20,20 @@ func _on_ready() -> void:
 	WebcamManager.all_cats_aligned.connect(signal_call)
 	
 	# dialogs
-	DialogManager.start_dialog(["Hey thanks for calling !"], $Cat1, true)
+	DialogManager.start_dialog(["Hey thanks for calling !     "], $Cat1, true)
 	await DialogManager.dialog_finish
-	DialogManager.start_dialog(["No worries love !"], $Cat2, true)
+	DialogManager.start_dialog(["No worries love !     "], $Cat2, true)
 	await DialogManager.dialog_finish
-	DialogManager.start_dialog(["I know you don't like video calls..."], $Cat1, true)
+	DialogManager.start_dialog(["I know you don't like video calls...     "], $Cat1, true)
 	await DialogManager.dialog_finish
-	DialogManager.start_dialog(["Yeah I always feel uneasy, like someone is watching."], $Cat2, true)
+	DialogManager.start_dialog(["Yeah I always feel uneasy, like someone is watching.     "], $Cat2, true)
 	await DialogManager.dialog_finish
-	DialogManager.start_dialog(["Ahahah, that's irrational you know there's no way !"], $Cat1, true)
+	DialogManager.start_dialog(["Ahahah, that's irrational you know there's no way !     "], $Cat1, true)
 	await DialogManager.dialog_finish
-	DialogManager.start_dialog(["Yeah, yeah, and what would they even see anyway ?"], $Cat2, true)
+	DialogManager.start_dialog(["Yeah, yeah, and what would they even see anyway ?     "], $Cat2, true)
 	await DialogManager.dialog_finish
-	DialogManager.start_dialog(["So, how are you ?"], $Cat1, true)
+	DialogManager.start_dialog(["So, how are you ?     "], $Cat1, true)
 	await DialogManager.dialog_finish
-	DialogManager.start_dialog(["Life you know, my boss was an ass as usual... How are you ?"], $Cat2, true)
+	DialogManager.start_dialog(["Life you know, my boss was an ass as usual... How are you ?     "], $Cat2, true)
 	await DialogManager.dialog_finish
-	DialogManager.start_dialog(["I'm fine, I really miss you."], $Cat1, true)
+	DialogManager.start_dialog(["I'm fine, I really miss you.     "], $Cat1, true)

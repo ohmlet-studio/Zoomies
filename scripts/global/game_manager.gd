@@ -51,7 +51,14 @@ func game_over():
 	add_child(gameover_instance)
 	await gameover_instance.cutscene_over
 	
-	remove_child(gameover_instance)
+	# show youre fired
+	gameover_instance.Letter_node.set_visible(true)
+	print("here")
+	gameover_instance.YesNo_node.set_visible(true)
+	#gameover_instance.Letter_node.AnimationPlayer.play("youre_fired_anim")
+	#remove_child(gameover_instance)
+	
+	
 
 	# TODO switch to letter scene 
 	
