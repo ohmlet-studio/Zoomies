@@ -64,22 +64,27 @@ script = ExtResource("2_ppm4p")
 [node name="zoomInPlayer" type="AudioStreamPlayer" parent="SubViewport"]
 stream = ExtResource("3_r24hr")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="scrollPlayer" type="AudioStreamPlayer" parent="SubViewport"]
 stream = ExtResource("4_jyrki")
 volume_db = -10.0
 pitch_scale = 1.5
+bus = &"SFX"
 
 [node name="zoomOutPlayer" type="AudioStreamPlayer" parent="SubViewport"]
 stream = ExtResource("5_j6drw")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="aligned_sound" type="AudioStreamPlayer" parent="SubViewport"]
 stream = ExtResource("5_lgkhl")
+bus = &"SFX"
 
 [node name="ding_player" type="AudioStreamPlayer" parent="SubViewport"]
 stream = ExtResource("5_lgkhl")
 volume_db = -3.0
+bus = &"SFX"
 
 [node name="Parent3D" type="Node3D" parent="SubViewport"]
 
@@ -219,10 +224,12 @@ offset_bottom = 1102.0
 [node name="connect_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_km0xu")
 volume_db = -5.0
+bus = &"SFX"
 
 [node name="disconnect_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_na4ef")
 volume_db = -5.0
+bus = &"SFX"
 
 [connection signal="button_down" from="Parent2D/Button" to="." method="_on_sprite_input"]
 [connection signal="mouse_entered" from="Parent2D/Button" to="." method="mouse_enter"]

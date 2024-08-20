@@ -14,6 +14,7 @@ script = ExtResource("1_6muly")
 stream = ExtResource("4_e2mxu")
 volume_db = 3.0
 autoplay = true
+bus = &"Music"
 
 [node name="ZoomiesUI" parent="." instance=ExtResource("3_khsjq")]
 
