@@ -9,14 +9,15 @@
 viewport_path = NodePath("SubViewport")
 
 [node name="CatDisplayBoss" instance=ExtResource("1_0derp")]
-default_boder_color = Color(0.733005, 0.733006, 0.733005, 1)
-border_color_focus = Color(0.463838, 0.635312, 1, 1)
 cat_body = ExtResource("2_b11pb")
 cat_eyes = ExtResource("2_wpukm")
 wallpaper = ExtResource("3_3f5l1")
 
-[node name="mouse" parent="SubViewport/Parent3D/objects" index="4"]
-visible = false
+[node name="mouth" parent="SubViewport/Parent3D/cat" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0657063, -0.13983, 0.043834)
+
+[node name="mug" parent="SubViewport/Parent3D/objects" index="3"]
+transform = Transform3D(0.0926422, 0, -0.451318, 0, 0.0971439, 0, 0.0747955, 0, 0.559005, 3.06126, -3.37343, 0.337024)
 
 [node name="CatDisplaySprite" parent="Parent2D" index="0"]
 texture = SubResource("ViewportTexture_67l7x")

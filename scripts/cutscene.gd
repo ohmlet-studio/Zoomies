@@ -17,6 +17,7 @@ func _ready():
 	number_of_floors -= 2
 	midsection_height = $midsections/building_mid.get_rect().size.y * 0.95
 	
+	# if gameover do not play the animation
 	var target_camera_y
 	if gameover:
 		var midsection = $midsections.get_child(number_of_floors % 3).duplicate()
@@ -30,14 +31,13 @@ func _ready():
 	else:
 		$Camera2D.offset.y = 0
 		target_camera_y = -first_floor_height + -number_of_floors * midsection_height
-		
 	
+	# if less than one floor
 	if number_of_floors < 1:
 		$Victory.play()
 		await get_tree().create_timer(2.5).timeout
 		cutscene_over.emit()
 		return
-		
 	
 	for i in range(number_of_floors-1):
 		# Get the midsection (floor - 1) % 3
