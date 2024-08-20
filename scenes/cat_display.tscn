@@ -105,7 +105,7 @@ transform = Transform3D(0.361119, 0, 0, 0, 0.361119, 0, 0, 0, 0.555758, -0.00206
 texture = ExtResource("10_8edfj")
 
 [node name="mouth" type="Sprite3D" parent="SubViewport/Parent3D/cat"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.229643, 0.043834)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0657063, -0.13983, 0.043834)
 alpha_cut = 2
 texture = ExtResource("11_cxlok")
 

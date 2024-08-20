@@ -6,6 +6,8 @@
 viewport_path = NodePath("SubViewport")
 
 [node name="CatDisplayRandom" instance=ExtResource("1_ymc8f")]
+default_boder_color = Color(0.733005, 0.733006, 0.733005, 1)
+border_color_focus = Color(0.463838, 0.635312, 1, 1)
 randomize_room = true
 randomize_cat = true
 

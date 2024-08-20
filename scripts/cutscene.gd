@@ -1,11 +1,12 @@
 extends Node2D
 
-@export var number_of_floors:int = 1
+@export var number_of_floors:int = 10
 @export var floor_scroll_time:float = 0.2
+@export var gameover = false
 
 var target_scale_y = Vector2(1, 1)
+var first_floor_height = 70
 var midsection_height
-var first_floor_height
 
 var tick_timer
 var tick_count = 0
@@ -14,15 +15,29 @@ signal cutscene_over()
 
 func _ready():
 	number_of_floors -= 2
+	midsection_height = $midsections/building_mid.get_rect().size.y * 0.95
 	
+	# if gameover do not play the animation
+	var target_camera_y
+	if gameover:
+		var midsection = $midsections.get_child(number_of_floors % 3).duplicate()
+		var roof = $Building_roof
+		midsection.position.y = -first_floor_height + -(number_of_floors-1) * midsection_height
+		midsection.position.x = (number_of_floors % 3 - 1) * 50
+		$Camera2D.offset.y = -first_floor_height + -number_of_floors * midsection_height
+		target_camera_y = 0
+		roof.position.y = $Camera2D.offset.y - 100
+		add_child(midsection)
+	else:
+		$Camera2D.offset.y = 0
+		target_camera_y = -first_floor_height + -number_of_floors * midsection_height
+	
+	# if less than one floor
 	if number_of_floors < 1:
 		$Victory.play()
 		await get_tree().create_timer(2.5).timeout
+		cutscene_over.emit()
 		return
-		
-		
-	midsection_height = $midsections/building_mid.get_rect().size.y * 0.95
-	first_floor_height = 70
 	
 	for i in range(number_of_floors-1):
 		# Get the midsection (floor - 1) % 3
@@ -31,17 +46,17 @@ func _ready():
 		midsection.position.y = -first_floor_height + -i * midsection_height
 		midsection.position.x = (i % 3 - 1) * 50
 		self.add_child(midsection)
-	
+
 	# wait a bit
 	$Victory.play()
 	await get_tree().create_timer(2.5).timeout
 	
-	$Camera2D.offset.y = 0
-	var target_camera_y = -first_floor_height + -number_of_floors * midsection_height
 	var tween_camera_move = get_tree().create_tween()
 	tween_camera_move.tween_property($Camera2D, "offset:y", target_camera_y, floor_scroll_time*number_of_floors)
 	tween_camera_move.set_ease(Tween.EASE_IN_OUT)
-	tween_camera_move.tween_callback(_spawn_last_level)
+	
+	if !gameover:
+		tween_camera_move.tween_callback(_spawn_last_level)
 	
 	# create a timer and play tick sound every floor_scroll_time s
 	tick_timer = Timer.new()
