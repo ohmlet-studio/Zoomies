@@ -35,8 +35,6 @@ func _on_ready() -> void:
 	await DialogManager.dialog_finish
 	DialogManager.start_dialog(["Yes!"], $Cat5, true)
 	await DialogManager.dialog_finish
-	
-	await DialogManager.dialog_finish
 	DialogManager.start_dialog(["Does anyone have any idea what we're getting Felix?"], $Cat2, true)
 	await DialogManager.dialog_finish
 	DialogManager.start_dialog(["I was thinking high quality treats or something like that."], $Cat3, true)

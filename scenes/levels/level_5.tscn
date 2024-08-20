@@ -7,6 +7,8 @@
 
 [node name="Level5" type="Node2D"]
 script = ExtResource("1_72u7l")
+DIFFICULTY = 0.8
+timer_sec = 45
 
 [node name="ZoomiesUI" parent="." instance=ExtResource("2_8qnsk")]
 position = Vector2(-960, -540)

@@ -31,19 +31,19 @@ var object_lim_x_axis = 10
 #@export var room_objects: Array[Texture2D]
 
 # object list for web compatibility
-@export var first_plan_objects_list: Array[Texture]
-@export var second_plan_objects_list: Array[Texture]
-@export var third_plan_objects_list: Array[Texture]
-@export var floors_list: Array[Texture]
-@export var wallpapers_list: Array[Texture]
-@export var cat_bodies_list: Array[Texture]
-@export var cat_eyes_list: Array[Texture]
-@export var mug_list: Array[Texture]
-@export var mouse_list: Array[Texture]
+var first_plan_objects_list: Array[Texture]
+var second_plan_objects_list: Array[Texture]
+var third_plan_objects_list: Array[Texture]
+var floors_list: Array[Texture]
+var wallpapers_list: Array[Texture]
+var cat_bodies_list: Array[Texture]
+var cat_eyes_list: Array[Texture]
+var mug_list: Array[Texture]
+var mouse_list: Array[Texture]
 
 # mouth animations
-@export var mouth_talking_poses: Array[Texture2D] = []
-@export var mouth_idle_texture: Texture2D
+var mouth_talking_poses: Array[Texture2D] = []
+var mouth_idle_texture: Texture2D
 
 var border_color = default_boder_color
 
@@ -56,6 +56,49 @@ var cinematic_mode = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if randomize_cat or randomize_room:
+		var cat_bodies_paths = ["res://assets/textures/cat_parts/body/Body1.png", "res://assets/textures/cat_parts/body/Body2.png", "res://assets/textures/cat_parts/body/Body3.png", "res://assets/textures/cat_parts/body/Body4.png", "res://assets/textures/cat_parts/body/Body5.png", "res://assets/textures/cat_parts/body/Body6.png", "res://assets/textures/cat_parts/body/Body7.png", "res://assets/textures/cat_parts/body/Body8.png", "res://assets/textures/cat_parts/body/Body9.png", "res://assets/textures/cat_parts/body/Body10.png", "res://assets/textures/cat_parts/body/Body11.png", "res://assets/textures/cat_parts/body/Body12.png", "res://assets/textures/cat_parts/body/Body13.png", "res://assets/textures/cat_parts/body/Body14.png", "res://assets/textures/cat_parts/body/Body15.png", "res://assets/textures/cat_parts/body/Body16.png", "res://assets/textures/cat_parts/body/Body17.png", "res://assets/textures/cat_parts/body/Body18.png"]
+		for path in cat_bodies_paths:
+			cat_bodies_list.append(load(path))
+			
+		var cat_eyes_paths = ["res://assets/textures/cat_parts/eyes/normal/oval.png", "res://assets/textures/cat_parts/eyes/normal/sexy.png", "res://assets/textures/cat_parts/eyes/normal/wide.png"]
+		for path in cat_eyes_paths:
+			cat_eyes_list.append(load(path))
+
+		var mug_paths = ["res://assets/textures/rooms/objects/mug/colored/blanc.png", "res://assets/textures/rooms/objects/mug/colored/bleu.png", "res://assets/textures/rooms/objects/mug/colored/greenyarn.png", "res://assets/textures/rooms/objects/mug/colored/orange.png", "res://assets/textures/rooms/objects/mug/colored/orangeyarn.png"]
+		for path in mug_paths:
+			mug_list.append(load(path))
+			
+		var mouth_talking_poses_paths = ["res://assets/textures/cat_parts/mouth/big_smile.png", "res://assets/textures/cat_parts/mouth/chock.png", "res://assets/textures/cat_parts/mouth/smile.png"]
+		for path in mouth_talking_poses_paths:
+			mouth_talking_poses.append(load(path))
+		
+		var first_plan_objects_paths = ["res://assets/textures/rooms/objects/first_plan/lavalamp.png"]
+		for path in first_plan_objects_paths:
+			first_plan_objects_list.append(load(path))
+
+		var second_plan_objects_paths = ["res://assets/textures/rooms/objects/second_plan/aloevera.png", "res://assets/textures/rooms/objects/second_plan/monstera.png"]
+		for path in second_plan_objects_paths:
+			second_plan_objects_list.append(load(path))
+
+		var third_plan_objects_paths = ["res://assets/textures/rooms/objects/third__plan/drawer.png", "res://assets/textures/rooms/objects/third__plan/meuble.png"]
+		for path in third_plan_objects_paths:
+			third_plan_objects_list.append(load(path))
+		
+		var wallpapers_paths = ["res://assets/textures/rooms/wallpapers/duck.jpg", "res://assets/textures/rooms/wallpapers/fish.jpg", "res://assets/textures/rooms/wallpapers/paws.jpg", "res://assets/textures/rooms/wallpapers/squares.jpg", "res://assets/textures/rooms/wallpapers/vertical_stripes.jpg"]
+		for path in wallpapers_paths:
+			wallpapers_list.append(load(path))
+		
+		var floors_paths = ["res://assets/textures/rooms/floors/boards.jpg", "res://assets/textures/rooms/floors/tiles.jpg"]
+		for path in floors_paths:
+			floors_list.append(load(path))
+		
+		var mouse_paths = ["res://assets/textures/rooms/objects/mouse/blue.png", "res://assets/textures/rooms/objects/mouse/purple.png", "res://assets/textures/rooms/objects/mouse/yellow.png"]
+		for path in mouse_paths:
+			mouse_list.append(load(path))
+			
+		mouth_idle_texture = load("res://assets/textures/cat_parts/mouth/neutral.png")
+
 	# ----------- Pick random texture -------------
 	if randomize_cat:
 		#cat_body = _get_random_texture("res://assets/textures/cat_parts/body/")
