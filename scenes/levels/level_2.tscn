@@ -12,22 +12,16 @@ script = ExtResource("1_rtukf")
 position = Vector2(-960, -540)
 
 [node name="Cat1" parent="." instance=ExtResource("3_33dxy")]
-position = Vector2(-914, -160)
+position = Vector2(-600, -358)
 scale = Vector2(0.3, 0.3)
-default_boder_color = Color(0.733005, 0.733006, 0.733005, 1)
-border_color_focus = Color(0.463838, 0.635312, 1, 1)
 
 [node name="Cat2" parent="." instance=ExtResource("3_33dxy")]
-position = Vector2(-292, -160)
+position = Vector2(22, -358)
 scale = Vector2(0.3, 0.3)
-default_boder_color = Color(0.733005, 0.733006, 0.733005, 1)
-border_color_focus = Color(0.463838, 0.635312, 1, 1)
 
 [node name="Cat3" parent="." instance=ExtResource("3_33dxy")]
-position = Vector2(336, -160)
+position = Vector2(-286, 8)
 scale = Vector2(0.3, 0.3)
-default_boder_color = Color(0.733005, 0.733006, 0.733005, 1)
-border_color_focus = Color(0.463838, 0.635312, 1, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

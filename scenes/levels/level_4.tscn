@@ -14,32 +14,22 @@ position = Vector2(-960, -540)
 [node name="Cat1" parent="." instance=ExtResource("3_sxiyw")]
 position = Vector2(-907, -388)
 scale = Vector2(0.3, 0.3)
-default_boder_color = Color(0.733005, 0.733006, 0.733005, 1)
-border_color_focus = Color(0.463838, 0.635312, 1, 1)
 
 [node name="Cat2" parent="." instance=ExtResource("3_sxiyw")]
 position = Vector2(-285, -388)
 scale = Vector2(0.3, 0.3)
-default_boder_color = Color(0.733005, 0.733006, 0.733005, 1)
-border_color_focus = Color(0.463838, 0.635312, 1, 1)
 
 [node name="Cat3" parent="." instance=ExtResource("3_sxiyw")]
 position = Vector2(343, -388)
 scale = Vector2(0.3, 0.3)
-default_boder_color = Color(0.733005, 0.733006, 0.733005, 1)
-border_color_focus = Color(0.463838, 0.635312, 1, 1)
 
 [node name="Cat4" parent="." instance=ExtResource("3_sxiyw")]
 position = Vector2(-620, -16)
 scale = Vector2(0.3, 0.3)
-default_boder_color = Color(0.733005, 0.733006, 0.733005, 1)
-border_color_focus = Color(0.463838, 0.635312, 1, 1)
 
 [node name="Cat5" parent="." instance=ExtResource("3_sxiyw")]
 position = Vector2(47, -16)
 scale = Vector2(0.3, 0.3)
-default_boder_color = Color(0.733005, 0.733006, 0.733005, 1)
-border_color_focus = Color(0.463838, 0.635312, 1, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
