@@ -1,10 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2rskphkhcspx"]
+[gd_scene load_steps=14 format=3 uid="uid://d2rskphkhcspx"]
 
 [ext_resource type="FontFile" uid="uid://djf30q323awye" path="res://assets/fonts/Vividly-Regular.ttf" id="1_r48s2"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="2_v6ora"]
 [ext_resource type="AudioStream" uid="uid://b3i0482cg5esx" path="res://assets/sounds/Menu Theme.wav" id="3_ehhgd"]
 [ext_resource type="Theme" uid="uid://cssgsvi4n3gf2" path="res://assets/fonts/menu_theme.tres" id="3_qjtdt"]
 [ext_resource type="Texture2D" uid="uid://de8pb6aaspoep" path="res://assets/textures/UI/Menu/Title.png" id="3_ugpel"]
+[ext_resource type="Texture2D" uid="uid://cilqc0ctpmceq" path="res://assets/textures/UI/Menu/IMG_0803.png" id="5_2qtbx"]
+[ext_resource type="Script" path="res://scripts/cat_node_menu.gd" id="5_cjjct"]
+[ext_resource type="Texture2D" uid="uid://12nevif1e1lg" path="res://assets/textures/UI/Menu/IMG_0804.png" id="6_17vvt"]
+[ext_resource type="Texture2D" uid="uid://cvw15xbdaoqd5" path="res://assets/textures/UI/Menu/IMG_0805.png" id="7_oenlf"]
+[ext_resource type="Texture2D" uid="uid://dfow2ygb0a2sy" path="res://assets/textures/UI/Menu/IMG_0807.png" id="8_j7j85"]
+[ext_resource type="Texture2D" uid="uid://d7ykatct6mio" path="res://assets/textures/UI/Menu/IMG_0808.png" id="9_1yb27"]
+[ext_resource type="Texture2D" uid="uid://u7fwxdv6xpkb" path="res://assets/textures/UI/Menu/IMG_0809.png" id="10_65nn1"]
 
 [sub_resource type="Theme" id="Theme_jyfsc"]
 default_font = ExtResource("1_r48s2")
@@ -187,6 +194,108 @@ focus_next = NodePath("../StartGameButton")
 focus_previous = NodePath("../OptionsButton")
 theme = ExtResource("3_qjtdt")
 text = "Return"
+
+[node name="CatNode" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_cjjct")
+
+[node name="Cat1" type="TextureRect" parent="CatNode"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 249.0
+offset_right = 1146.08
+offset_bottom = 857.0
+rotation = 2.55133
+scale = Vector2(0.405634, 0.405634)
+texture = ExtResource("5_2qtbx")
+stretch_mode = 2
+
+[node name="Cat2" type="TextureRect" parent="CatNode"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = 372.0
+offset_right = 932.0
+offset_bottom = 1189.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.57021
+scale = Vector2(0.405634, 0.405634)
+texture = ExtResource("6_17vvt")
+stretch_mode = 2
+
+[node name="Cat3" type="TextureRect" parent="CatNode"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = 923.0
+offset_right = 885.0
+offset_bottom = 1740.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.549426
+scale = Vector2(0.392408, 0.392408)
+texture = ExtResource("7_oenlf")
+stretch_mode = 2
+
+[node name="Cat4" type="TextureRect" parent="CatNode"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1596.0
+offset_top = 1096.0
+offset_right = 2453.0
+offset_bottom = 1913.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.657881
+scale = Vector2(0.494752, 0.494752)
+texture = ExtResource("8_j7j85")
+stretch_mode = 2
+
+[node name="Cat5" type="TextureRect" parent="CatNode"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1816.0
+offset_top = 723.0
+offset_right = 2673.0
+offset_bottom = 1540.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.56411
+scale = Vector2(0.414753, 0.414753)
+texture = ExtResource("9_1yb27")
+stretch_mode = 2
+
+[node name="Cat6" type="TextureRect" parent="CatNode"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1941.0
+offset_top = 202.0
+offset_right = 2798.0
+offset_bottom = 1019.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -2.44542
+scale = Vector2(0.454751, 0.454751)
+texture = ExtResource("10_65nn1")
+stretch_mode = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ehhgd")
