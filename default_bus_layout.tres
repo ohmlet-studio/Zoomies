@@ -1,6 +1,7 @@
-[gd_resource type="AudioBusLayout" format=3 uid="uid://jjqq050i1j88"]
+[gd_resource type="AudioBusLayout" format=3 uid="uid://brbk5vkkvx3hs"]
 
 [resource]
+bus/0/solo = true
 bus/1/name = &"Music"
 bus/1/solo = false
 bus/1/mute = false
