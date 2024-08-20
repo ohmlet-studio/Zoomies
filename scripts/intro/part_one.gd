@@ -23,12 +23,13 @@ const lines: Array[String] = [
 ]
 
 func _ready() -> void:
-	WebcamManager.reset()
-	$Boss.disable_input()
+	WebcamManager.reset_cats()
 	
 	# wait for a bit
 	await get_tree().create_timer(0.5).timeout
 	
+	$Boss.disable_input()
+	$Boss.set_cinematic_mode(true)
 	$Boss.connect_cat()
 	
 	await get_tree().create_timer(0.5).timeout
@@ -41,4 +42,7 @@ func _ready() -> void:
 	
 	
 func _on_dialog_finished():
+	$Boss.disconnect_cat()
+	
+	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://scenes/intro/part_two.tscn")

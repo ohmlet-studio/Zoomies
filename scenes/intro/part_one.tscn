@@ -20,8 +20,6 @@ bus = &"Music"
 [node name="Boss" parent="." instance=ExtResource("3_lbx7h")]
 position = Vector2(256, 119)
 scale = Vector2(0.720302, 0.720302)
-default_boder_color = Color(0.636083, 0.677255, 0.753501, 1)
-border_color_focus = Color(1.03481e-06, 0.720339, 1.54018e-06, 1)
 cat_body = ExtResource("4_486o4")
 
 [connection signal="ready" from="." to="." method="_on_ready"]

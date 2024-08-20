@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 DialogManager="*res://scripts/global/dialog_manager.gd"
 WebcamManager="*res://scripts/global/webcam_manager.gd"
+GameManager="*res://scripts/global/game_manager.gd"
 
 [display]
 

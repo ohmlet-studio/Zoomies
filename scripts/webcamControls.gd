@@ -31,11 +31,6 @@ var cam_default_fov
 var is_aligned = false
 var is_in_hint_range = false
 
-signal ears_aligned_in()
-signal ears_aligned_out()
-signal hint_range_in()
-signal hint_range_out()
-
 func _ready() -> void:
 	# Keep default
 	cam_default_pos_x = camera_pivot.rotation_degrees.x
@@ -97,11 +92,11 @@ func check_hint_range():
 		camera.fov > (cam_default_fov - hint_range_mult * EARS_MARGIN_FOV)
 	) :
 		if !is_in_hint_range:
-			hint_range_in.emit()
+			get_parent().on_hint_aligned_in()
 			is_in_hint_range = true
 	else :
 		if is_in_hint_range:
-			hint_range_out.emit()
+			get_parent().on_hint_aligned_out()
 			is_in_hint_range = false
 		
 func check_ears_aligned():
@@ -119,11 +114,11 @@ func check_ears_aligned():
 		if !is_aligned:
 			is_aligned = true
 			ding_player.play()
-			ears_aligned_in.emit()
+			get_parent().on_ears_aligned_in()
 	else :
 		if is_aligned:
 			is_aligned = false
-			ears_aligned_out.emit()
+			get_parent().on_ears_aligned_out()
 
 func zoom(speed) -> void:
 	

@@ -45,6 +45,13 @@ var object_lim_x_axis = 10
 
 var border_color = default_boder_color
 
+signal ears_aligned_in()
+signal ears_aligned_out()
+signal hint_range_in()
+signal hint_range_out()
+
+var cinematic_mode = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# ----------- Pick random texture -------------
@@ -95,9 +102,16 @@ func _ready() -> void:
 	# set the sprite invisible
 	parent2D.visible = false
 	
-	enable_input()
-	
 	WebcamManager.add_new_display(self)
+
+func set_cinematic_mode(is_enabled):
+	cinematic_mode = is_enabled
+	
+	if is_enabled:
+		disable_input()
+		$Parent2D/EarHint.hide()
+	else:
+		enable_input()
 
 func disable_input():
 	sub_viewport.is_input_enabled = false
@@ -133,7 +147,7 @@ func _get_random_texture(path : String) -> Texture2D:
 	var res := load(dir_name + random_file)
 	return res
 
-func connect_cat():
+func connect_cat(cinematic:bool=false):
 	var tween = get_tree().create_tween()
 	
 	$connect_sound.play()
@@ -146,6 +160,7 @@ func connect_cat():
 	# Create and configure the tween
 	tween.tween_property(parent2D, "scale:y", target_scale_y, 0.2).set_trans(Tween.TRANS_SINE)
 
+	set_cinematic_mode(cinematic)
 	
 func disconnect_cat():
 	$disconnect_sound.play()
@@ -172,19 +187,35 @@ func _process(delta: float) -> void:
 	nine_patch.modulate = border_color
 
 func on_ears_aligned_in():
+	if cinematic_mode:
+		return
+		
 	$Parent2D/EarHint.hide()
 	$Parent2D/EarHintAligned.show()
+	ears_aligned_in.emit()
 	WebcamManager.check_are_cats_aligned()
 	
 func on_ears_aligned_out():
+	if cinematic_mode:
+		return
+		
 	$Parent2D/EarHintAligned.hide()
 	$Parent2D/EarHint.show()
+	ears_aligned_out.emit()
 
 func on_hint_aligned_in():
+	if cinematic_mode:
+		return
+		
 	$Parent2D/EarHint.show()
+	hint_range_in.emit()
 	
 func on_hint_aligned_out():
+	if cinematic_mode:
+		return
+		
 	$Parent2D/EarHint.hide()
+	hint_range_out.emit()
 
 func mouse_enter():
 	border_color = border_color_hover

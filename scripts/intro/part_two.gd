@@ -1,31 +1,40 @@
 extends Node2D
 
 const dialog_one: Array[String] = [
-	"Ok try to find me in the room using WASD and SHIFT"
+	"Ok try to find me in the room using WASD and SHIFT."
 ]
 
 const dialog_two: Array[String] = [
 	"Look around until my head in is frame."
 ]
 
-const dialog_three: Array[String] = [
+const dialog_getting_closer: Array[String] = [
 	"Now, match the ears to the outline.",
 	"quickly, preferably..."
 ]
 
+const dialog_getting_further: Array[String] = [
+	"You're going the wrong way now."
+]
+
+const dialog_tutorial_over: Array[String] = [
+	"I think you get the jist of it.",
+	"Good luck now!",
+]
+
 var handle_dial_finish : Callable
 
-var dialog_step = 0
+var next_dialog_step = "start"
 
 func _ready() -> void:
-	WebcamManager.reset()
-	await get_tree().create_timer(.5).timeout
+	WebcamManager.reset_cats()
 	
-	$Boss.connect_cat()
-	$Boss.disable_input()
+	await get_tree().create_timer(0.5).timeout
 	
-	await get_tree().create_timer(.5).timeout
-
+	$Boss.connect_cat(true)
+	
+	await get_tree().create_timer(0.5).timeout
+	
 	var dialog_signal_call = Callable(self, "_on_dialog_finish")
 	DialogManager.dialog_finish.connect(dialog_signal_call)
 	DialogManager.start_dialog(dialog_one, $Boss)
@@ -33,15 +42,38 @@ func _ready() -> void:
 func _on_dialog_finish():
 	# when dialog is over
 	
-	dialog_step += 1
-	
-	if dialog_step == 1:
+	if next_dialog_step == "start":
 		await get_tree().create_timer(.5).timeout
-		$Boss.enable_input()
 		$sfx.play()
-		$Boss.unalign_camera_random(0.5, 0.5)
+		$Boss.unalign_camera_random(1, 0.5)
+		
+		$Boss.set_cinematic_mode(false)
+		$Boss.enable_input()
+		$Boss.activate()
+		
+		next_dialog_step = "step_two"
+		
+	elif next_dialog_step == "step_two":
+		await get_tree().create_timer(.5).timeout
 		DialogManager.start_dialog(dialog_two, $Boss)
-	elif dialog_step == 2:
-		DialogManager.start_dialog(dialog_three, $Boss)
-	else:
-		pass
+		next_dialog_step = ""
+		
+	elif next_dialog_step == "last_step":
+		$Boss.disconnect_cat()
+		await get_tree().create_timer(0.5).timeout
+		
+		# start level 1
+		WebcamManager.reset_cats()
+		get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")
+
+
+func getting_closer():
+	DialogManager.start_dialog(dialog_getting_closer, $Boss)
+	
+func getting_further():
+	DialogManager.start_dialog(dialog_getting_further, $Boss)
+
+func finish_tutorial():
+	next_dialog_step = "last_step"
+	$Boss.set_cinematic_mode(true)
+	DialogManager.start_dialog(dialog_tutorial_over, $Boss)

@@ -234,10 +234,6 @@ stream = ExtResource("20_na4ef")
 volume_db = -5.0
 bus = &"SFX"
 
-[connection signal="ears_aligned_in" from="SubViewport" to="." method="on_ears_aligned_in"]
-[connection signal="ears_aligned_out" from="SubViewport" to="." method="on_ears_aligned_out"]
-[connection signal="hint_range_in" from="SubViewport" to="." method="on_hint_aligned_in"]
-[connection signal="hint_range_out" from="SubViewport" to="." method="on_hint_aligned_out"]
 [connection signal="button_down" from="Parent2D/Button" to="." method="_on_sprite_input"]
 [connection signal="mouse_entered" from="Parent2D/Button" to="." method="mouse_enter"]
 [connection signal="mouse_exited" from="Parent2D/Button" to="." method="mouse_exit"]
