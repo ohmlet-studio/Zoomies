@@ -15,4 +15,4 @@ If you're too slow you will be noticed, which will be bad for the company and, m
 
 **Art:** Nispouli & Capumonkey  
 **Music/SFX:** Hiromaster  
-**Code:** [Retronyme](https://rubengr.es) & Ollie
+**Code:** [Retronyme](https://rubengr.es) & [ollig](https://olchap.fr)
